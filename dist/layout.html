@@ -10,248 +10,209 @@
 	<link href="./assets/css/style.css" rel="stylesheet">
 	<script src="./assets/js/jquery-3.4.1.min.js"></script>
 	<script src="./assets/js/dynamicListener.min.js"></script>
-	<script src="./assets/js/jquery-ui.js"></script>
 	<script src="./assets/js/swiper.min.js"></script>
 	<script src="./assets/js/ui.js"></script>
 	<script src="./assets/js/main.js"></script>
 	<!-- 20240304 접근성 수정 -->
-	<title>레이아웃 01 | 경영혁신형 중소기업 인증시스템</title>
+	<title>레이아웃 | 나일소프트</title>
 	<!-- // 20240304 접근성 수정 -->
 </head>
 
 <body class="front_body">
 	<div class="page_wrap">
-		<!-- skip menu -->
-		<ul class="skiplist">
-			<li class="skip"><a href="#content">본문내용으로 바로가기</a></li><!-- 20240323 자리 변경 -->
-			<li class="skip pc_skip"><a href="#pc_gnb">주메뉴 바로가기</a></li>
-			<li class="skip mb_skip"><a href="#mobile_gnb">주메뉴 바로가기</a></li>
-		</ul>
-		<!-- //skip menu -->
-		<header class="header_wrap">
-			<div class="header_util_wrap">
-				<h1 class="header_toplogo">
-					<a href="#" class="header_toplogo_link"><img src="./assets/images/toplogo.png" alt="중소벤처기업부 MAin Biz"></a>
-				</h1>
-				<h1 class="header_toplogo_mb">
-					<a href="#" class="header_toplogo_link"><img src="./assets/images/toplogo.svg" alt="MAin Biz"></a>
-				</h1>
-				<div class="header_util_item_list_wrap">
-					<ul class="header_util_item_list">
-						<li><a href="#" class="header_util_menu">로그인</a></li>
-						<li><a href="#" class="header_util_menu">회원가입</a></li>
-						<!-- 20240304 접근성 수정 -->
-						<li><a href="#" class="header_util_menu type2" target="_blank" title="새창 열림">중소벤처24 이지패스</a></li>
-						<!-- // 20240304 접근성 수정 -->
-					</ul>
-				</div>
-			</div>
-			<div class="header_nav_wrap">
-				<nav class="header_nav_list_wrap">
-					<ul class="header_nav_list" id="pc_gnb">
-						<li name="gnb_info">
-							<a href="#" class="header_nav_menu">MAINBiz 안내</a>
-							<div class="nav_depth_menu_list_wrap">
-								<ul class="nav_depth_menu_list">
-									<li><a href="#" class="nav_depth_menu">제도안내</a></li>
-									<li><a href="#" class="nav_depth_menu">인증 절차</a></li>
-									<li><a href="#" class="nav_depth_menu">인증 혜택</a></li>
-									<li><a href="#" class="nav_depth_menu">CI 소개</a></li>
-									<li><a href="#" class="nav_depth_menu">홍보 자료</a></li>
-								</ul>
-							</div>
-						</li>
-						<li name="gnb_app">
-							<a href="#" class="header_nav_menu">인증 신청</a>
-							<div class="nav_depth_menu_list_wrap">
-								<ul class="nav_depth_menu_list">
-									<li><a href="#" class="nav_depth_menu">신규 신청</a></li>
-									<li><a href="#" class="nav_depth_menu">연장 신청</a></li>
-									<li><a href="#" class="nav_depth_menu">진행 현황</a></li>
-								</ul>
-							</div>
-						</li>
-						<li name="gnb_issue">
-							<a href="#" class="header_nav_menu">확인서 발급</a>
-							<div class="nav_depth_menu_list_wrap">
-								<ul class="nav_depth_menu_list">
-									<li><a href="#" class="nav_depth_menu">온라인 발급</a></li>
-									<li><a href="#" class="nav_depth_menu">확인서 재발급</a></li>
-									<li><a href="#" class="nav_depth_menu">사본 발급</a></li>
-									<li><a href="#" class="nav_depth_menu">영문 · 중문 발급</a></li>
-								</ul>
-							</div>
-						</li>
-						<li name="gnb_data">
-							<a href="#" class="header_nav_menu">정보 마당</a>
-							<div class="nav_depth_menu_list_wrap">
-								<ul class="nav_depth_menu_list">
-									<li><a href="#" class="nav_depth_menu">인증 현황</a></li>
-									<li><a href="#" class="nav_depth_menu">인증선정 취소 공고</a></li>
-									<li><a href="#" class="nav_depth_menu">자료실</a></li>
-								</ul>
-							</div>
-						</li>
-						<li name="gnb_customer">
-							<a href="#" class="header_nav_menu">고객 지원</a>
-							<div class="nav_depth_menu_list_wrap">
-								<ul class="nav_depth_menu_list">
-									<li><a href="#" class="nav_depth_menu">공지사항</a></li>
-									<li><a href="#" class="nav_depth_menu">FAQ</a></li>
-									<li><a href="#" class="nav_depth_menu">문의하기</a></li>
-									<li><a href="#" class="nav_depth_menu">인증 &middot; 코칭 교육 신청</a></li>
-									<li><a href="https://mainbiz.or.kr/business/etc_signboard.asp" target="_blank" title="새창 열림" class="nav_depth_menu">메인비즈 인증 현판제작</a></li>
-									<li><a href="#" class="nav_depth_menu">홈페이지 편의성조사</a></li>
-									<li><a href="#" class="nav_depth_menu">위치 및 연락처</a></li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-				</nav>
-			</div>
-			<a href="javascript:;" class="btn_panel_menu"><i class="btn_panel_menu_ico"></i><span class="hdtext">메인메뉴 열기</span></a>
-			<!-- mobile -->
-			<div class="mobile_mainmenu_zone" id="mobile_gnb">
-				<div class="mainmenu_dim"></div>
-				<div class="mobile_mainmenu_wrap">
-					<div class="mbutil_row">
-						<!-- 로그인 전 -->
-						<ul class="mbutil_hlist">
-							<li><a href="#" class="mbutil">로그인</a></li>
-							<li><a href="#" class="mbutil">회원가입</a></li>
+		<div class="sub_visual_wrap" style="background-image:url(./assets/images/bg_sv_info.jpg)">
+			<header class="header_wrap">
+				<div class="bg_depth"></div>
+				<div class="header_inner">
+					<h1 class="toplogo">
+						<a href="#" class="toplogo_link"><span class="hdtext">NileSOFT</span></a>
+					</h1>
+					<nav class="nav_list_wrap">
+						<ul class="header_nav_list">
+							<li name="gnb_product_info">
+								<a href="#" class="header_nav_menu">제품소개</a>
+								<div class="header_two_list_wrap type2">
+									<div class="header_two_menu_cols">
+										<p class="nav_depth_category">로그/개인정보</p>
+										<ul class="header_two_list">
+											<li><a href="#" class="header_two">LogCops</a></li>
+											<li><a href="#" class="header_two">PrivacyCops</a></li>
+											<li><a href="#" class="header_two">IT내부통제</a></li>
+											<li><a href="#" class="header_two">di Factory</a></li>
+										</ul>
+									</div>
+									<div class="header_two_menu_cols">
+										<p class="nav_depth_category">보안취약점</p>
+										<ul class="header_two_list">
+											<li><a href="#" class="header_two">Secuguard SSE</a></li>
+											<li><a href="#" class="header_two">Secuguard WSE</a></li>
+											<li><a href="#" class="header_two">Secuguard NSE</a></li>
+											<li><a href="#" class="header_two">Secuguard UVM</a></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li name="gnb_customer">
+								<a href="#" class="header_nav_menu">고객지원</a>
+								<div class="header_two_list_wrap">
+									<ul class="header_two_list">
+										<li><a href="#" class="header_two">자료실</a></li>
+										<li><a href="#" class="header_two">FAQ</a></li>
+										<li><a href="#" class="header_two">제품문의</a></li>
+									</ul>
+								</div>
+							</li>
+							<li name="gnb_irpr">
+								<a href="#" class="header_nav_menu">IR/PR</a>
+								<div class="header_two_list_wrap">
+									<ul class="header_two_list">
+										<li><a href="#" class="header_two">공지사항</a></li>
+										<li><a href="#" class="header_two">수상 및 인증</a></li>
+										<li><a href="#" class="header_two">재무정보</a></li>
+									</ul>
+								</div>
+							</li>
+							<li name="gnb_company_info">
+								<a href="#" class="header_nav_menu">회사소개</a>
+								<div class="header_two_list_wrap">
+									<ul class="header_two_list">
+										<li><a href="#" class="header_two">회사개요</a></li>
+										<li><a href="#" class="header_two">CEO인사말</a></li>
+										<li><a href="#" class="header_two">연혁</a></li>
+										<li><a href="#" class="header_two">주요 고객사</a></li>
+										<li><a href="#" class="header_two">오시는길</a></li>
+									</ul>
+								</div>
+							</li>
 						</ul>
-						<!-- // 로그인 전 -->
-						<!-- 로그인 후 -->
-						<!-- <ul class="mbutil_hlist">
-                    <li><a href="#" class="mbutil">로그아웃</a></li>
-                </ul> -->
-						<!-- // 로그인 후 -->
+					</nav>
+					<div class="util_list_wrap">
+						<ul class="util_list">
+							<li><a href="#" class="util_menu"><i class="ico earth"></i><span class="util_menu_text">KOR</span></a></li>
+						</ul>
 					</div>
-					<div class="mbmenu_row">
-						<div class="mbmenu_inwrap">
-							<ul class="mbmenu_vlist">
-								<li name="gnb_info">
-									<a href="#" class="mbmenu_one">MAINBiz 안내</a>
-									<div class="mbmenu_two_menu_list_wrap">
-										<ul class="mbmenu_two_menu_list">
-											<li><a href="#" class="mbmenu_two_menu">제도안내</a></li>
-											<li><a href="#" class="mbmenu_two_menu">인증 절차</a></li>
-											<li><a href="#" class="mbmenu_two_menu">인증 혜택</a></li>
-											<li><a href="#" class="mbmenu_two_menu">CI 소개</a></li>
-											<li><a href="#" class="mbmenu_two_menu">홍보 자료</a></li>
-										</ul>
-									</div>
-								</li>
-								<li name="gnb_app">
-									<a href="#" class="mbmenu_one">인증 신청</a>
-									<div class="mbmenu_two_menu_list_wrap">
-										<ul class="mbmenu_two_menu_list">
-											<li><a href="#" class="mbmenu_two_menu">신규 신청</a></li>
-											<li><a href="#" class="mbmenu_two_menu">연장 신청</a></li>
-											<li><a href="#" class="mbmenu_two_menu">진행 현황</a></li>
-										</ul>
-									</div>
-								</li>
-								<li name="gnb_issue">
-									<a href="#" class="mbmenu_one">확인서 발급</a>
-									<div class="mbmenu_two_menu_list_wrap">
-										<ul class="mbmenu_two_menu_list">
-											<li><a href="#" class="mbmenu_two_menu">온라인 발급</a></li>
-											<li><a href="#" class="mbmenu_two_menu">확인서 재발급</a></li>
-											<li><a href="#" class="mbmenu_two_menu">사본 발급</a></li>
-											<li><a href="#" class="mbmenu_two_menu">영문 · 중문 발급</a></li>
-										</ul>
-									</div>
-								</li>
-								<li name="gnb_data">
-									<a href="#" class="mbmenu_one">정보 마당</a>
-									<div class="mbmenu_two_menu_list_wrap">
-										<ul class="mbmenu_two_menu_list">
-											<li><a href="#" class="mbmenu_two_menu">인증 현황</a></li>
-											<li><a href="#" class="mbmenu_two_menu">인증선정 취소 공고</a></li>
-											<li><a href="#" class="mbmenu_two_menu">자료실</a></li>
-										</ul>
-									</div>
-								</li>
-								<li name="gnb_customer">
-									<a href="#" class="mbmenu_one">고객 지원</a>
-									<div class="mbmenu_two_menu_list_wrap">
-										<ul class="mbmenu_two_menu_list">
-											<li><a href="#" class="mbmenu_two_menu">공지사항</a></li>
-											<li><a href="#" class="mbmenu_two_menu">FAQ</a></li>
-											<li><a href="#" class="mbmenu_two_menu">문의하기</a></li>
-											<li><a href="#" class="mbmenu_two_menu">인증 &middot; 코칭 교육 신청</a></li>
-											<li><a href="https://mainbiz.or.kr/business/etc_signboard.asp" target="_blank" title="새창 열림" class="mbmenu_two_menu">메인비즈 인증 현판제작</a></li>
-											<li><a href="#" class="mbmenu_two_menu">홈페이지 편의성조사</a></li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-							<ul class="mbmenu_util_menu_vlist">
-								<!-- 20240304 접근성 수정 -->
-								<li><a href="#" class="mbmenu_util_menu" title="새창 열림" target="_blank">중소벤처24 이지패스</a></li>
-								<!-- // 20240304 접근성 수정 -->
+				</div>
+				<a href="javascript:;" class="btn_panel_menu"><i class="btn_panel_menu_ico"></i><span class="hdtext">메인메뉴 열기</span></a>
+				<!-- mobile -->
+				<div class="mobile_mainmenu_zone" id="mobile_gnb">
+					<div class="mainmenu_dim"></div>
+					<div class="mobile_mainmenu_wrap">
+						<div class="mbutil_row">
+							<ul class="util_list">
+								<li><a href="#" class="util_menu"><i class="ico earth"></i><span class="util_menu_text">KOR</span></a></li>
 							</ul>
 						</div>
-					</div>
-					<a href="#" class="btn_mbmenuclose"><span class="hdtext">메인메뉴 닫기</span></a>
-				</div>
-			</div>
-			<!-- // mobile -->
-		</header>
-		<section class="middle_wrap" id="content">
-			내용이 들어갑니다.
-		</section>
-		<footer class="footer_wrap">
-			<div class="footer_sub_row">
-				<div class="footer_sub_cols">
-					<ul class="footer_menu_list">
-						<li><a href="#" class="footer_menu type2">개인정보처리방침</a></li>
-						<li><a href="#" class="footer_menu">이메일무단수집거부</a></li>
-						<li><a href="#" class="footer_menu">오시는 길</a></li>
-						<li><a href="#" class="footer_menu">사이트맵</a></li>
-					</ul>
-				</div>
-				<div class="footer_sub_cols has_outlink">
-					<ul class="footer_box_menu_list">
-						<li>
-							<a href="#" class="footer_box_menu">
-								<span class="footer_box_menu_text">메인비즈협회 홈페이지</span>
-								<i class="footer_box_menu_ico"></i>
-							</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="footer_main_row">
-				<div class="footer_main_cols">
-					<ul class="footer_data_item_list">
-						<li>
-							<p class="footer_data_emp_text">(사)한국경영혁신중소기업협회</p>
-						</li>
-						<li>
-							<p class="footer_data_tail_text">03111 서울 종로구 종로 413, 208호, 308호(숭인동, 동보빌딩)</p>
-						</li>
-						<li>
-							<div class="footer_data_tail_text_group">
-								<p class="footer_data_tail_text type2">T. 1666-5001</p>
-								<p class="footer_data_tail_text type2">F. 02-2248-2798</p>
+						<div class="mbmenu_row">
+							<div class="mbmenu_inwrap">
+								<ul class="mbmenu_nav_list">
+									<li name="gnb_product_info">
+										<a href="#" class="mbmenu_nav_menu">제품소개</a>
+										<div class="mbmenu_two_list_wrap">
+											<div class="mbmenu_two_menu_row">
+												<p class="mbmenu_depth_category">로그/개인정보</p>
+												<ul class="mbmenu_two_list">
+													<li><a href="#" class="mbmenu_two">LogCops</a></li>
+													<li><a href="#" class="mbmenu_two">PrivacyCops</a></li>
+													<li><a href="#" class="mbmenu_two">IT내부통제</a></li>
+													<li><a href="#" class="mbmenu_two">di Factory</a></li>
+												</ul>
+											</div>
+											<div class="mbmenu_two_menu_row">
+												<p class="nav_depth_category">보안취약점</p>
+												<ul class="mbmenu_two_list">
+													<li><a href="#" class="mbmenu_two">Secuguard SSE</a></li>
+													<li><a href="#" class="mbmenu_two">Secuguard WSE</a></li>
+													<li><a href="#" class="mbmenu_two">Secuguard NSE</a></li>
+													<li><a href="#" class="mbmenu_two">Secuguard UVM</a></li>
+												</ul>
+											</div>
+										</div>
+									</li>
+									<li name="gnb_customer">
+										<a href="#" class="mbmenu_nav_menu">고객지원</a>
+										<div class="mbmenu_two_list_wrap">
+											<ul class="mbmenu_two_list type2">
+												<li><a href="#" class="mbmenu_two">자료실</a></li>
+												<li><a href="#" class="mbmenu_two">FAQ</a></li>
+												<li><a href="#" class="mbmenu_two">제품문의</a></li>
+											</ul>
+										</div>
+									</li>
+									<li name="gnb_irpr">
+										<a href="#" class="mbmenu_nav_menu">IR/PR</a>
+										<div class="mbmenu_two_list_wrap">
+											<ul class="mbmenu_two_list type2">
+												<li><a href="#" class="mbmenu_two">공지사항</a></li>
+												<li><a href="#" class="mbmenu_two">수상 및 인증</a></li>
+												<li><a href="#" class="mbmenu_two">재무정보</a></li>
+											</ul>
+										</div>
+									</li>
+									<li name="gnb_company_info">
+										<a href="#" class="mbmenu_nav_menu">회사소개</a>
+										<div class="mbmenu_two_list_wrap">
+											<ul class="mbmenu_two_list type2">
+												<li><a href="#" class="mbmenu_two">회사개요</a></li>
+												<li><a href="#" class="mbmenu_two">CEO인사말</a></li>
+												<li><a href="#" class="mbmenu_two">연혁</a></li>
+												<li><a href="#" class="mbmenu_two">주요 고객사</a></li>
+												<li><a href="#" class="mbmenu_two">오시는길</a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
 							</div>
-						</li>
-						<li>
-							<p class="footer_data_tail_text copyright">Copyright ⓒ Ministry of Interior and Safety. All Rights Reserved.</p>
-						</li>
+						</div>
+						<a href="#" class="btn_mbmenuclose"><span class="hdtext">메인메뉴 닫기</span></a>
+					</div>
+				</div>
+				<!-- // mobile -->
+			</header>
+			<div class="sv_inner">
+				<div class="sv_copy_wrap">
+					<div class="sv_copy_group">
+						<p class="sv_copy_sub">CEO MASSAGE</p>
+						<h2 class="sv_copy_main">CEO인사말</h2>
+					</div>
+				</div>
+				<div class="breadcrumb_list_wrap">
+					<ul class="breadcrumb_list">
+						<li><a href="#" class="breadcrumb_ico_link"><span class="hdtext">홈</span></a></li>
+						<li><a href="#" class="breadcrumb_link">회사소개</a></li>
+						<li><a href="#" class="breadcrumb_link">CEO인사말</a></li>
 					</ul>
 				</div>
-				<div class="footer_main_cols">
-					<div class="footer_data_guide_item">
-						<p class="footer_data_guide_emp">1666-5001</p>
-						<ul class="footer_data_guide_list">
-							<li>평일 : <span class="data_num_text">09:00 - 18:00</span></li>
-							<li>점심시간 : <span class="data_num_text">12:00 - 13:00</span></li>
-							<li>토, 일, 공휴일 휴무</li>
+			</div>
+		</div>
+		<main class="middle_wrap">
+			<div class="middle_sub_contents">
+				내용이 들어갑니다.
+			</div>
+		</main>
+		<footer class="footer_wrap">
+			<div class="footer_inner">
+				<div class="footer_logo_cols"><span class="footer_logo"><span class="hdtext">NileSOFT</span></span></div>
+				<div class="footer_info_cols">
+					<div class="footer_info_wrap">
+						<address class="footer_info_para">서울특별시 구로구 디지털로32길 30, 코오롱디지털타워빌란트1차 1004호</address>
+						<ul class="footer_info_para_list">
+							<li>
+								<p class="footer_info_para">대표자 : 송영호</p>
+							</li>
+							<li>
+								<p class="footer_info_para">사업자등록번호 : 116-81-47522</p>
+							</li>
+							<li>
+								<p class="footer_info_para">Tel : 02-783-0961</p>
+							</li>
+							<li>
+								<p class="footer_info_para">Fax : 02-783-0963</p>
+							</li>
 						</ul>
+						<p class="footer_info_para">Email : webmaster@nilesoft.co.kr</p>
 					</div>
+					<p class="footer_copy_para">COPYRIGHT© NileSOFT Ltd. ALL RIGHTS RESERVED.</p>
+					<a href="#" class="btn_top_go"><span class="btn_top_go_text">TOP</span></a>
 				</div>
 			</div>
 		</footer>
