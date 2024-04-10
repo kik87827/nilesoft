@@ -101,7 +101,76 @@ function layoutFunc() {
       });
     }
   }
+
+  function mbTotal() {
+    var touchstart = "ontouchstart" in window;
+    var btn_panel_menu = document.querySelector(".btn_panel_menu"),
+      mobile_mainmenu_zone = document.querySelector(".mobile_mainmenu_zone"),
+      mainmenu_dim = document.querySelector(".mainmenu_dim"),
+      btn_mbmenuclose = document.querySelector(".btn_mbmenuclose"),
+      mobile_mainmenu_wrap = document.querySelector(".mobile_mainmenu_wrap");
+    mbmenu_nav_menu = document.querySelectorAll(".mbmenu_nav_menu");
+    domHtml = document.querySelector("html"),
+      domBody = document.querySelector("body");
+
+    // init 
+    if (mobile_mainmenu_zone === null) {
+      return;
+    }
+    btn_panel_menu.addEventListener("click", function(e) {
+      e.preventDefault();
+      totalOpen();
+    }, false);
+    btn_mbmenuclose.addEventListener("click", function(e) {
+      e.preventDefault();
+      totalClose();
+    }, false);
+    mainmenu_dim.addEventListener("click", function(e) {
+      e.preventDefault();
+      totalClose();
+    }, false);
+    resizeAction(() => {
+      if (window.innerWidth > 1023) {
+        totalClose();
+      }
+    });
+
+    if (!!mbmenu_nav_menu) {
+      mbmenu_nav_menu.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          const thisEventTarget = e.currentTarget;
+          const thisEventParent = thisEventTarget.closest("li");
+          const thisEventParentGlobalLi = siblings(thisEventParent);
+          thisEventParentGlobalLi.forEach((item) => {
+            if (item !== thisEventParent) {
+              item.classList.remove("active");
+            }
+          });
+          thisEventParent.classList.toggle("active");
+        });
+      });
+    }
+
+    function totalOpen() {
+      mobile_mainmenu_zone.classList.add("active")
+      setTimeout(function() {
+        mobile_mainmenu_zone.classList.add("motion");
+        if (touchstart) {
+          domHtml.classList.add("touchDis");
+        }
+      }, 30);
+    }
+
+    function totalClose() {
+      mobile_mainmenu_zone.classList.remove("motion");
+      setTimeout(function() {
+        mobile_mainmenu_zone.classList.remove("active");
+        domHtml.classList.remove("touchDis");
+      }, 500);
+    }
+  }
   pcGnb();
+  mbTotal();
   scrollTop();
 }
 
