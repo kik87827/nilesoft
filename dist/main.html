@@ -14,12 +14,12 @@
 	<script src="./assets/js/ui.js"></script>
 	<script src="./assets/js/main.js"></script>
 	<!-- 20240304 접근성 수정 -->
-	<title>레이아웃 | 나일소프트</title>
+	<title>메인 | 나일소프트</title>
 	<!-- // 20240304 접근성 수정 -->
 </head>
 
-<body class="front_body">
-	<div class="page_wrap main">
+<body class="front_body main">
+	<div class="page_wrap">
 		<header class="header_wrap">
 			<div class="bg_depth"></div>
 			<div class="header_inner">
@@ -168,35 +168,96 @@
 			<!-- // mobile -->
 		</header>
 		<main class="middle_wrap">
-			내용이 들어갑니다.
-		</main>
-		<footer class="footer_wrap">
-			<div class="footer_inner">
-				<div class="footer_logo_cols"><span class="footer_logo"><span class="hdtext">NileSOFT</span></span></div>
-				<div class="footer_info_cols">
-					<div class="footer_info_wrap">
-						<address class="footer_info_para">서울특별시 구로구 디지털로32길 30, 코오롱디지털타워빌란트1차 1004호</address>
-						<ul class="footer_info_para_list">
-							<li>
-								<p class="footer_info_para">대표자 : 송영호</p>
-							</li>
-							<li>
-								<p class="footer_info_para">사업자등록번호 : 116-81-47522</p>
-							</li>
-							<li>
-								<p class="footer_info_para">Tel : 02-783-0961</p>
-							</li>
-							<li>
-								<p class="footer_info_para">Fax : 02-783-0963</p>
-							</li>
-						</ul>
-						<p class="footer_info_para">Email : webmaster@nilesoft.co.kr</p>
+			<div class="swiper mv_container">
+				<!-- Additional required wrapper -->
+				<div class="swiper-wrapper">
+					<!-- Slides -->
+					<div class="swiper-slide">
+						<div class="mv_item scene_01">
+							<div class="mv_item_inner">
+								<p style="color:#fff;">Slide 1</p>
+							</div>
+						</div>
 					</div>
-					<p class="footer_copy_para">COPYRIGHT© NileSOFT Ltd. ALL RIGHTS RESERVED.</p>
-					<a href="#" class="btn_top_go"><span class="btn_top_go_text">TOP</span></a>
+					<div class="swiper-slide">
+						<div class="mv_item scene_02">
+							<div class="mv_item_inner">
+								<p style="color:#fff;">Slide 2</p>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="mv_item scene_03">
+							<div class="mv_item_inner">
+								<p style="color:#000;">Slide 3</p>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="mv_item scene_04">
+							<div class="mv_item_inner">
+								<p style="color:#000;">Slide 4</p>
+							</div>
+							<footer class="footer_wrap">
+								<div class="footer_inner">
+									<div class="footer_logo_cols"><span class="footer_logo"><span class="hdtext">NileSOFT</span></span></div>
+									<div class="footer_info_cols">
+										<div class="footer_info_wrap">
+											<address class="footer_info_para">서울특별시 구로구 디지털로32길 30, 코오롱디지털타워빌란트1차 1004호</address>
+											<ul class="footer_info_para_list">
+												<li>
+													<p class="footer_info_para">대표자 : 송영호</p>
+												</li>
+												<li>
+													<p class="footer_info_para">사업자등록번호 : 116-81-47522</p>
+												</li>
+												<li>
+													<p class="footer_info_para">Tel : 02-783-0961</p>
+												</li>
+												<li>
+													<p class="footer_info_para">Fax : 02-783-0963</p>
+												</li>
+											</ul>
+											<p class="footer_info_para">Email : webmaster@nilesoft.co.kr</p>
+										</div>
+										<p class="footer_copy_para">COPYRIGHT© NileSOFT Ltd. ALL RIGHTS RESERVED.</p>
+										<a href="#" class="btn_top_go"><span class="btn_top_go_text">TOP</span></a>
+									</div>
+								</div>
+							</footer>
+						</div>
+					</div>
 				</div>
+				<!-- If we need pagination -->
+				<div class="swiper-pagination"></div>
 			</div>
-		</footer>
+			<script>
+				const mainSwiper = new Swiper('.mv_container', {
+					direction: 'vertical',
+					mousewheel: true,
+					speed: 1000,
+					// If we need pagination
+					pagination: {
+						el: '.mv_container .swiper-pagination',
+						clickable: true,
+					},
+				});
+
+				const front_body = document.querySelector(".front_body");
+				const btn_main_top_go = document.querySelector(".main .btn_top_go");
+				mainSwiper.on("slideChange", () => {
+					if (mainSwiper.realIndex > 1) {
+						front_body.classList.add("main_skin2");
+					} else {
+						front_body.classList.remove("main_skin2");
+					}
+				});
+				btn_main_top_go.addEventListener("click", (e) => {
+					e.preventDefault();
+					mainSwiper.slideTo(0, 0);
+				});
+			</script>
+		</main>
 	</div>
 </body>
 

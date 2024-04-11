@@ -85,7 +85,7 @@ $(function() {
             });
     
             this_item.classList.add("active");
-            header_wrap.classList.add("active");
+            header_wrap.classList.add("ready_active","active");
     
             bg_depth.style.height = this_item_depth.getBoundingClientRect().height + "px";
           });
@@ -95,6 +95,9 @@ $(function() {
         header_wrap.addEventListener("mouseleave",()=>{
           header_nav_li.forEach((item)=>{
             header_wrap.classList.remove("active");
+            setTimeout(()=>{
+              header_wrap.classList.remove("ready_active");
+            },500);
             item.classList.remove("active");
           });
           bg_depth.style.height = "0px";
