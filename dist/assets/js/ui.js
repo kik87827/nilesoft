@@ -86,7 +86,9 @@ function layoutFunc() {
 
           this_item.classList.add("active");
           header_wrap.classList.add("ready_active", "active");
-
+          setTimeout(() => {
+            this_item_depth.classList.add("out");
+          }, 500);
           bg_depth.style.height = this_item_depth.getBoundingClientRect().height + "px";
         });
       });
@@ -94,9 +96,11 @@ function layoutFunc() {
     if (!!header_wrap) {
       header_wrap.addEventListener("mouseleave", () => {
         header_nav_li.forEach((item) => {
+          const this_item_depth = item.querySelector(".header_two_list_wrap");
           header_wrap.classList.remove("active");
           setTimeout(() => {
-            header_wrap.classList.remove("ready_active");
+            header_wrap.classList.remove("active");
+            this_item_depth.classList.remove("out");
           }, 500);
           item.classList.remove("active");
         });
