@@ -74,32 +74,55 @@ function layoutFunc() {
     const header_nav_list = document.querySelector(".header_nav_list");
     const header_nav_li = document.querySelectorAll(".header_nav_list > li");
     if (!!header_nav_li) {
+      let hoverTimeout;
       header_nav_li.forEach((this_li) => {
         this_li.addEventListener("mouseenter", (e) => {
-          const this_item = e.currentTarget;
-          const this_item_not = siblings(this_item);
-          const this_item_depth = this_item.querySelector(".header_two_list_wrap");
-
-          this_item_not.forEach((item) => {
-            item.classList.remove("active");
-          });
-
-          this_item.classList.add("active");
-          header_wrap.classList.add("ready_active", "active");
-          setTimeout(() => {
-            this_item_depth.classList.add("out");
-          }, 500);
-          bg_depth.style.height = this_item_depth.getBoundingClientRect().height + "px";
+          let thisEvent = e.currentTarget;
+          if (hoverTimeout) {
+            clearTimeout(hoverTimeout);
+          }
+          hoverTimeout = setTimeout(() => {
+            hoverAction(thisEvent);
+          }, 30);
         });
       });
     }
+
+    function hoverAction(target) {
+      const this_item = target;
+      const this_item_not = siblings(this_item);
+      const this_item_depth = this_item.querySelector(".header_two_list_wrap");
+
+      this_item_not.forEach((item) => {
+        item.classList.remove("active");
+      });
+
+      this_item.classList.add("active");
+      header_wrap.classList.add("ready_active", "active");
+      setTimeout(() => {
+        this_item_depth.classList.add("out");
+      }, 500);
+      bg_depth.style.height = this_item_depth.getBoundingClientRect().height + "px";
+    }
+
+    function leaveAction(target) {
+      const this_item = target;
+      const this_item_depth = this_item.querySelector(".header_two_list_wrap");
+
+
+      this_item.classList.remove("active");
+      header_wrap.classList.remove("ready_active", "active");
+      bg_depth.style.height = "0px";
+    }
+
     if (!!header_wrap) {
+
       header_wrap.addEventListener("mouseleave", () => {
         header_nav_li.forEach((item) => {
           const this_item_depth = item.querySelector(".header_two_list_wrap");
           header_wrap.classList.remove("active");
           setTimeout(() => {
-            header_wrap.classList.remove("active");
+            header_wrap.classList.remove("ready_active");
             this_item_depth.classList.remove("out");
           }, 500);
           item.classList.remove("active");
