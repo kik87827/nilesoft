@@ -1,1 +1,63 @@
 /* contents */
+
+/* 공통 */
+.middle_subtop_copy{}
+
+/* CEO인사말 */
+.greet_page{}
+.greet_img_cols{
+    > img{}
+}
+.greet_spec_cols{
+
+}
+.greet_spec_emp_01{}
+.greet_spec_emp_02{
+    strong{}
+}
+.greet_normal_para_group{
+
+}
+.greet_normal_para{
+    &:last-of-type{}
+}
+.greet_sign_para{
+    strong{}
+}
+
+/* 찾아오시는 길 */
+.map_api_wrap{
+    > iframe{}
+}
+.map_spec_wrap{
+
+}
+.map_spec_tr{
+
+}
+.map_spec_cell{
+    &.define_th{}
+    &.define_td{}
+}
+.map_spec_key{}
+.map_spec_value{}
+
+.map_tail_list{
+    >li{
+        &:last-of-type{}
+    }
+}
+.map_tail_thcols{
+    .map_tail_key{}
+}
+.map_tail_tdcols{
+
+}
+.map_tail_dl{
+    &:last-of-type{}
+    dt,dd{}
+    dt{}
+    dd{}
+}
+.map_tail_keybox{}
+.map_tail_value_para{}
