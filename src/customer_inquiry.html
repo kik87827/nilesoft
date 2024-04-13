@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+    @@include('./include/_head.html')
+<body class="front_body">
+    <div class="page_wrap">
+        <div class="sub_visual_wrap" style="background-image:url(./assets/images/bg_sv_customer.jpg)">
+            @@include('./include/_header.html')
+            <div class="sv_inner">
+                <div class="sv_copy_wrap">
+                    <div class="sv_copy_group">
+                        <p class="sv_copy_sub">PRODUCT inquiry</p>
+                        <h2 class="sv_copy_main">제품문의</h2>
+                    </div>
+                </div>
+                <div class="breadcrumb_list_wrap">
+                    <ul class="breadcrumb_list">
+                        <li><a href="#" class="breadcrumb_ico_link"><span class="hdtext">홈</span></a></li>
+                        <li><a href="#" class="breadcrumb_link">고객지원</a></li>
+                        <li><a href="#" class="breadcrumb_link">제품문의</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <main class="middle_wrap">
+            <div class="middle_sub_contents">
+                내용이 들어갑니다.
+            </div>
+        </main>
+        <!-- popup -->
+        <div class="popup_wrap" id="termsPopup">
+            <div class="bg_dim"></div>
+            <div class="popup_item">
+                <div class="popup_title_row">
+                    <h3 class="popup_title">개인정보처리방침</h3>
+                </div>
+                <div class="popup_contents_row">
+                    <div class="popup_contents_inner">
+                        내용이 들어갑니다.
+                    </div>
+                </div>
+                <!-- <div class="popup_btn_row">
+                    <a href="#" class="btn_box close_trigger"><span class="btn_box_text">저장</span></a>
+                </div> -->
+                <a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+            </div>
+        </div>
+        <!-- // popup -->
+        <script>
+			menuRock("[name='customer_menu03']");
+
+            document.addEventListener("DOMContentLoaded", function() {
+				// 인스턴스 선언
+				let termsPopup = new DesignPopup({
+					selector: "#termsPopup",
+					beforeCallback() {
+
+					},
+					callback() {
+
+					},
+					closeCallback() {
+					}
+				});
+
+				// event
+				/* document.querySelector("#props_dban_01").addEventListener("click", () => {
+					eduFormPopup.popupShow(); // show
+				}); */
+
+				// 퍼블확인용
+				let url = window.location.href.split('?')[1];
+				let url_2 = url !== undefined ? url.split('#')[0] : null;
+				if (url_2 === "popup") {
+					termsPopup.popupShow(); // show
+				}
+			});
+		</script>
+        @@include('./include/_footer.html')
+    </div>
+</body>
+</html>

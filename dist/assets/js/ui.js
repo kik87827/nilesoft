@@ -58,19 +58,21 @@ function resizeAction(callback) {
 function layoutFunc() {
   function scrollTop() {
     const btn_top_go = document.querySelector(".btn_top_go");
-    btn_top_go.addEventListener("click", (e) => {
-      e.preventDefault();
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth"
-      })
-    });
+    if (!!btn_top_go) {
+      btn_top_go.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth"
+        })
+      });
+    }
   }
 
   function pcGnb() {
     const header_wrap = document.querySelector(".header_wrap");
-    const bg_depth = document.querySelector(".bg_depth");
+    /* const bg_depth = document.querySelector(".bg_depth"); */
     const header_nav_list = document.querySelector(".header_nav_list");
     const header_nav_li = document.querySelectorAll(".header_nav_list > li");
     if (!!header_nav_li) {
@@ -78,56 +80,56 @@ function layoutFunc() {
       header_nav_li.forEach((this_li) => {
         this_li.addEventListener("mouseenter", (e) => {
           let thisEvent = e.currentTarget;
-          if (hoverTimeout) {
-            clearTimeout(hoverTimeout);
-          }
-          hoverTimeout = setTimeout(() => {
-            hoverAction(thisEvent);
-          }, 30);
+          let thisEventNot = siblings(thisEvent);
+
+          thisEventNot.forEach((item) => {
+            if (thisEvent !== item) {
+              leaveAction(item);
+            }
+          });
+
+          hoverAction(thisEvent);
         });
       });
     }
 
     function hoverAction(target) {
       const this_item = target;
+      const this_item_parent = this_item.closest(".header_nav_list > li");
       const this_item_not = siblings(this_item);
       const this_item_depth = this_item.querySelector(".header_two_list_wrap");
+      const this_item_depth_inner = this_item.querySelector(".header_two_inner");
+
+      if (this_item_depth.classList.contains("type2")) {
+        this_item_depth_inner.style.left = this_item_parent.getBoundingClientRect().left + "px";
+      } else {
+        this_item_depth_inner.style.left = this_item_parent.getBoundingClientRect().left + (this_item_parent.getBoundingClientRect().width / 2) + "px";
+      }
 
       this_item_not.forEach((item) => {
         item.classList.remove("active");
       });
 
       this_item.classList.add("active");
-      header_wrap.classList.add("ready_active", "active");
-      setTimeout(() => {
-        this_item_depth.classList.add("out");
-      }, 500);
-      bg_depth.style.height = this_item_depth.getBoundingClientRect().height + "px";
+      header_wrap.classList.add("active");
+      this_item_depth.style.height = this_item_depth_inner.getBoundingClientRect().height + "px";
     }
 
     function leaveAction(target) {
       const this_item = target;
       const this_item_depth = this_item.querySelector(".header_two_list_wrap");
 
-
       this_item.classList.remove("active");
-      header_wrap.classList.remove("ready_active", "active");
-      bg_depth.style.height = "0px";
+      header_wrap.classList.remove("active");
+      this_item_depth.style.height = "0px";
     }
 
     if (!!header_wrap) {
 
       header_wrap.addEventListener("mouseleave", () => {
         header_nav_li.forEach((item) => {
-          const this_item_depth = item.querySelector(".header_two_list_wrap");
-          header_wrap.classList.remove("active");
-          setTimeout(() => {
-            header_wrap.classList.remove("ready_active");
-            this_item_depth.classList.remove("out");
-          }, 500);
-          item.classList.remove("active");
+          leaveAction(item);
         });
-        bg_depth.style.height = "0px";
       });
     }
   }
@@ -208,9 +210,14 @@ function layoutFunc() {
  * menu rock
  */
 function menuRock(target) {
-  const targetDom = document.querySelector(target);
+  const targetDom = document.querySelectorAll(target);
   if (!!targetDom) {
-    targetDom.classList.add("active");
+    targetDom.forEach((target) => {
+      if (!!target.closest(".mbmenu_nav_list > li")) {
+        target.closest(".mbmenu_nav_list > li").classList.add("active");
+      }
+      target.classList.add("active");
+    });
   }
 }
 
@@ -225,4 +232,121 @@ function siblings(t) {
   return tempArr.filter(function(e) {
     return e != t;
   });
+}
+
+
+
+
+/* popup */
+class DesignPopup {
+  constructor(option) {
+    // variable
+    this.option = option;
+    this.selector = document.querySelector(this.option.selector);
+    if (!this.selector) {
+      return;
+    }
+
+    this.design_popup_wrap = document.querySelectorAll(".popup_wrap");
+    this.domHtml = document.querySelector("html");
+    this.domBody = document.querySelector("body");
+    this.pagewrap = document.querySelector(".page_wrap");
+    this.layer_wrap_parent = null;
+    this.btn_closeTrigger = null;
+    this.scrollValue = 0;
+
+    // init
+    const popupGroupCreate = document.createElement("div");
+    popupGroupCreate.classList.add("layer_wrap_parent");
+    if (!this.layer_wrap_parent && !document.querySelector(".layer_wrap_parent")) {
+      this.pagewrap.append(popupGroupCreate);
+    }
+    this.layer_wrap_parent = document.querySelector(".layer_wrap_parent");
+
+
+    // event
+    this.btn_close = this.selector.querySelectorAll(".btn_popup_close");
+    this.bg_design_popup = this.selector.querySelector(".bg_dim");
+    let closeItemArray = [...this.btn_close];
+    if (!!this.selector.querySelectorAll(".close_trigger")) {
+      this.btn_closeTrigger = this.selector.querySelectorAll(".close_trigger");
+      closeItemArray.push(...this.btn_closeTrigger);
+    }
+    if (closeItemArray.length) {
+      closeItemArray.forEach((element) => {
+        element.addEventListener("click", (e) => {
+          e.preventDefault();
+          this.popupHide(this.selector);
+        }, false);
+      });
+    }
+  }
+  dimCheck() {
+    const popupActive = document.querySelectorAll(".popup_wrap.active");
+    if (!!popupActive[0]) {
+      popupActive[0].classList.add("active_first");
+    }
+    if (popupActive.length > 1) {
+      this.layer_wrap_parent.classList.add("has_active_multi");
+    } else {
+      this.layer_wrap_parent.classList.remove("has_active_multi");
+    }
+  }
+  popupShow() {
+    this.design_popup_wrap_active = document.querySelectorAll(".popup_wrap.active");
+    if (this.selector == null) {
+      return;
+    }
+    this.selector_contents = this.selector.querySelector(".popup_contents_row");
+    this.selector_contents_inner = this.selector.querySelector(".popup_contents_inner");
+    this.domHtml.classList.add("touchDis");
+    this.selector.classList.add("active");
+    if (!!this.selector_contents_inner && !!this.selector_contents) {
+      if (this.selector_contents.getBoundingClientRect().height < this.selector_contents_inner.getBoundingClientRect().height) {
+        this.selector_contents.classList.add("scroll_mode");
+      } else {
+        this.selector_contents.classList.remove("scroll_mode");
+      }
+    }
+    setTimeout(() => {
+      this.selector.classList.add("motion_end");
+    }, 30);
+    if ("beforeCallback" in this.option) {
+      this.option.beforeCallback();
+    }
+    if ("callback" in this.option) {
+      this.option.callback();
+    }
+    if (!!this.design_popup_wrap_active) {
+      this.design_popup_wrap_active.forEach((element, index) => {
+        if (this.design_popup_wrap_active !== this.selector) {
+          element.classList.remove("active");
+        }
+      });
+    }
+    this.layer_wrap_parent.append(this.selector);
+    this.dimCheck();
+  }
+  popupHide() {
+    let target = this.option.selector;
+    if (!!target) {
+      this.selector.classList.remove("motion");
+      if ("beforeClose" in this.option) {
+        this.option.beforeClose();
+      }
+      //remove
+      this.selector.classList.remove("motion_end");
+      setTimeout(() => {
+        this.selector.classList.remove("active");
+      }, 400);
+      this.design_popup_wrap_active = document.querySelectorAll(".popup_wrap.active");
+      this.dimCheck();
+      if ("closeCallback" in this.option) {
+        this.option.closeCallback();
+      }
+      if (this.design_popup_wrap_active.length == 1) {
+        this.domHtml.classList.remove("touchDis");
+      }
+    }
+  }
 }
