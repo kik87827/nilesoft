@@ -1333,7 +1333,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
     font-size: 13px;
   }
   .middle_sub_contents {
-    padding: 40px 20px;
+    padding: 40px 20px 80px;
   }
   .footer_inner {
     padding: 30px 20px;
@@ -3713,6 +3713,12 @@ button.swiper-pagination-bullet {
   margin-bottom: 100px;
 }
 
+@media (max-width: 1023px) {
+  .middle_subtop_copy {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+}
 /* CEO인사말 */
 .greet_page {
   display: flex;
@@ -3773,6 +3779,42 @@ button.swiper-pagination-bullet {
   padding-left: 5px;
 }
 
+@media (max-width: 1023px) {
+  .greet_page {
+    display: block;
+  }
+  .greet_img_cols {
+    text-align: center;
+  }
+  .greet_img_cols > img {
+    max-width: 50%;
+  }
+  .greet_spec_cols {
+    margin-top: 30px;
+  }
+  .greet_spec_cols br {
+    display: none;
+  }
+  .greet_spec_emp_01 {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .greet_spec_emp_02 {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .greet_normal_para {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .greet_sign_para {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  .greet_sign_para strong {
+    font-size: 20px;
+  }
+}
 /* 찾아오시는 길 */
 .map_api_wrap {
   height: 456px;
@@ -3824,6 +3866,7 @@ button.swiper-pagination-bullet {
   font-size: 20px;
   font-weight: 600;
   line-height: 1.4;
+  word-break: keep-all;
 }
 
 .map_tail_list {
@@ -3896,6 +3939,92 @@ button.swiper-pagination-bullet {
   font-weight: 500;
 }
 
+@media (max-width: 1023px) {
+  .map_api_wrap {
+    height: 300px;
+  }
+  .map_spec_wrap {
+    margin-top: 30px;
+    display: block;
+    width: auto;
+  }
+  .map_spec_tr {
+    display: block;
+  }
+  .map_spec_tr:last-of-type .map_spec_cell {
+    padding-bottom: 0;
+  }
+  .map_spec_tr:last-of-type .map_spec_cell.define_th {
+    padding-bottom: 20px;
+  }
+  .map_spec_tr .map_spec_cell {
+    padding-bottom: 30px;
+  }
+  .map_spec_cell {
+    display: block;
+    padding-bottom: 20px;
+  }
+  .map_spec_cell.define_th {
+    white-space: normal;
+    width: auto;
+    padding: 0 0 20px;
+  }
+  .map_spec_key {
+    font-size: 20px;
+  }
+  .map_spec_value {
+    font-size: 16px;
+  }
+  .map_tail_list {
+    display: block;
+    width: auto;
+  }
+  .map_tail_list > li {
+    display: block;
+    border-bottom: 1px solid #dfdfdf;
+  }
+  .map_tail_thcols,
+.map_tail_tdcols {
+    padding-bottom: 20px;
+    display: block;
+    border-bottom: 0;
+  }
+  .map_tail_thcols {
+    padding: 20px 20px 0;
+    width: auto;
+    white-space: normal;
+  }
+  .map_tail_tdcols {
+    padding: 10px 20px 15px 20px;
+  }
+  .map_tail_key {
+    font-size: 16px;
+    display: inline-block;
+    white-space: normal;
+  }
+  .map_tail_dl {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+  .map_tail_dl:last-of-type {
+    margin-bottom: 0;
+  }
+  .map_tail_dl dt {
+    flex: 0;
+  }
+  .map_tail_dl dd {
+    flex: 1;
+    padding-top: 4px;
+  }
+  .map_tail_keybox {
+    font-size: 14px;
+    min-width: 50px;
+  }
+  .map_tail_value_para {
+    font-size: 14px;
+  }
+}
 .guide_contents_item {
   margin-bottom: 120px;
 }
