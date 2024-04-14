@@ -1,63 +1,81 @@
 /* contents */
 
 /* 공통 */
-.middle_subtop_copy{}
+.middle_subtop_copy{color:#333333; font-size:36px; font-weight:700; word-break: keep-all; text-align: center; line-height:1.4;margin-bottom:100px;}
 
 /* CEO인사말 */
-.greet_page{}
+.greet_page{display:flex;gap:60px;}
 .greet_img_cols{
-    > img{}
+    flex:0 0 382px;
+    > img{vertical-align: top;}
 }
 .greet_spec_cols{
-
+    flex: 1;
+    *{word-break: keep-all;}
 }
-.greet_spec_emp_01{}
+.greet_spec_emp_01{font-size:36px; color:#13479b; font-weight:500;margin-bottom:40px;}
 .greet_spec_emp_02{
-    strong{}
+    font-size:32px; color:#333333; font-weight:500;margin-bottom:40px; line-height:1.2;
+    strong{font-weight:700;}
 }
 .greet_normal_para_group{
 
 }
 .greet_normal_para{
-    &:last-of-type{}
+    font-size:18px; color:#333333; line-height:1.5; margin-bottom:40px;
+    &:last-of-type{margin-bottom:0;}
 }
 .greet_sign_para{
-    strong{}
+    margin-top:40px;color:#121212; font-size:20px;
+    strong{  letter-spacing: 2px; font-size:24px; font-weight:700; padding-left:5px;}
 }
 
 /* 찾아오시는 길 */
-.map_api_wrap{
-    > iframe{}
+.map_api_wrap{height:456px; position:relative; 
+    > iframe{height:100%;position:absolute;top:0;left:0;width:100%;}
 }
 .map_spec_wrap{
-
+    margin-top:60px; display:table; width:100%;
 }
 .map_spec_tr{
-
+    display:table-row; 
+    &:last-of-type{
+        .map_spec_cell{padding-bottom:0;}
+    }
+    .map_spec_cell{padding-bottom:60px;}
 }
 .map_spec_cell{
-    &.define_th{}
+    display:table-cell; vertical-align: top; padding-bottom:60px;
+    &.define_th{white-space: nowrap; width:1px; padding-right:80px;}
     &.define_td{}
 }
-.map_spec_key{}
-.map_spec_value{}
+.map_spec_key{font-size:32px; font-weight:700; color:#333333; display:inline-block;}
+.map_spec_value{color:#333333; font-size:20px; font-weight:600; line-height:1.4;}
 
 .map_tail_list{
+    border-top:1px solid #333333;  display:table; width:100%;
     >li{
+         display:table-row; 
         &:last-of-type{}
     }
 }
+.map_tail_thcols,
+.map_tail_tdcols{
+    border-bottom:1px solid #dfdfdf; display:table-cell; vertical-align: top;
+}
 .map_tail_thcols{
-    .map_tail_key{}
+    padding:20px 75px 20px 20px; width:1px; white-space: nowrap;
 }
 .map_tail_tdcols{
-
+    padding:17px 20px 15px 20px;
 }
+.map_tail_key{font-size:18px; color:#333333; font-weight:700; display:inline-block; white-space: nowrap;}
 .map_tail_dl{
-    &:last-of-type{}
+    display:flex; gap:15px; margin-bottom:10px;
+    &:last-of-type{margin-bottom:0;}
     dt,dd{}
-    dt{}
-    dd{}
+    dt{flex:0;}
+    dd{flex:1;padding-top:2px;}
 }
-.map_tail_keybox{}
-.map_tail_value_para{}
+.map_tail_keybox{font-size:18px; font-weight:500; line-height:1; color:#fff; border-radius:100px; box-sizing: border-box; min-width:68px; background:#3cb44a; display:inline-block; text-align: center; box-sizing: border-box; padding:5px;}
+.map_tail_value_para{font-size:18px; color:#333333; font-weight:500;}
