@@ -1,10 +1,53 @@
 /* contents */
 
 /* 공통 */
+.middle_subtop_wrap{
+    &.type2{
+        .middle_subtop_main{}
+        .middle_subtop_sub{}
+    }
+}
+.middle_subtop_main{}
+.middle_subtop_sub{}
 .middle_subtop_copy{color:#333333; font-size:36px; font-weight:700; word-break: keep-all; text-align: center; line-height:1.4;margin-bottom:100px;}
+.tab_menu_list_wrap{}
+.tab_menu_list{
+    > li{
+
+    }
+}
+.tab_menu{
+    &.active{
+
+    }
+}
+.tab_cont_wrap{}
+.tab_cont{
+    &.active{
+
+    } 
+}
+.sub_block_wrap{}
+.sub_block{
+    &:last-of-type{}
+}
+.sub_title_row{}
+.sub_title{}
+.sub_title_copy{}
+.sub_contents_row{}
+.respon_table_wrap{}
+.respon_table{}
+.respon_tr_group{}
+.respon_tr{}
+.respon_cols{}
+.respon_cell{}
+.respon_thtext{}
+.respon_tdtext{}
 @media (max-width:$mobile_large){
     .middle_subtop_copy{font-size:18px;margin-bottom:30px;}
 }
+
+
 /* CEO인사말 */
 .greet_page{display:flex;gap:60px;}
 .greet_img_cols{
@@ -158,4 +201,58 @@
     .map_tail_keybox{font-size:14px; min-width:50px;}
     .map_tail_value_para{font-size:14px;}
     
+}
+
+
+/* 고객사 */
+.partner_logo_list_wrap{}
+.partner_logo_list{
+    > li{}
+}
+.partner_logo{
+    img{}
+}
+
+
+/* 연혁 */
+.history_container{}
+.history_img_cols{
+    > img{}
+}
+.history_spec_cols{}
+.history_spec_title{}
+.history_spec_list{
+    > li{
+        &:last-of-type{}
+    }
+}
+.history_spec_cell{
+    &.define_th{}
+    &.define_td{}
+}
+.history_thtext{}
+.history_tdtext_list{
+    >li{
+        &:last-of-type{}
+    }
+}
+.history_tdtext{}
+
+
+
+/* 회사소개 */
+.summary_box_list_wrap{}
+.summary_box_list{
+    > li{}
+}
+.summary_box{}
+.summary_box_title{}
+.summary_img_row{
+    img{}
+}
+.summary_spec_row{}
+.summary_spec_para{}
+
+.organ_system_wrap{
+    img{}
 }
