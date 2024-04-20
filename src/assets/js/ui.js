@@ -347,3 +347,39 @@ $(function() {
       }
     }
   }
+
+
+  function tabMenuFunc(){
+    const tab_menu = document.querySelectorAll(".tab_menu");
+    if(!!tab_menu){
+      tab_menu.forEach((item)=>{
+        item.addEventListener("click",(e)=>{
+          e.preventDefault();
+          const thisEvent = e.currentTarget;
+          const thisParent = thisEvent.closest(".ui_tab");
+          const thisEventNot = thisParent.querySelectorAll(".tab_menu");
+          const thisContentGroup = document.querySelector(thisParent.dataset.contgroup);
+          const thisContent = document.querySelector(thisEvent.getAttribute("href"));
+          const thisContentNot = thisContentGroup.querySelectorAll(".tab_cont");
+
+          if(!!thisEvent){
+            thisEventNot.forEach((item)=>{
+              if(thisContent !== item){
+                item.classList.remove("active");
+              }
+            });
+          }
+          thisEvent.classList.add("active");
+
+          if(!!thisContent){
+            thisContentNot.forEach((item)=>{
+              if(thisContent !== item){
+                item.classList.remove("active");
+              }
+            });
+            thisContent.classList.add("active");
+          }
+        });
+      });
+    }
+  }

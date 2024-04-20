@@ -192,19 +192,19 @@
 		</div>
 		<main class="middle_wrap">
 			<div class="middle_sub_contents">
-				<div class="middle_subtop_wrap">
+				<div class="middle_subtop_wrap type2">
 					<p class="middle_subtop_main">나일소프트는 1994년 설립 후<br> 30년간 정보보호의 대중화를 위해 힘써왔습니다!</p>
 					<p class="middle_subtop_sub">이제 더 나은 비즈니스 가치 창출과 세계로 도약하겠습니다.</p>
 				</div>
 				<div class="tab_menu_list_wrap skin2">
-					<ul class="tab_menu_list ui_tab">
+					<ul class="tab_menu_list ui_tab" data-contgroup="#tab_cont_wrap">
 						<li><a href="#tab_cont_01" class="tab_menu active"><span class="tab_menu_text">2014 ~</span><span class="tab_menu_text">혁신과 도약</span></a></li>
 						<li><a href="#tab_cont_02" class="tab_menu"><span class="tab_menu_text">2004~2013</span><span class="tab_menu_text">변화와 발전</span></a></li>
 						<li><a href="#tab_cont_03" class="tab_menu"><span class="tab_menu_text">1994~2003</span><span class="tab_menu_text">시작과 도전</span></a></li>
 					</ul>
 				</div>
-				<div class="tab_cont_wrap">
-					<div class="tab_cont" id="tab_cont_01">
+				<div class="tab_cont_wrap" id="tab_cont_wrap">
+					<div class="tab_cont active" id="tab_cont_01">
 						<div class="history_container">
 							<div class="history_img_cols"><img src="./assets/images/img_history_01.jpg" alt="" aria-hidden="true"></div>
 							<div class="history_spec_cols">
@@ -675,6 +675,8 @@
 		</main>
 		<script>
 			menuRock("[name='company_menu03']");
+
+			tabMenuFunc();
 		</script>
 		<footer class="footer_wrap">
 			<div class="footer_inner">

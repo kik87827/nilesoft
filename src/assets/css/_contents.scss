@@ -3,28 +3,46 @@
 /* 공통 */
 .middle_subtop_wrap{
     &.type2{
+        margin-bottom:90px;
         .middle_subtop_main{}
         .middle_subtop_sub{}
     }
 }
-.middle_subtop_main{}
-.middle_subtop_sub{}
+.middle_subtop_main,
+.middle_subtop_sub{color:#333333; font-size:36px; word-break: keep-all; text-align: center; line-height:1.4; }
+.middle_subtop_main{ font-weight:700;}
+.middle_subtop_sub{margin-top:5px;}
 .middle_subtop_copy{color:#333333; font-size:36px; font-weight:700; word-break: keep-all; text-align: center; line-height:1.4;margin-bottom:100px;}
-.tab_menu_list_wrap{}
+.tab_menu_list_wrap{max-width:1200px;margin:0 auto 100px;
+    &.skin2{
+        .tab_menu_list{
+            gap:7px;
+            > li{
+                flex:1;
+                .tab_menu{min-width:0;border-radius: 10px;}
+            }
+        }
+    }
+}
 .tab_menu_list{
+    display:flex; gap:25px; justify-content: center;
     > li{
-
+        flex:0 0 170px;
     }
 }
 .tab_menu{
+    display:flex; align-items: center; justify-content: center; padding:20px; min-height:50px; box-sizing: border-box; background:#ececec; border-radius:100px;
     &.active{
-
+        background-color:#13479b;
+        .tab_menu_text{color:#fff;}
     }
 }
+.tab_menu_text{font-size:18px; color:#333333; display:inline-block; font-weight:500;}
 .tab_cont_wrap{}
 .tab_cont{
+    display:none;
     &.active{
-
+        display:block;
     } 
 }
 .sub_block_wrap{}
@@ -215,28 +233,36 @@
 
 
 /* 연혁 */
-.history_container{}
+.history_container{display:flex; gap:90px;}
 .history_img_cols{
-    > img{}
+    flex:0 0 396px;
+    > img{vertical-align: top;}
 }
-.history_spec_cols{}
-.history_spec_title{}
+.history_spec_cols{flex: 1;}
+.history_spec_title{font-size:35px; color:#13479b; font-weight:700; letter-spacing: -1px; margin:0 0 50px 0;}
 .history_spec_list{
+    display:table;
     > li{
-        &:last-of-type{}
+        display:table-row;
+        &:last-of-type{
+            .history_spec_cell{padding-bottom:0;}
+        }
     }
 }
 .history_spec_cell{
-    &.define_th{}
+    display:table-cell; vertical-align: top; padding-bottom:40px;
+    &.define_th{width:1px;white-space: nowrap;padding-right:40px;}
     &.define_td{}
 }
-.history_thtext{}
+.history_thtext{font-size:18px; color:#333333; font-weight:700; letter-spacing: -0.5px;}
 .history_tdtext_list{
+    padding-top:1px;
     >li{
-        &:last-of-type{}
+        padding-bottom:15px;
+        &:last-of-type{padding-bottom:0;}
     }
 }
-.history_tdtext{}
+.history_tdtext{font-size:16px; color:#777777;}
 
 
 
