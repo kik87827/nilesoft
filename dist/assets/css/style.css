@@ -3752,7 +3752,7 @@ button.swiper-pagination-bullet {
 
 .tab_menu_list_wrap {
   max-width: 1200px;
-  margin: 0 auto 100px;
+  margin: 0 auto 50px;
 }
 .tab_menu_list_wrap.skin2 .tab_menu_list {
   gap: 7px;
@@ -4187,6 +4187,22 @@ button.swiper-pagination-bullet {
   }
 }
 /* 고객사 */
+.partner_logo_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 0;
+}
+.partner_logo_list > li {
+  flex: 0 0 16.6666666%;
+}
+
+.partner_logo {
+  display: block;
+}
+.partner_logo img {
+  vertical-align: top;
+}
+
 /* 연혁 */
 .history_container {
   display: flex;

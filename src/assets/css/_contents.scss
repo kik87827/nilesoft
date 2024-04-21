@@ -20,7 +20,7 @@
 .middle_subtop_main{ font-weight:700;}
 .middle_subtop_sub{margin-top:5px;}
 .middle_subtop_copy{color:#333333; font-size:36px; font-weight:700; word-break: keep-all; text-align: center; line-height:1.4;margin-bottom:100px;}
-.tab_menu_list_wrap{max-width:1200px;margin:0 auto 100px;
+.tab_menu_list_wrap{max-width:1200px;margin:0 auto 50px;
     &.skin2{
         .tab_menu_list{
             gap:7px;
@@ -237,10 +237,12 @@
 /* 고객사 */
 .partner_logo_list_wrap{}
 .partner_logo_list{
-    > li{}
+    display:flex; flex-wrap:wrap; gap:20px 0;
+    > li{flex:0 0 16.6666666%;}
 }
 .partner_logo{
-    img{}
+    display:block;
+    img{vertical-align: top;}
 }
 
 

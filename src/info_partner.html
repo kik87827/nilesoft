@@ -24,15 +24,15 @@
         <main class="middle_wrap">
             <div class="middle_sub_contents">
                 <div class="tab_menu_list_wrap">
-                    <ul class="tab_menu_list ui_tab">
+                    <ul class="tab_menu_list ui_tab" data-contgroup="#tab_cont_wrap">
                         <li><a href="#tab_cont_01" class="tab_menu active"><span class="tab_menu_text">공공</span></a></li>
                         <li><a href="#tab_cont_02" class="tab_menu"><span class="tab_menu_text">금융</span></a></li>
                         <li><a href="#tab_cont_03" class="tab_menu"><span class="tab_menu_text">기업</span></a></li>
                         <li><a href="#tab_cont_04" class="tab_menu"><span class="tab_menu_text">병원/교육</span></a></li>
                     </ul>
                 </div>
-                <div class="tab_cont_wrap">
-                    <div class="tab_cont" id="tab_cont_01">
+                <div class="tab_cont_wrap" id="tab_cont_wrap">
+                    <div class="tab_cont active" id="tab_cont_01">
                         <div class="partner_logo_list_wrap">
                             <ul class="partner_logo_list">
                                 <li><a href="#" class="partner_logo"><img src="./assets/images/partner01_01.jpg" alt=""></a></li>
@@ -179,6 +179,7 @@
         </main>
         <script>
 			menuRock("[name='company_menu04']");
+            tabMenuFunc();
 		</script>
         @@include('./include/_footer.html')
     </div>
