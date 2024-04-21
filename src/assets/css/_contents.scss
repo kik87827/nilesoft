@@ -32,7 +32,7 @@
     }
 }
 .tab_menu_list{
-    display:flex; gap:25px; justify-content: center;
+    display:flex; gap:25px; justify-content: center; flex-wrap:wrap;
     > li{
         flex:0 0 170px;
     }
@@ -88,6 +88,15 @@
     }
     .middle_subtop_main{ font-size:24px;}
     .middle_subtop_sub{ font-size:18px;}
+
+    .tab_menu_list_wrap{margin-bottom:30px;}
+
+    .tab_menu_list{
+        gap:10px; margin-right:-10px;
+        > li{flex:0 0 calc(50% - 10px)}
+    }
+    .tab_menu{padding:10px;min-height:40px;}
+    .tab_menu_text{font-size:16px;}
 
     .sub_title{font-size:20px;}
     .sub_title_row{margin-bottom:15px;}
@@ -278,7 +287,11 @@
     display:block;
     img{vertical-align: top;}
 }
-
+@media (max-width:$mobile_large){
+    .partner_logo_list{
+        > li{flex:0 0 33.333333%;}
+    }
+}
 
 /* 연혁 */
 .history_container{display:flex; gap:90px;}
