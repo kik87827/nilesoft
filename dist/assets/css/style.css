@@ -3829,6 +3829,7 @@ button.swiper-pagination-bullet {
   color: #777777;
   font-weight: 500;
   margin-top: 10px;
+  word-break: keep-all;
 }
 
 .respon_table_wrap {
@@ -3843,6 +3844,7 @@ button.swiper-pagination-bullet {
 .respon_cols {
   flex: 1;
   display: flex;
+  align-items: center;
 }
 
 .respon_cell {
@@ -3859,6 +3861,7 @@ button.swiper-pagination-bullet {
   color: #333333;
   display: inline-block;
   font-weight: 700;
+  line-height: 1.4;
 }
 
 .respon_tdtext {
@@ -3866,12 +3869,66 @@ button.swiper-pagination-bullet {
   color: #777777;
   font-weight: 500;
   display: inline-block;
+  word-break: keep-all;
+  line-height: 1.4;
 }
 
+/* @media (max-width:$tablet){
+    .respon_cell{
+        &.define_th{flex:0 0 190px;}
+    }
+} */
 @media (max-width: 1023px) {
   .middle_subtop_copy {
     font-size: 18px;
     margin-bottom: 30px;
+  }
+  .middle_subtop_wrap.type3 {
+    margin-bottom: 45px;
+  }
+  .middle_subtop_wrap.type3 .middle_subtop_sub {
+    margin-top: 10px;
+  }
+  .middle_subtop_main {
+    font-size: 24px;
+  }
+  .middle_subtop_sub {
+    font-size: 18px;
+  }
+  .sub_title {
+    font-size: 20px;
+  }
+  .sub_title_row {
+    margin-bottom: 15px;
+  }
+  .sub_title_copy {
+    font-size: 16px;
+  }
+  .respon_tr {
+    display: block;
+    border-bottom: 0;
+  }
+  .respon_cols {
+    border-bottom: 1px solid #dddddd;
+  }
+  .respon_cell {
+    flex: 1;
+    box-sizing: border-box;
+    padding: 15px;
+  }
+  .respon_cell.define_th {
+    flex: 0;
+    padding-right: 0;
+  }
+  .respon_thtext {
+    white-space: nowrap;
+  }
+  .respon_thtext,
+.respon_tdtext {
+    font-size: 14px;
+  }
+  .sub_block {
+    margin-bottom: 50px;
   }
 }
 /* CEO인사말 */
@@ -4294,6 +4351,8 @@ button.swiper-pagination-bullet {
   color: #2b2b2b;
   font-weight: 600;
   letter-spacing: -0.5px;
+  word-break: keep-all;
+  line-height: 1.3;
 }
 
 .summary_img_row {
@@ -4312,6 +4371,30 @@ button.swiper-pagination-bullet {
   word-break: keep-all;
 }
 
+@media (max-width: 1023px) {
+  .summary_box_list {
+    gap: 15px;
+    margin-right: -15px;
+    flex-wrap: wrap;
+  }
+  .summary_box_list > li {
+    flex: 0 0 calc(50% - 15px);
+  }
+  .summary_box {
+    border-radius: 10px;
+    padding: 20px 15px;
+  }
+  .summary_box_title {
+    font-size: 18px;
+  }
+  .summary_img_row {
+    max-width: 55px;
+    margin: 10px auto;
+  }
+  .summary_spec_para {
+    font-size: 14px;
+  }
+}
 .guide_contents_item {
   margin-bottom: 120px;
 }

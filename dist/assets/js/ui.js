@@ -386,3 +386,36 @@ function tabMenuFunc() {
     });
   }
 }
+
+
+function responTableStyle() {
+  action();
+  window.addEventListener("resize", () => {
+    action();
+  });
+
+  function action() {
+    const respon_table_wrap = document.querySelectorAll(".respon_table_wrap");
+    if (!!respon_table_wrap) {
+      respon_table_wrap.forEach((item) => {
+        const thisItem = item;
+        const thItem = thisItem.querySelectorAll(".respon_thtext");
+        let thWidth = [];
+        if (!!thItem) {
+          thItem.forEach((item) => {
+            item.style.removeProperty("width");
+          });
+          if (window.innerWidth > 1023) {
+            return;
+          }
+          thItem.forEach((item) => {
+            thWidth.push(item.getBoundingClientRect().width);
+          });
+          thItem.forEach((item) => {
+            item.style.width = Math.max.apply(null, thWidth) + "px";
+          });
+        }
+      });
+    }
+  }
+}
