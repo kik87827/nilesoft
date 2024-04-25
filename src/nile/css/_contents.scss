@@ -30,15 +30,20 @@
             }
         }
     }
+    &.no_break{
+        .tab_menu_list{flex-wrap:nowrap;
+            > li{flex:1;}
+        }
+    }
 }
 .tab_menu_list{
-    display:flex; gap:25px; justify-content: center; flex-wrap:wrap;
+    display:flex; gap:25px; justify-content: center; flex-wrap:wrap; text-align: center;
     > li{
         flex:0 0 170px;
     }
 }
 .tab_menu{
-    display:flex; align-items: center; justify-content: center; padding:20px; min-height:50px; box-sizing: border-box; background:#ececec; border-radius:100px;
+    display:flex; text-align: center; align-items: center; justify-content: center; padding:20px; min-width:220px; min-height:50px; box-sizing: border-box; background:#ececec; border-radius:100px;
     &.active{
         background-color:#13479b;
         .tab_menu_text{color:#fff;}
@@ -120,10 +125,19 @@
         gap:10px; margin-right:-10px;
         > li{flex:0 0 calc(50% - 10px)}
     }
-    .tab_menu{padding:10px;min-height:40px;
+    .tab_menu{padding:10px;min-height:40px; min-width:0;
         flex-direction: column;
     }
-    .tab_menu_text{font-size:16px;}
+    .tab_menu_text{font-size:16px;word-break: keep-all;}
+
+    .tab_menu_list_wrap{
+        &.no_break{
+            .tab_menu_list{flex-wrap:nowrap;
+                > li{flex:1;}
+            }
+            .tab_menu{height:100%;}
+        }
+    }
 
     .sub_title{font-size:20px;}
     .sub_title_row{margin-bottom:15px;}
@@ -460,6 +474,101 @@ input.form_input{}
 .toggle_bar_main_text{}
 .toggle_contents_wrap{}
 .toggle_contents_inner{}
+
+
+.list_tb_wrap{}
+.list_tb{
+    thead{
+        th{
+            &:last-of-type{}
+        }
+    }
+    tbody{
+        tr{
+            td{
+                &.nodata_td{
+
+                }
+                &:last-of-type{}
+            }
+            &.nodata_tr{
+
+            }
+        }
+    }
+    .fixed_wid{}
+    .mb_hidden{}
+    .btn_box{}
+}
+.nodata_para{}
+.ico_alarm{}
+.board_list_main_wrap{}
+.board_list_main{}
+
+
+
+/* view */
+.view_package{}
+.view_title_row{border-bottom:1px solid #BBBBBB;padding-bottom:30px;}
+.view_title{font-size:30px;color:#333333; font-weight:300; line-height:1.4;}
+
+.view_util_wrap{margin-top:10px;}
+.view_util_list{
+    display:flex;gap:16px;
+    > li{
+        
+    }
+}
+.view_caption_obj{
+    display:flex; font-size:16px; color:#6b6b6b; gap:6px;
+    &.type2{
+        color:#666;
+        .view_caption_key{}
+        .view_caption_value{}
+    }
+}
+.view_caption_key{display:inline-block;}
+.view_caption_value{display:inline-block;@include rubik; }
+.view_caption_data{display:inline-block; color:#666666;font-size:16px;
+    &.emp{font-weight:500;}
+}
+.view_contents{
+    padding:32px; word-break: break-all;line-height:1.4; font-size:18px; color:#666;
+    img{width:auto !important;height: auto !important;max-width:100% !important;}
+    *{word-break: break-all; color:#666;font-size:18px;}
+}
+.neighbor_data_wrap{margin-top:32px;border:1px solid #73B4DD; border-radius:16px;}
+.neighbor_data_row{
+    border-bottom:1px solid #73B4DD; display:flex; align-items: center;padding:18px 24px;
+    &:last-of-type{border-bottom:0;}
+}
+.neighbor_data_key_cols{flex:0;white-space: nowrap;}
+.neighbor_data_link_cols{flex:1;padding-left:28px; display:flex; align-items: center;gap:20px;
+    .neighbor_data_link{flex:1;}
+    > .view_util_list{}
+}
+.neighbor_data_key{
+    display:inline-block;color:#6b6b6b; font-size:16px;font-weight:700; position:relative; padding-left:28px; white-space: nowrap;
+    &:before{
+        display:block;content:'';width:16px;height:16px;background:url("../images/ico_prev_write.png") no-repeat 50% 50%/100% auto; position:absolute;top:50%;left:0;transform: translateY(-50%);
+    }
+    &.type2{
+        &:before{background-image:url("../images/ico_next_write.png")}
+    }
+}
+.neighbor_data_link{font-size:18px;color:#333; @include clamp(1); letter-spacing: -0.05em; line-height: 1.4; font-weight:500;}
+
+.neighbor_data_flex_group{
+    display:flex;align-items:center; justify-content: space-between; gap:20px;
+    .neighbor_data_link{flex:1;min-width:0;}
+    .flag_current{flex:0;white-space: nowrap;}
+}
+@media (max-width:$mobile_large){
+    
+}
+@media (max-width:$mobile){
+
+}
 
 
 /* pagination */
