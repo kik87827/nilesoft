@@ -14,6 +14,11 @@
         .middle_subtop_main{}
         .middle_subtop_sub{font-size:18px;color:#555555;margin-top:30px;}
     }
+    &.type4{
+        margin-bottom:70px;
+        .middle_subtop_main{}
+        .middle_subtop_sub{font-size:16px;color:#555555;margin-top:10px;}
+    }
 }
 .middle_subtop_main,
 .middle_subtop_sub{color:#333333; font-size:36px; word-break: keep-all; text-align: center; line-height:1.5; }
@@ -103,6 +108,16 @@
 }
 .terms_guide_title{}
 .terms_guide_content{}
+
+.cont_block_wrap{}
+.cont_block{
+    &:last-of-type{}
+}
+.cont_block_title_row{}
+.cont_block_title{}
+.cont_block_title_sub{}
+.cont_block_contents{}
+
 
 @media (max-width:$mobile_large){
     .middle_subtop_copy{font-size:18px;margin-bottom:30px;}
@@ -504,6 +519,67 @@ input.form_input{}
 .ico_alarm{}
 .board_list_main_wrap{}
 .board_list_main{}
+.grid_board_item{
+    &:hover{
+        .grid_board_thum{
+            &:after{}
+        }
+        .viewer_ico{}
+    }
+}
+.grid_board_thum{
+    &:after{}
+}
+.grid_board_thum > img{}
+.viewer_ico{}
+.grid_board_spec{}
+.spec_keyword{}
+.spec_main{}
+
+
+/* form */
+.form_tb_wrap{}
+.form_tb{
+    th,td{}
+    th{}
+    td{}
+}
+.form_thtext{}
+.props_list{
+    > li{
+        
+    }
+}
+.props_item{}
+input.props_form{
+    &[type='checkbox']{}
+    &[type='radio']{}
+}
+.props_label{}
+.inline_form_list{
+    >li{
+        &.else{}
+    }
+    input.form_input{}
+}
+.form_element_list{
+    >li{
+    }
+    .form_message{}
+}
+.form_unit{}
+textarea.form_textarea{}
+.form_message{}
+.form_terms_list_wrap{}
+.form_terms_list{
+    > li{
+        .btn_items{}
+    }
+}
+.btn_text_only{}
+.btn_submit_wrap{}
+.btn_submit_box{}
+.btn_submit_box_text{}
 
 
 
@@ -563,6 +639,26 @@ input.form_input{}
     .neighbor_data_link{flex:1;min-width:0;}
     .flag_current{flex:0;white-space: nowrap;}
 }
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.custom-file-upload:hover {
+    background-color: #0056b3;
+}
+
+.custom-file-upload span {
+    margin-right: 10px;
+}
+
 @media (max-width:$mobile_large){
     
 }
@@ -620,3 +716,37 @@ input.form_input{}
 @media (max-width: 319px) {
     .subcontent_box .pagination{margin-left:-20px;margin-right:-20px;}
 }
+
+
+/* table / chart */
+
+.chart_render{}
+.data_tb_wrap{
+    &.scroll{}
+}
+.data_tb{
+    .align2{}
+    thead{
+        tr{
+            th{
+                .data_thtext{}
+            }
+        }
+    }
+    tbody{
+        tr{
+            th{
+                &.type2{
+                    .data_thtext{}
+                }
+                .data_thtext{}
+            }
+            td{
+                &.emp_td{}
+            }
+        }
+    }
+}
+.data_thtext{}
+.data_tdtext{}
+.data_number{}

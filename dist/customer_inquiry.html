@@ -177,7 +177,7 @@
 			<div class="sv_inner">
 				<div class="sv_copy_wrap">
 					<div class="sv_copy_group">
-						<p class="sv_copy_sub">PRODUCT inquiry</p>
+						<p class="sv_copy_sub">PRODUCT INQUIRY</p>
 						<h2 class="sv_copy_main">제품문의</h2>
 					</div>
 				</div>
@@ -192,7 +192,135 @@
 		</div>
 		<main class="middle_wrap">
 			<div class="middle_sub_contents">
-				내용이 들어갑니다.
+				<div class="middle_subtop_wrap type4">
+					<p class="middle_subtop_main">
+						제품 문의, 견적 요청 등 다양한 문의를 기다립니다.<br>
+						궁금한 점이 있으시면 언제든 문의해 주시기 바랍니다.
+					</p>
+					<p class="middle_subtop_sub">
+						* 나일소프트제품의 1개월 시험사용은 법인에 한하여 가능합니다.
+					</p>
+				</div>
+				<form>
+					<div class="form_tb_wrap">
+						<table class="form_tb">
+							<caption><span class="hdtext">제품문의폼</span></caption>
+							<tbody>
+								<tr>
+									<th scope="row"><span class="form_thtext">문의선택</span><span class="import">필수</span></th>
+									<td>
+										<ul class="props_list">
+											<li>
+												<div class="props_item">
+													<input type="radio" class="props_form" id="type_choice_01">
+													<label for="type_choice_01" class="props_label">로그/개인정보 제품문의</label>
+												</div>
+											</li>
+											<li>
+												<div class="props_item">
+													<input type="radio" class="props_form" id="type_choice_02">
+													<label for="type_choice_02" class="props_label">보안취약점관리 제품문의 </label>
+												</div>
+											</li>
+											<li>
+												<div class="props_item">
+													<input type="radio" class="props_form" id="type_choice_03">
+													<label for="type_choice_03" class="props_label">1개월 사용신청 문의(WSE,SSE,NSE 제품)</label>
+												</div>
+											</li>
+											<li>
+												<div class="props_item">
+													<input type="radio" class="props_form" id="type_choice_04">
+													<label for="type_choice_04" class="props_label">자료 요청</label>
+												</div>
+											</li>
+											<li>
+												<div class="props_item">
+													<input type="radio" class="props_form" id="type_choice_05">
+													<label for="type_choice_05" class="props_label">견적 문의</label>
+												</div>
+											</li>
+											<li>
+												<div class="props_item">
+													<input type="radio" class="props_form" id="type_choice_06">
+													<label for="type_choice_06" class="props_label">데모 요청</label>
+												</div>
+											</li>
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><span class="form_thtext">업체명</span><span class="import">필수</span></th>
+									<td>
+										<input type="text" class="form_input respon" data-width="57%" style="width:57%" value="업체명">
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><span class="form_thtext">담당자명</span><span class="import">필수</span></th>
+									<td>
+										<input type="text" class="form_input respon">
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><span class="form_thtext">연락처</span><span class="import">필수</span></th>
+									<td>
+										<input type="text" class="form_input respon">
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><span class="form_thtext">이메일</span><span class="import">필수</span></th>
+									<td>
+										<ul class="inline_form_list respon">
+											<li><input type="text" class="form_input"></li>
+											<li class="else"><span class="form_unit">@</span></li>
+											<li><input type="text" class="form_input"></li>
+											<li><input type="text" class="form_input"></li>
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><span class="form_thtext">문의내용</span><span class="import">필수</span></th>
+									<td>
+										<textarea cols="10" rows="10" class="form_textarea"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><span class="form_thtext">첨부파일</span></th>
+									<td>
+										<input type="file" class="form_input respon">
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><span class="form_thtext">보안문자</span><span class="import">필수</span></th>
+									<td>
+										<ul class="form_element_list">
+											<li><input type="text" class="form_input respon"></li>
+											<li>
+												<p class="form_message">보안문자를 입력하세요. <a href="#" class="text_btn">[새로고침]</a></p>
+											</li>
+										</ul>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="form_terms_list_wrap">
+						<ul class="form_terms_list">
+							<li>
+								<div class="props_item">
+									<input type="checkbox" class="props_form" id="props_terms_01">
+									<label for="props_terms_01" class="props_label">개인정보 수집 및 이용 동의 (필수)</label>
+								</div>
+								<div class="btn_items">
+									<a href="javascript:void(0)" class="btn_text_only" id="btn_detail_call">자세히보기</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="btn_submit_wrap">
+						<a href="#" class="btn_submit_box"><span class="btn_submit_box_text">문의하기</span></a>
+					</div>
+				</form>
 			</div>
 		</main>
 		<!-- popup -->
@@ -268,6 +396,12 @@
 				if (url_2 === "popup") {
 					termsPopup.popupShow(); // show
 				}
+
+
+				// 자세히 보기 팝업
+				document.querySelector("#btn_detail_call").addEventListener("click", () => {
+					termsPopup.popupShow(); // show
+				});
 			});
 		</script>
 		<footer class="footer_wrap">
