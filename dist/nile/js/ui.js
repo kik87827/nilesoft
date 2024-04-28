@@ -246,7 +246,7 @@ class DesignPopup {
     if (!this.selector) {
       return;
     }
-
+    this.touchstart = "ontouchstart" in window;
     this.design_popup_wrap = document.querySelectorAll(".popup_wrap");
     this.domHtml = document.querySelector("html");
     this.domBody = document.querySelector("body");
@@ -299,7 +299,9 @@ class DesignPopup {
     }
     this.selector_contents = this.selector.querySelector(".popup_contents_row");
     this.selector_contents_inner = this.selector.querySelector(".popup_contents_inner");
-    this.domHtml.classList.add("touchDis");
+    if (this.touchstart) {
+      this.domHtml.classList.add("touchDis");
+    }
     this.selector.classList.add("active");
     if (!!this.selector_contents_inner && !!this.selector_contents) {
       if (this.selector_contents.getBoundingClientRect().height < this.selector_contents_inner.getBoundingClientRect().height) {
@@ -417,5 +419,21 @@ function responTableStyle() {
         }
       });
     }
+  }
+}
+
+
+function toggleFunc() {
+  const toggle_bar = document.querySelectorAll(".toggle_bar");
+  if (!!toggle_bar) {
+    toggle_bar.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        const thisItem = e.currentTarget;
+        const thisParnet = thisItem.closest(".toggle_item");
+        if (!!thisParnet) {
+          thisParnet.classList.toggle("active");
+        }
+      });
+    });
   }
 }
