@@ -222,7 +222,7 @@
 									<p class="cont_block_title_sub">(2023/12/31 기준, 단위:천원)</p>
 								</div>
 								<div class="cont_block_contents">
-									<div class="data_tb_wrap scroll">
+									<div class="data_tb_wrap scroll" id="tb_scroll_01">
 										<table class="data_tb">
 											<caption><span class="hdtext">월별매출실적표</span></caption>
 											<thead>
@@ -378,7 +378,7 @@
 									<p class="cont_block_title_sub">(단위:백만원)</p>
 								</div>
 								<div class="cont_block_contents">
-									<div class="data_tb_wrap scroll type2">
+									<div class="data_tb_wrap scroll type2" id="tb_scroll_02">
 										<table class="data_tb">
 											<colgroup>
 												<col style="width:17%;">
@@ -491,7 +491,7 @@
 									<p class="cont_block_title_sub">(단위:백만원)</p>
 								</div>
 								<div class="cont_block_contents">
-									<div class="data_tb_wrap scroll type2">
+									<div class="data_tb_wrap scroll type2" id="tb_scroll_03">
 										<table class="data_tb">
 											<colgroup>
 												<col style="width:17%;">
@@ -898,7 +898,7 @@
 									<p class="cont_block_title_sub">(단위:백만원)</p>
 								</div>
 								<div class="cont_block_contents">
-									<div class="data_tb_wrap scroll type2">
+									<div class="data_tb_wrap scroll type2" id="tb_scroll_04">
 										<table class="data_tb">
 											<caption><span class="hdtext">요약 손익계산서</span></caption>
 											<colgroup>
@@ -1200,7 +1200,7 @@
 									<p class="cont_block_title_sub">(2023/12/31 기준, 단위:백만원)</p>
 								</div>
 								<div class="cont_block_contents">
-									<div class="data_tb_wrap scroll">
+									<div class="data_tb_wrap scroll" id="tb_scroll_05">
 										<table class="data_tb">
 											<caption><span class="hdtext">자본금 현황표</span></caption>
 											<colgroup>
@@ -1301,6 +1301,8 @@
 			menuRock("[name='irpr_menu03']");
 
 			tabMenuFunc();
+
+			scrollDrag(["#tb_scroll_01", "#tb_scroll_02", "#tb_scroll_03", "#tb_scroll_04", "#tb_scroll_05"]);
 		</script>
 		<footer class="footer_wrap">
 			<div class="footer_inner">

@@ -131,6 +131,10 @@
         .ico{
             &.down{width:12px;height:11px;}
         }
+
+        &.size_submit{
+            min-width:160px;
+        }
     }
     .btn_box_text{font-size:16px;}
 }

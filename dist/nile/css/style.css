@@ -3507,6 +3507,9 @@ button.swiper-pagination-bullet {
     width: 12px;
     height: 11px;
   }
+  .btn_box.size_submit {
+    min-width: 160px;
+  }
   .btn_box_text {
     font-size: 16px;
   }
@@ -3980,6 +3983,20 @@ input.subform_input::input-placeholder {
     height: 50px;
     font-size: 16px;
     padding: 0 10px;
+  }
+  .cont_block {
+    margin-bottom: 30px;
+  }
+  .cont_block_title_row {
+    display: block;
+  }
+  .cont_block_title {
+    font-size: 18px;
+  }
+  .cont_block_title_sub {
+    font-size: 14px;
+    top: 0;
+    margin-top: 5px;
   }
 }
 /* CEO인사말 */
@@ -4923,6 +4940,10 @@ input.form_input[type=file]::-webkit-file-upload-button {
   input.form_input {
     font-size: 14px;
     height: 40px;
+    padding: 0 10px;
+  }
+  input.form_input[type=file] {
+    padding: 12px 10px;
   }
   .form_submit {
     width: 50px;
@@ -5278,6 +5299,10 @@ textarea.form_textarea:focus {
   color: #777777;
 }
 
+.text_btn {
+  display: inline-block;
+}
+
 .form_terms_list_wrap {
   margin-top: 20px;
 }
@@ -5285,6 +5310,7 @@ textarea.form_textarea:focus {
 .form_terms_list > li {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 .form_terms_list > li .btn_items {
   padding-top: 1px;
@@ -5298,6 +5324,87 @@ textarea.form_textarea:focus {
   border-bottom: 1px solid #13479b;
 }
 
+@media (max-width: 1023px) {
+  .props_list_tb {
+    display: block;
+  }
+  .props_list_tr {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .props_list_tr:last-of-type {
+    padding-bottom: 0;
+  }
+  .props_list_tr:last-of-type > li {
+    padding-bottom: 20px;
+  }
+  .props_list_tr:last-of-type > li:last-of-type {
+    padding-bottom: 0;
+  }
+  .props_list_tr > li {
+    display: block;
+    padding-right: 28px;
+    padding-bottom: 20px;
+    flex: 0 0 100%;
+    box-sizing: border-box;
+  }
+  .props_list_tr > li:last-of-type {
+    padding-bottom: 20px;
+  }
+  .props_label {
+    position: relative;
+    top: 0;
+    font-size: 14px;
+  }
+  .form_tb th {
+    width: 1px;
+    padding: 20px 10px;
+  }
+  .form_thtext {
+    font-size: 14px;
+  }
+  input.props_form[type=checkbox] {
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+  }
+  input.props_form[type=checkbox] + .props_label {
+    padding-top: 0;
+  }
+  .inline_form_list {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .inline_form_list > li {
+    flex: 1;
+  }
+  .inline_form_list > li.else {
+    flex: 1;
+    white-space: normal;
+    text-align: left;
+    width: 100%;
+  }
+  .form_element_list {
+    display: block;
+  }
+  .form_element_list .form_message {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  .form_unit {
+    font-size: 14px;
+  }
+  .btn_text_only {
+    font-size: 14px;
+  }
+  .form_terms_list > li {
+    display: flex;
+    gap: 20px;
+  }
+  .form_terms_list > li .btn_items {
+    padding-top: 0;
+  }
+}
 /* view */
 .view_title_row {
   border-bottom: 1px solid #dddddd;
@@ -5771,6 +5878,38 @@ textarea.form_textarea:focus {
   text-align: center;
 }
 
+@media (max-width: 1299px) {
+  .data_tb_wrap.scroll {
+    overflow-x: auto;
+    position: relative;
+  }
+  .data_tb_wrap.scroll .data_tb {
+    table-layout: auto;
+    white-space: nowrap;
+  }
+  .data_tb_wrap.scroll::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+  }
+  .data_tb thead tr th {
+    padding: 10px;
+  }
+  .data_tb tbody tr th {
+    padding: 10px;
+  }
+  .data_tb tbody tr td {
+    padding: 10px;
+  }
+}
+@media (max-width: 1023px) {
+  .data_thtext_sub {
+    font-size: 11px;
+  }
+  .data_number,
+.data_thtext, .data_tdtext {
+    font-size: 13px;
+  }
+}
 .guide_contents_item {
   margin-bottom: 120px;
 }

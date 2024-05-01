@@ -215,8 +215,15 @@ input.subform_input{height:60px;background:#fff;font-size:18px; font-weight:500;
     .btn_subform_row{margin-top:15px;}
     .btn_submit_box{font-size:16px; min-height:50px; }
 
-    input.subform_input{height:50px;font-size:16px;padding:0 10px; 
+    input.subform_input{height:50px;font-size:16px;padding:0 10px; }
+
+    .cont_block{
+        margin-bottom:30px;
     }
+    .cont_block_title_row{display:block;}
+    .cont_block_title{font-size:18px;}
+    .cont_block_title_sub{font-size:14px; top:0;margin-top:5px;}
+    .cont_block_contents{}
 }
 
 
@@ -662,7 +669,12 @@ input.form_input{border:1px solid #ddd; font-family: 'Pretendard'; font-weight:5
     select.form_select{font-size:14px; height: 40px;padding: 0 50px 0 16px;
         background-size:40px auto;line-height:38px;
     }
-    input.form_input{font-size:14px;  height: 40px;}
+    input.form_input{font-size:14px;  height: 40px; padding:0 10px;
+        &[type='file']{
+            padding:12px 10px;
+        }
+    }
+
     .form_submit{width:50px; background-size:20px auto;}
     .board_top_row{display:block;}
     .board_fraction_cols{white-space: normal;margin-bottom:10px;}
@@ -719,6 +731,7 @@ input.form_input{border:1px solid #ddd; font-family: 'Pretendard'; font-weight:5
 
     .board_thtext,
     .board_tdtext{font-size:14px;}
+
 
 
 
@@ -846,10 +859,11 @@ textarea.form_textarea{
     &:before{display:block;content:"*";position:absolute;top:0;left:0;}
     a{color:#777777;}
 }
+.text_btn{display:inline-block;}
 .form_terms_list_wrap{margin-top:20px;}
 .form_terms_list{
     > li{
-        display:flex;gap:20px;
+        display:flex;gap:20px; flex-wrap:wrap;
         .btn_items{padding-top:1px;}
     }
 }
@@ -858,7 +872,61 @@ textarea.form_textarea{
 .btn_submit_box{}
 .btn_submit_box_text{}
 
+@media (max-width:$mobile_large){
+    .props_list_tb{
+        display:block;
+    }
+    
+    .props_list_tr{
+        display:flex; flex-wrap:wrap; 
+        &:last-of-type{padding-bottom:0;
+            > li{padding-bottom:20px;
+                &:last-of-type{padding-bottom:0;}
+            }
+        }
+        > li {display:block;padding-right:28px; padding-bottom:20px; flex: 0 0 100%; box-sizing: border-box;
+            &:last-of-type{padding-bottom:20px;}
+        }
+    }
+    .props_label{position:relative;top:0;font-size:14px;}
+    .form_tb{
+        th{width:1px;padding:20px 10px;}
+    }
+    .form_thtext{font-size:14px;}
 
+    input.props_form{
+        &[type='checkbox']{flex:0 0 16px;width:16px;height:16px;
+            & + .props_label{padding-top:0;}
+        }
+    }
+
+    
+    .inline_form_list{
+        flex-direction: column; gap:5px;
+        >li{
+            flex:1;
+            &.else{flex:1;white-space: normal;text-align: left;width:100%;}
+        }
+        input.form_input{}
+    }
+    .form_element_list{
+        display:block;
+        >li{
+            
+        }
+        .form_message{font-size:14px;margin-top:5px;}
+    }
+    .form_unit{font-size:14px;}
+
+    .btn_text_only{font-size:14px;  }
+
+    .form_terms_list{
+        > li{
+            display:flex;gap:20px;
+            .btn_items{padding-top:0;}
+        }
+    }
+}
 
 /* view */
 .view_package{}
@@ -1084,3 +1152,38 @@ textarea.form_textarea{
 .data_number{display:inline-block;font-size:15px;font-weight:600; text-align: right; display:block;}
 .data_tdtext{text-align: center;}
 
+
+@media (max-width:$tablet){
+    .data_tb_wrap{
+        &.scroll{overflow-x:auto;position:relative;
+            .data_tb{table-layout: auto; white-space: nowrap;}
+            &::-webkit-scrollbar {width: 5px; height:8px;}
+        }
+    }
+    .data_tb{
+        thead{
+            tr{
+                th{
+                     padding:10px;
+                    .data_thtext{}
+                }
+            }
+        }
+        tbody{
+            tr{
+                th{
+                    padding:10px; 
+                }
+                td{ 
+                    padding:10px; 
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:$mobile_large){
+    .data_thtext_sub{font-size:11px;}
+    .data_number,
+    .data_thtext, .data_tdtext{font-size:13px;}
+}
