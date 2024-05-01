@@ -3,6 +3,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 window.addEventListener("load", () => {
   layoutFunc();
+
 });
 
 $(function() {})
@@ -436,4 +437,29 @@ function toggleFunc() {
       });
     });
   }
+}
+
+
+function responElement(type) {
+  const responItem = document.querySelectorAll(".respon");
+
+  action();
+  window.addEventListener("resize", () => {
+    action();
+  });
+
+  function action() {
+    if (!!responItem) {
+      responItem.forEach((item) => {
+        const thisDataStyle = item.dataset.width;
+        console.log(thisDataStyle);
+        item.style.removeProperty("width");
+        if (window.innerWidth > 768) {
+          if (type == "width") {
+            item.style.width = thisDataStyle;
+          }
+        }
+      });
+    }
+  };
 }

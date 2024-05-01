@@ -110,6 +110,9 @@
         min-height:35px;
         .btn_box_text{font-size:16px;}
     }
+    &.size_submit{
+        min-width:220px;
+    }
     .ico{
         display:inline-block;
         &.down{width:17px;height:15px; background:url("../images/ico_download.png") no-repeat 0 0/100% auto;}
