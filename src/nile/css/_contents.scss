@@ -121,11 +121,14 @@
 
 .cont_block_wrap{}
 .cont_block{
-    &:last-of-type{}
+    margin-bottom:70px;
+    &:last-of-type{margin-bottom:0;}
 }
-.cont_block_title_row{}
-.cont_block_title{}
-.cont_block_title_sub{}
+.cont_block_title_row{display:flex;align-items: flex-end; gap:10px;margin-bottom:15px;}
+.cont_block_title,
+.cont_block_title_sub{font-weight:500;}
+.cont_block_title{font-size:24px; color:#333333;}
+.cont_block_title_sub{font-size:16px;color:#aaa; position:relative;top:-2px;}
 .cont_block_contents{}
 
 input.subform_input{height:60px;background:#fff;font-size:18px; font-weight:500; line-height:1;border:1px solid #dddddd;border-radius:5px;width:100%;padding:0 20px; box-sizing: border-box;
@@ -1035,15 +1038,18 @@ textarea.form_textarea{
 
 /* table / chart */
 
-.chart_render{}
+.chart_render{background:#eee;padding:15px 0;}
 .data_tb_wrap{
+    border-top:2px solid #13479b;
     &.scroll{}
 }
 .data_tb{
+    width:100%; table-layout: fixed;
     .align2{}
     thead{
         tr{
             th{
+                background:#fafafa; padding:15px;border:1px solid #fafafa;
                 .data_thtext{}
             }
         }
@@ -1051,18 +1057,30 @@ textarea.form_textarea{
     tbody{
         tr{
             th{
+                background:#fafafa; padding:15px; border:1px solid #dddddd; text-align: center;
+                &:first-of-type{border-left:0;}
                 &.type2{
+                    background:#fff;
                     .data_thtext{}
                 }
+                &.align2{text-align: left; }
                 .data_thtext{}
             }
-            td{
-                &.emp_td{}
+            td{ padding:15px; border:1px solid #dddddd;
+                &:first-of-type{border-left:0;}
+                &.emp_td{background:#fafafa;}
+                &:last-of-type{border-right:0;}
+            }
+            &.emp{
+                th,
+                td{background:#f2f2f2;}
             }
         }
     }
 }
-.data_thtext{}
-.data_tdtext{}
-.data_number{}
+.data_thtext{display:inline-block;font-size:16px;font-weight:600;}
+.data_thtext_sub{font-size:14px;color:#777777;}
+.data_tdtext,
+.data_number{display:inline-block;font-size:15px;font-weight:600; text-align: right; display:block;}
+.data_tdtext{text-align: center;}
 

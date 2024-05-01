@@ -40,7 +40,7 @@
                                 <div class="cont_block_contents">
                                     <div class="chart_render">
                                         <!-- chart render -->
-                                        <div style="display:flex;justify-content:center;align-items:center;font-size:24px;font-weight:500;color:#ff0000;">
+                                        <div style="display:flex;justify-content:center;align-items:center;font-size:24px;font-weight:500;color:#ff0000;height:550px;">
                                             E차트 영역
                                         </div>
                                         <!-- // chart render -->
@@ -177,7 +177,7 @@
                                 <div class="cont_block_contents">
                                     <div class="chart_render">
                                         <!-- chart render -->
-                                        <div style="display:flex;justify-content:center;align-items:center;font-size:24px;font-weight:500;color:#ff0000;">
+                                        <div style="display:flex;justify-content:center;align-items:center;font-size:24px;font-weight:500;color:#ff0000;height:550px;">
                                             E차트 영역
                                         </div>
                                         <!-- // chart render -->
@@ -192,7 +192,7 @@
                                 <div class="cont_block_contents">
                                     <div class="chart_render">
                                         <!-- chart render -->
-                                        <div style="display:flex;justify-content:center;align-items:center;font-size:24px;font-weight:500;color:#ff0000;">
+                                        <div style="display:flex;justify-content:center;align-items:center;font-size:24px;font-weight:500;color:#ff0000;height:550px;">
                                             E차트 영역
                                         </div>
                                         <!-- // chart render -->
@@ -201,7 +201,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab_cont active" id="tab_cont_02">
+                    <div class="tab_cont" id="tab_cont_02">
                         <div class="cont_block_wrap">
                             <div class="cont_block">
                                 <div class="cont_block_title_row">
@@ -211,6 +211,9 @@
                                 <div class="cont_block_contents">
                                     <div class="data_tb_wrap scroll type2">
                                         <table class="data_tb">
+                                            <colgroup>
+                                                <col style="width:17%;">
+                                            </colgroup>
                                             <caption><span class="hdtext">요약 재무제표</span></caption>
                                             <thead>
                                                 <tr>
@@ -273,6 +276,9 @@
                                 <div class="cont_block_contents">
                                     <div class="data_tb_wrap scroll type2">
                                         <table class="data_tb">
+                                            <colgroup>
+                                                <col style="width:17%;">
+                                            </colgroup>
                                             <caption><span class="hdtext">요약 재무제표</span></caption>
                                             <thead>
                                                 <tr>
@@ -462,6 +468,9 @@
                                     <div class="data_tb_wrap scroll type2">
                                         <table class="data_tb">
                                             <caption><span class="hdtext">요약 손익계산서</span></caption>
+                                            <colgroup>
+                                                <col style="width:17%;">
+                                            </colgroup>
                                             <thead>
                                                 <tr>
                                                     <th scope="col"><span class="data_thtext">과목</span></th>
@@ -606,9 +615,9 @@
                                         <table class="data_tb">
                                             <caption><span class="hdtext">자본금 현황표</span></caption>
                                             <colgroup>
-                                                <col style="width:16%;">
-                                                <col style="width:7%;">
-                                                <col style="width:7%;">
+                                                <col style="width:17%;">
+                                                <col style="width:8%;">
+                                                <col style="width:10%;">
                                                 <col style="width:16%;">
                                                 <col style="width:16%;">
                                                 <col>
@@ -616,7 +625,7 @@
                                             </colgroup>
                                             <thead>
                                                 <tr>
-                                                    <th scope="col"><span class="hdtext">변동일자</span></th>
+                                                    <th scope="col"><span class="data_thtext">변동일자</span></th>
                                                     <th scope="col"><span class="data_thtext">종류</span></th>
                                                     <th scope="col"><span class="data_thtext">액면가(원)</span></th>
                                                     <th scope="col"><span class="data_thtext">발행주식수(주)</span></th>
@@ -701,6 +710,8 @@
         </main>
         <script>
 			menuRock("[name='irpr_menu03']");
+
+            tabMenuFunc();
 		</script>
         @@include('./include/_footer.html')
     </div>
