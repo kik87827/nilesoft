@@ -344,8 +344,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 }
 
 .page_wrap {
-  min-width: 280px; /* display:flex;flex-direction: column; */
-  overflow-x: hidden;
+  min-width: 280px; /* display:flex;flex-direction: column; */ /* overflow-x:hidden; */
   position: relative; /* min-height:100vh; */
 }
 
@@ -386,24 +385,36 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   background: transparent;
   transition: 0.4s;
   z-index: 20;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 .header_wrap.ready {
   overflow: visible;
 }
-.header_wrap.active {
+.header_wrap.scroll {
+  box-shadow: -1px 6px 16px -10px rgba(0, 0, 0, 0.4);
+}
+.header_wrap.scroll, .header_wrap.active {
   background: #fff;
 }
-.header_wrap.active .toplogo_link {
+.header_wrap.scroll .toplogo_link, .header_wrap.active .toplogo_link {
   background-position: 0 100%;
 }
-.header_wrap.active .header_nav_menu {
+.header_wrap.scroll .header_nav_menu, .header_wrap.active .header_nav_menu {
   color: #0f0f0f;
 }
-.header_wrap.active .util_menu .ico {
+.header_wrap.scroll .util_menu .ico, .header_wrap.active .util_menu .ico {
   background-position: 0 100%;
 }
-.header_wrap.active .util_menu .util_menu_text {
+.header_wrap.scroll .util_menu .util_menu_text, .header_wrap.active .util_menu .util_menu_text {
   color: #404040;
+}
+.header_wrap.scroll .btn_panel_menu:before, .header_wrap.scroll .btn_panel_menu:after, .header_wrap.active .btn_panel_menu:before, .header_wrap.active .btn_panel_menu:after {
+  background: #000;
+}
+.header_wrap.scroll .btn_panel_menu_ico, .header_wrap.active .btn_panel_menu_ico {
+  background: #000;
 }
 
 .header_inner {
@@ -411,6 +422,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   position: relative;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
 }
 
 .toplogo {
@@ -772,6 +784,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
+  padding-top: 80px;
 }
 .sub_visual_wrap:before {
   display: block;
@@ -1047,6 +1060,10 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
     height: 60px;
     flex: 0 0 60px;
   }
+  .sub_visual_wrap {
+    padding-top: 60px;
+    min-height: 180px;
+  }
   .sub_visual_wrap .header_wrap {
     flex: 0 0 60px;
   }
@@ -1063,9 +1080,6 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   }
   .sv_copy_main {
     font-size: 30px;
-  }
-  .sub_visual_wrap {
-    min-height: 180px;
   }
   .breadcrumb_list_wrap {
     padding: 0 20px 20px;

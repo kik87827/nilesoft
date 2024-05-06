@@ -11,7 +11,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
     }
 }
 .page_wrap{
-    min-width:280px; /* display:flex;flex-direction: column; */ overflow-x:hidden; position:relative; /* min-height:100vh; */
+    min-width:280px; /* display:flex;flex-direction: column; */ /* overflow-x:hidden; */ position:relative; /* min-height:100vh; */
     
 }
 .bg_depth{background:#fff;position:absolute;top:80px;left:0;width:100%;height:0;transition:.4s;box-sizing: border-box; overflow:hidden;
@@ -20,9 +20,15 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
     &:before{top:0;}
     &:after{bottom:0;}
 }
-.header_wrap{height:80px;display:flex; align-items: center;width:100%; justify-content: center;position:relative; background:transparent; transition:.4s; z-index:20;
+.header_wrap{height:80px;display:flex; align-items: center;width:100%; justify-content: center;position:relative; background:transparent; transition:.4s; z-index:20; position:fixed;top:0;left:0;
     &.ready{overflow:visible;
     }
+    &.scroll{
+        -webkit-box-shadow: -1px 6px 16px -10px rgba(0,0,0,0.4);
+        -moz-box-shadow: -1px 6px 16px -10px rgba(0,0,0,0.4);
+        box-shadow: -1px 6px 16px -10px rgba(0,0,0,0.4);
+    }
+    &.scroll,
     &.active{
         background:#fff;  
         .toplogo_link{background-position:0 100%;}
@@ -33,9 +39,16 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
             }
             .util_menu_text{color:#404040;}
         }
+
+        .btn_panel_menu{
+           
+            &:before,
+            &:after{background:#000;}
+        }
+        .btn_panel_menu_ico{background:#000;}
     }
 }
-.header_inner{padding:0 0;position:relative;width:100%;height:100%;}
+.header_inner{padding:0 0;position:relative;width:100%;height:100%; box-sizing: border-box;}
 .toplogo{display:inline-flex;position:absolute;top:50%;left:50px;transform: translateY(-50%);align-items: flex-start;}
 .toplogo_link{
     display:inline-block; width:171px;height:22px; background:url("../images/toplogo.png") no-repeat 0 0/100% auto; vertical-align: top; 
@@ -197,7 +210,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 
 /* // mobile */
 
-.sub_visual_wrap{min-height:400px; position:relative; display:flex;flex-direction: column; background-repeat:no-repeat; background-size:cover; background-position:50% 50%;
+.sub_visual_wrap{min-height:400px; position:relative; display:flex;flex-direction: column; background-repeat:no-repeat; background-size:cover; background-position:50% 50%; padding-top:80px;
     &:before{display:block;content:'';width:100%;height:100%;background:#141414;opacity:.4;position:absolute;top:0;left:0;}
     .header_wrap{flex:0 0 80px;}
 }
@@ -280,6 +293,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 
     .header_wrap{height:60px; flex:0 0 60px;}
     .sub_visual_wrap{
+        padding-top:60px; min-height:180px;
         .header_wrap{flex:0 0 60px;}
     }
     
@@ -289,8 +303,6 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 
     .sv_copy_sub{font-size:16px;}
     .sv_copy_main{font-size:30px;}
-
-    .sub_visual_wrap{min-height:180px;}
 
     .breadcrumb_list_wrap{padding:0 20px 20px;}
 

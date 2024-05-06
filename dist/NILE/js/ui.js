@@ -132,6 +132,14 @@ function layoutFunc() {
           leaveAction(item);
         });
       });
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 0) {
+          header_wrap.classList.add("scroll");
+        } else {
+          header_wrap.classList.remove("scroll");
+        }
+      });
     }
   }
 
