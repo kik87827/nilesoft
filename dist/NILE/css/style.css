@@ -576,10 +576,18 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   transform: translateY(-50%);
 }
 
+.util_list {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 0;
+  line-height: 0;
+}
 .util_menu {
   display: inline-flex;
   gap: 7px;
   line-height: 1;
+  align-items: center;
 }
 .util_menu .ico {
   width: 18px;
@@ -598,6 +606,46 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   font-weight: 500;
   color: #fff;
   display: inline-block;
+  line-height: 1;
+}
+
+.login_data_list {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.login_men {
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1;
+}
+
+.btn_util_box {
+  display: inline-flex;
+  padding: 10px 18px;
+  border-radius: 100px;
+  background: #fff;
+  gap: 5px;
+  align-items: center;
+}
+.btn_util_box .ico {
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+.btn_util_box .ico.logout {
+  background-image: url("../images/ico_logout.png");
+  width: 15px;
+  height: 13px;
+}
+
+.btn_util_text {
+  display: inline-block;
+  font-size: 14px;
+  color: #333333;
+  font-weight: 500;
 }
 
 .btn_panel_menu {
@@ -651,6 +699,9 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 .mobile_mainmenu_zone.active.active.motion .mainmenu_dim {
   opacity: 0.8;
 }
+.mobile_mainmenu_zone.active.active.motion .btn_mbmenuclose {
+  opacity: 1;
+}
 
 /* mobile */
 .mainmenu_dim {
@@ -683,10 +734,42 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   align-items: center;
   padding: 0 20px;
 }
+.mbutil_row .util_list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
 .mbutil_row .util_menu {
   vertical-align: middle;
   align-items: center;
 }
+.login_mb_data_list {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.login_mb_men {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1;
+  color: #fff;
+}
+
+.btn_util_mb {
+  display: inline-block;
+  width: 15px;
+  height: 13px;
+  position: relative;
+  top: 0;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+.btn_util_mb.logout {
+  background-image: url("../images/ico_logout_m.png");
+}
+
 .mbmenu_row {
   position: relative;
   overflow-y: auto;
@@ -765,13 +848,15 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 
 .btn_mbmenuclose {
   display: block;
+  opacity: 0;
+  transition: 0.5s;
   width: 60px;
   height: 60px;
   z-index: 10;
   background: url("../images/btn_totalclose.png") no-repeat 50% 50%/100% auto;
   position: absolute;
   top: 0;
-  right: 0;
+  left: -60px;
   z-index: 5;
 }
 
@@ -1012,6 +1097,9 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   .header_nav_menu {
     white-space: nowrap;
   }
+  .login_men {
+    font-size: 14px;
+  }
   .footer_inner {
     display: flex;
     gap: 50px;
@@ -1031,6 +1119,9 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   }
 }
 @media (max-width: 1280px) {
+  .header_nav_list {
+    gap: 40px;
+  }
   .sv_copy_wrap {
     padding: 60px 80px;
   }

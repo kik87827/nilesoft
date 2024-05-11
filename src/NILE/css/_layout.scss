@@ -111,19 +111,36 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 
 .util_list_wrap{position:absolute;top:50%;right:40px;transform: translateY(-50%);}
 .util_list{
+    display:flex;align-items:center;gap:30px; font-size:0; line-height:0;
     >li{
         &:last-of-type{}
     }
 }
 .util_menu{
-    display:inline-flex; gap:7px;line-height:1;
+    display:inline-flex; gap:7px;line-height:1; align-items: center;
     .ico{
         width:18px;height:18px; flex:0 0 18px; background-repeat:no-repeat; background-size:100% auto; background-position: 0 0;
         &.earth{background-image:url("../images/ico_earth.png");}
     }
 }
-.util_menu_text{font-size:14px; font-weight:500; color:#fff; display:inline-block;}
+.util_menu_text{font-size:14px; font-weight:500; color:#fff; display:inline-block; line-height:1;}
+.login_data_list{
+    display:flex; align-items: center; gap:15px;
+    > li{
 
+    }
+}
+.login_men{
+    display:inline-block; font-size:17px; font-weight:500; color:#fff; line-height:1;
+}
+.btn_util_box{
+    display:inline-flex;padding:10px 18px; border-radius:100px;background:#fff;gap:5px; align-items: center;
+    .ico{
+        background-position:0 0;background-repeat:no-repeat; background-size:100% auto;
+        &.logout{background-image:url("../images/ico_logout.png"); width:15px; height:13px;}
+    }
+}
+.btn_util_text{display:inline-block; font-size:14px; color:#333333; font-weight:500;}
 
 .btn_panel_menu{
     display:none;align-items:center;justify-content:center;width:60px;height:60px;border-radius: 100%; z-index:5; position:absolute; top:0;right:0;flex-direction:column; align-items: center; justify-content: center;
@@ -138,6 +155,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
         display:block;
         &.motion .mobile_mainmenu_wrap{right:0;}
         &.active.motion .mainmenu_dim{opacity:0.8;}
+        &.active.motion .btn_mbmenuclose{opacity:1;}
     }
 }
 
@@ -147,6 +165,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 .mbutil_row{
     background:#13479b; flex:0 0 60px; display:flex; align-items: center; padding:0 20px;
     .util_list{
+        display:flex; justify-content: space-between; align-items:center; width:100%;
          > li{
             &:last-of-type{}
          }
@@ -157,6 +176,17 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
             &.earth{}
         }
     }
+}
+.login_mb_data_list{
+    display:flex; align-items:center; gap:5px;
+    > li{
+        &:last-of-type{}
+    }
+}
+.login_mb_men{display:inline-block; font-size:14px; line-height:1; color:#fff;}
+.btn_util_mb{
+    display:inline-block; width:15px; height:13px; position:relative;top:0; background-position:0 0; background-repeat:no-repeat; background-size:100% auto;
+    &.logout{background-image:url("../images/ico_logout_m.png");}
 }
 .mbmenu_row{position:relative;overflow-y:auto;flex:1;}
 .mbmenu_inwrap{}
@@ -206,7 +236,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 }
 
 
-.btn_mbmenuclose{display:block; width:60px;height:60px;z-index:10;background:url("../images/btn_totalclose.png") no-repeat 50% 50%/100% auto;position:absolute;top:0;right:0;z-index:5;}
+.btn_mbmenuclose{display:block; opacity:0; transition:.5s; width:60px;height:60px;z-index:10;background:url("../images/btn_totalclose.png") no-repeat 50% 50%/100% auto;position:absolute;top:0;left:-60px;z-index:5;}
 
 /* // mobile */
 
@@ -271,6 +301,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
     .util_list_wrap{position:static;transform: none;}
     .header_nav_list{gap:60px;}
     .header_nav_menu{white-space: nowrap;}
+    .login_men{font-size:14px;}
 
     .footer_inner{display:flex;gap:50px;padding:50px 30px;}
     .footer_logo_cols{position:static;transform: none;flex:0 0 171px;}
@@ -279,6 +310,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 }
 
 @media (max-width:1280px){
+    .header_nav_list{gap:40px;}
     .sv_copy_wrap{padding:60px 80px;}
     .breadcrumb_list_wrap{max-width:100%;padding:0 30px 30px; box-sizing: border-box;}
     .middle_sub_contents{padding:50px 30px; box-sizing: border-box; max-width:100%;}
