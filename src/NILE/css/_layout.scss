@@ -268,7 +268,9 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 .breadcrumb_link{font-size:16px; display:inline-block; font-weight:500; color:#ffffff; }
 
 .middle_wrap{}
-.middle_sub_contents{padding:100px 86px;margin:0 auto;max-width:1200px;}
+.middle_sub_contents{padding:100px 86px;margin:0 auto;max-width:1200px;
+    &.type2{padding:0;margin:0;max-width:100%;}
+}
 
 .footer_wrap{flex:0;background:#1e2327;position:relative;}
 .footer_inner{padding:50px 0;}
