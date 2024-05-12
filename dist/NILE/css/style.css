@@ -4059,6 +4059,17 @@ input.subform_input::input-placeholder {
   word-break: keep-all;
 }
 
+.info_block_contents {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.info_block_contents > .data_tb_wrap {
+  margin-bottom: 33px;
+}
+.info_block_contents > .data_tb_wrap:last-of-type {
+  margin-bottom: 0;
+}
+
 @media (max-width: 1299px) {
   .info_block {
     padding: 100px 30px;
@@ -6050,6 +6061,20 @@ textarea.form_textarea:focus {
 .data_tb_wrap {
   border-top: 2px solid #13479b;
 }
+.data_tb_wrap.skin2 .data_tb thead tr th {
+  background: #edeff2;
+  padding: 20px;
+  border: 1px solid #fafafa;
+  border-bottom: 1px solid #dddddd;
+  border-right: 1px solid #edeff2;
+}
+.data_tb_wrap.skin2 .data_tb tbody tr td {
+  padding: 20px;
+}
+.data_tb_wrap.skin2 .data_thtext,
+.data_tb_wrap.skin2 .data_tdtext {
+  font-size: 18px;
+}
 .data_tb {
   width: 100%;
   table-layout: fixed;
@@ -6128,6 +6153,17 @@ textarea.form_textarea:focus {
   .data_tb_wrap.scroll::-webkit-scrollbar {
     width: 5px;
     height: 8px;
+  }
+  .data_tb_wrap.skin2 .data_tb thead tr th {
+    padding: 10px 5px;
+  }
+  .data_tb_wrap.skin2 .data_tb tbody tr td {
+    padding: 10px 5px;
+  }
+  .data_tb_wrap.skin2 .data_thtext,
+.data_tb_wrap.skin2 .data_tdtext {
+    font-size: 13px;
+    word-break: keep-all;
   }
   .data_tb thead tr th {
     padding: 10px;
@@ -6215,6 +6251,7 @@ textarea.form_textarea:focus {
   margin-top: 25px;
   font-weight: 500;
   line-height: 1.5;
+  word-break: keep-all;
 }
 
 .btn_pv_group {
@@ -6307,6 +6344,7 @@ textarea.form_textarea:focus {
     font-size: 14px;
   }
 }
+/* product */
 /* product 공통 배너 */
 .sub_customer_card_container {
   padding: 110px 30px;

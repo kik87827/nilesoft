@@ -189,7 +189,12 @@ input.subform_input{height:60px;background:#fff;font-size:18px; font-weight:500;
     .color_emp{color:#00398f; font-weight:700;}
 }
 .info_block_copy{font-size:18px;margin-top:30px;word-break:keep-all;}
-.info_block_contents{}
+.info_block_contents{max-width:1200px;margin:0 auto;
+    > .data_tb_wrap {
+        margin-bottom:33px;
+        &:last-of-type{margin-bottom:0;}
+    }
+}
 
 @media (max-width:$tablet){
     .info_block{
@@ -1192,6 +1197,25 @@ textarea.form_textarea{
 .chart_render{background:#eee;padding:15px 0;}
 .data_tb_wrap{
     border-top:2px solid #13479b;
+    &.skin2{
+        .data_tb{
+            thead{
+                tr{
+                    th{
+                        background:#edeff2; padding:20px;border:1px solid #fafafa; border-bottom:1px solid #dddddd; border-right:1px solid #edeff2;
+                        .data_thtext{}
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    td{ padding:20px;}
+                }
+            }
+        }
+        .data_thtext,
+        .data_tdtext{font-size:18px;}
+    }
     &.scroll{}
 }
 .data_tb{
@@ -1241,6 +1265,24 @@ textarea.form_textarea{
         &.scroll{overflow-x:auto;position:relative;
             .data_tb{table-layout: auto; white-space: nowrap;}
             &::-webkit-scrollbar {width: 5px; height:8px;}
+        }
+        &.skin2{
+            .data_tb{
+                thead{
+                    tr{
+                        th{
+                            padding:10px 5px;
+                        }
+                    }
+                }
+                tbody{
+                    tr{
+                        td{ padding:10px 5px;}
+                    }
+                }
+            }
+            .data_thtext,
+            .data_tdtext{font-size:13px;word-break: keep-all;}
         }
     }
     .data_tb{
@@ -1313,7 +1355,7 @@ textarea.form_textarea{
     margin-top:50px; font-size:30px; font-weight:700; word-break: keep-all; line-height:1.4; color:#fff;
 }
 .pv_summary_sub{
-    font-size:20px; color:#999999; margin-top:25px; font-weight:500; line-height:1.5;
+    font-size:20px; color:#999999; margin-top:25px; font-weight:500; line-height:1.5; word-break: keep-all;
 }
 .btn_pv_group{
     margin-top:80px; display:flex; gap:15px;
@@ -1356,6 +1398,119 @@ textarea.form_textarea{
 }
 
 
+/* product */
+.logcops_func_container{
+    &:before{}
+}
+.logcops_func_list{
+    > li{
+        &:last-of-type{}
+    }
+}
+.logcops_func_box{
+    .ico{
+        &.ico_01{}
+        &.ico_02{}
+        &.ico_03{}
+        &.ico_04{}
+    }
+}
+.func_keyword{}
+.func_main{}
+.func_sub{}
+
+.logcops_system_container{}
+.logcops_system_list{
+    > li{
+        &:last-of-type{}
+    }
+}
+.logcops_system_item{}
+.logcops_img_row{
+    img{}
+}
+.logcops_spec_row{}
+.logcops_system_container{}
+.logcops_spec_main{}
+.logcops_spec_sub{}
+
+.privacy_main_wrap{}
+.privacy_cont_cols{
+    &:last-of-type{}
+}
+.privacy_img_cols{
+    img{}
+}
+.privacy_dia_item{
+    &:last-of-type{}
+}
+.privacy_dia_title{}
+.privacy_dia_bullet_list{
+    > li{
+        &:before{}
+        &:last-of-type{}
+    }
+}
+
+.vertical_tb_wrap{}
+.vertical_tb{
+    th,td{}
+    tr{
+        &:last-of-type{
+            th,td{}
+        }
+    }
+}
+.ver_thtext{}
+.ver_tdtext{}
+
+.sse_func_container{}
+.sse_func_img_cols{
+    img{}
+}
+.sse_func_spec_cols{}
+.sse_fspec_item{
+    &:last-of-type{}
+}
+.sse_fspec_title_row{}
+.sse_fspec_title{}
+.sse_fspec_contents{}
+.sse_func_dot_list{
+    > li{
+        &:before{}
+        &:last-of-type{}
+    }
+}
+
+.sse_main_wrap{}
+.sse_img_bg{
+    img{}
+}
+.sse_dia_item_wrap{}
+.sse_dia_item{
+    &:last-of-type{}
+}
+.sse_dia_flag_row{}
+.sse_dia_flag{}
+.sse_dia_title{}
+.sse_dia_sub{}
+.sse_effect_box_list_wrap{}
+.sse_effect_box_list{
+    > li{
+        &:last-of-type{}
+    }
+}
+.sse_effect_box{
+    .thums_row{
+        img{}
+    }
+    .spec_row{
+
+    }
+}
+.sse_effect_main_wrap{}
+.sse_effect_main{}
+.sse_effect_sub{}
 
 /* product 공통 배너 */
 .sub_customer_card_container{padding:110px 30px;}
