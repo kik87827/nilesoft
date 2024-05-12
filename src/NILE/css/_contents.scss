@@ -141,7 +141,7 @@ input.subform_input{height:60px;background:#fff;font-size:18px; font-weight:500;
 .info_block_container{}
 .info_block{
     padding:160px 30px;
-    &:last-of-type{}
+    &:last-of-type{padding-bottom:0;}
     &.skin2{
         background:#eff2f4;
         .info_block_title_row{
@@ -151,9 +151,30 @@ input.subform_input{height:60px;background:#fff;font-size:18px; font-weight:500;
         .info_block_copy{}
         .info_block_contents{}
     }
+    &.skin3{
+        background:url("../images/bg_nse_sec.jpg") no-repeat 0 0/100% auto;
+        .info_block_title,
+        .info_block_copy{color:#fff;}
+
+        .info_block_contents{color:#fff;}
+    }
+    &.skin4{
+        background:url("../images/bg_second_bg_uvm.jpg") no-repeat 0 100%/100% auto;
+        .info_block_title,
+        .info_block_copy{color:#fff;}
+
+        .info_block_contents{color:#fff;}
+    }
+    &.skin5{
+        background:url("../images/bg_uvm_dia.jpg") no-repeat 0 100%/100% auto;
+    }
+    &.type2{
+        padding-bottom:0;
+        
+    }
     &.gap2{
         .info_block_title_row{
-
+            margin-bottom:35px;
         }
         .info_block_title{}
         .info_block_copy{}
@@ -161,21 +182,31 @@ input.subform_input{height:60px;background:#fff;font-size:18px; font-weight:500;
     }
 }
 .info_block_title_row{
-    text-align: center; color:#333333; line-height:1.4;
+    text-align: center; color:#333333; line-height:1.4; margin-bottom:70px;
 }
-.info_block_title{font-size:42px; font-weight:700;word-break:keep-all;}
+.info_block_title_sub{font-size:36px; color:#333333; font-weight:500; word-break:keep-all; margin-bottom:5px;}
+.info_block_title{font-size:42px; font-weight:700;word-break:keep-all;
+    .color_emp{color:#00398f; font-weight:700;}
+}
 .info_block_copy{font-size:18px;margin-top:30px;word-break:keep-all;}
-.info_block_contents{margin-top:80px;}
+.info_block_contents{}
 
 @media (max-width:$tablet){
     .info_block{
         padding:100px 30px;
+        &.gap2{
+            .info_block_title_row{
+                margin-bottom:20px;
+            }
+        }
     }
+    .info_block_title_sub{font-size:24px;}
     .info_block_title{font-size:32px;}
     .info_block_copy{font-size:16px;margin-top:20px;
         br{display:none;}
     }
-    .info_block_contents{margin-top:40px;}
+    .info_block_title_row{margin-bottom:40px;}
+    .info_block_contents{}
 }
 
 
@@ -266,10 +297,16 @@ input.subform_input{height:60px;background:#fff;font-size:18px; font-weight:500;
 
     .info_block{
         padding:60px 20px;
+        &.gap2{
+            .info_block_title_row{
+                margin-bottom:15px;
+            }
+        }
     }
+    .info_block_title_sub{font-size:18px;}
     .info_block_title{font-size:24px;}
     .info_block_copy{font-size:16px;margin-top:10px;}
-    .info_block_contents{margin-top:25px;}
+    .info_block_title_row{margin-bottom:25px;}
 }
 
 
