@@ -67,7 +67,7 @@
     .btn_box_group{margin-top:0;}
 }
 
-@media (max-width:1023px){
+@media (max-width:$mobile_large){
     .guide_header{position:sticky;top:0;left:0;background:#fff;z-index:20;}
     .header_pix_inner{padding:15px 20px;}
     .guide_toplogo{margin-right:15px;}
