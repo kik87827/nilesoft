@@ -1575,6 +1575,69 @@ textarea.form_textarea{
 .stick_keyword{}
 .stick_value_para{}
 
+.nse_info_list_wrap{}
+.nse_info_list{
+    >li{}
+}
+.nse_info_item{
+
+}
+.nse_info_bullet_row{
+
+}
+.nse_info_bullet{}
+.nse_info_main_para{}
+.nse_info_sub_para{}
+
+.nse_expect_list_wrap{}
+.nse_expect_list{
+    > li{}
+}
+.nse_expect_box{
+    .main_copy_wrap{}
+    .main_copy{}
+    .sub_copy{}
+}
+.ico_expect{
+    &.ico_01{}
+    &.ico_02{}
+    &.ico_03{}
+    &.ico_04{}
+}
+.nse_structure_img_wrap{
+    img{}
+}
+.nse_structure_spec_wrap{
+
+}
+.nse_structure_spec_list{
+    > li{}
+}
+.structure_guide_box{
+
+}
+.structure_guide_title_row{
+
+}
+.structure_guide_title{}
+.structure_guide_contents{
+
+}
+.structure_guide_list{
+    > li{
+        &:last-of-type{}
+        &:before{}
+    }
+}
+.structure_guide_para{}
+.structure_indent_list{
+    >li{
+        .indent_bullet{}
+        .indent_liquid{}
+        &:last-of-type{}
+    }
+}
+
 /* product 공통 배너 */
 .sub_customer_card_container{padding:110px 30px;}
 .sub_customer_card{
