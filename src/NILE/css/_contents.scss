@@ -1637,6 +1637,20 @@ textarea.form_textarea{
         &:last-of-type{}
     }
 }
+.uvm_info_box_wrap{}
+.uvm_info_box_list{
+    > li{
+
+    }
+}
+.uvm_info_box{
+
+}
+.uvm_info_main{}
+.uvm_info_sub{}
+.uvm_info_img_wrap{
+    img{}
+}
 
 /* product 공통 배너 */
 .sub_customer_card_container{padding:110px 30px;}
