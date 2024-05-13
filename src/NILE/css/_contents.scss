@@ -1226,6 +1226,8 @@ textarea.form_textarea{
             th{
                 background:#fafafa; padding:15px;border:1px solid #fafafa;
                 .data_thtext{}
+                &.short_wid{}
+                &.liquid_wid{}
             }
         }
     }
@@ -1245,6 +1247,16 @@ textarea.form_textarea{
                 &:first-of-type{border-left:0;}
                 &.emp_td{background:#fafafa;}
                 &:last-of-type{border-right:0;}
+                &.key_td{
+                    .data_tdtext{}
+                }
+                &.value_td{
+                    .bullet_list{
+                        &.dot{
+                            > li{}
+                        }
+                    }
+                }
             }
             &.emp{
                 th,
@@ -1511,6 +1523,57 @@ textarea.form_textarea{
 .sse_effect_main_wrap{}
 .sse_effect_main{}
 .sse_effect_sub{}
+
+.wse_need_box_list_wrap{}
+
+.wse_need_box_list{
+    > li{}
+}
+
+.wse_need_box{
+
+}
+.wse_need_copy{
+
+}
+.wse_need_ico_row{
+    .ico_need{}
+}
+.ico_need{
+    &.ico_01{}
+    &.ico_02{}
+    &.ico_03{}
+    &.ico_04{}
+    &.ico_05{}
+    &.ico_06{}
+}
+
+.wse_stick_box_list_wrap{
+
+}
+.wse_stick_box_list{
+    > li{
+
+    }
+}
+.wse_stick_box{
+    .key_cols{
+
+    }
+    .value_cols{
+
+    }
+}
+.ico_stick{
+    &.ico_01{}
+    &.ico_02{}
+    &.ico_03{}
+    &.ico_04{}
+    &.ico_05{}
+    &.ico_06{}
+}
+.stick_keyword{}
+.stick_value_para{}
 
 /* product 공통 배너 */
 .sub_customer_card_container{padding:110px 30px;}
