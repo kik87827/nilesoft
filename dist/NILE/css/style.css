@@ -6446,6 +6446,56 @@ textarea.form_textarea:focus {
   line-height: 1.5;
 }
 
+.privacy_main_wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.privacy_img_cols {
+  display: flex;
+  align-items: flex-end;
+}
+.privacy_img_cols img {
+  vertical-align: top;
+}
+
+.privacy_dia_item {
+  margin-bottom: 40px;
+}
+.privacy_dia_item:last-of-type {
+  margin-bottom: 0;
+}
+
+.privacy_dia_title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #00398f;
+  margin-bottom: 13px;
+}
+
+.privacy_dia_bullet_list {
+  font-size: 16px;
+  color: #333333;
+}
+.privacy_dia_bullet_list > li {
+  padding-left: 8px;
+  position: relative;
+  margin-bottom: 7px;
+}
+.privacy_dia_bullet_list > li:before {
+  display: block;
+  content: "";
+  width: 2px;
+  height: 2px;
+  background: #333;
+  position: absolute;
+  top: 8px;
+  left: 0;
+}
+.privacy_dia_bullet_list > li:last-of-type {
+  margin-bottom: 0;
+}
+
 /* product 공통 배너 */
 .sub_customer_card_container {
   padding: 110px 30px;

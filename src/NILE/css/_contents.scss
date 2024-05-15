@@ -1459,21 +1459,26 @@ textarea.form_textarea{
 .logcops_spec_main{font-size:24px;}
 .logcops_spec_sub{font-size:14px; margin-top:24px; line-height:1.5;}
 
-.privacy_main_wrap{}
+.privacy_main_wrap{display:flex; justify-content: space-between;}
 .privacy_cont_cols{
+   
     &:last-of-type{}
 }
 .privacy_img_cols{
-    img{}
+    display:flex; align-items: flex-end;
+    img{vertical-align: top;}
 }
 .privacy_dia_item{
-    &:last-of-type{}
+    margin-bottom:40px;
+    &:last-of-type{margin-bottom:0;}
 }
-.privacy_dia_title{}
+.privacy_dia_title{font-size:22px; font-weight:600; color:#00398f; margin-bottom:13px;}
 .privacy_dia_bullet_list{
+    font-size:16px;color:#333333; 
     > li{
-        &:before{}
-        &:last-of-type{}
+        padding-left:8px; position:relative; margin-bottom:7px;
+        &:before{display:block;content:'';width:2px;height:2px; background:#333; position:absolute;top:8px;left:0;}
+        &:last-of-type{margin-bottom:0;}
     }
 }
 
