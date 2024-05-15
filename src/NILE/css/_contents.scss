@@ -1412,14 +1412,22 @@ textarea.form_textarea{
 
 /* product */
 .logcops_func_container{
-    &:before{}
+    position:relative; min-height:343px;
+    &:before{display:block;content:'';width:433px;height:343px;background:url("../images/logcops_monitor.png") no-repeat 0 0/100% auto;position:absolute;top:0;left:50%;transform: translateX(-50%);}
 }
 .logcops_func_list{
+    display:flex;flex-wrap:wrap; gap:30px 0;
     > li{
+        flex:0 0 50%; display:flex;
+        &:nth-of-type(2n){
+            justify-content: flex-end;
+            .logcops_func_box{}
+        }
         &:last-of-type{}
     }
 }
 .logcops_func_box{
+    background:#f4f4f4; border-radius:10px; max-width:360px; width:100%; height:100%; padding:25px; box-sizing: border-box; 
     .ico{
         &.ico_01{}
         &.ico_02{}
@@ -1427,24 +1435,29 @@ textarea.form_textarea{
         &.ico_04{}
     }
 }
-.func_keyword{}
-.func_main{}
-.func_sub{}
+.func_keyword{font-size:16px; color:#13479b; font-weight:500; margin-bottom:18px;}
+.func_main{font-size:24px; color:#333333; font-weight: 600;}
+.func_sub{font-size:16px; color:#333333; margin-top:7px;}
 
 .logcops_system_container{}
 .logcops_system_list{
+    display:flex; flex-wrap:wrap; gap:30px; margin-right:-30px;
     > li{
+        flex:0 0 calc(25% - 30px);
         &:last-of-type{}
     }
 }
-.logcops_system_item{}
+.logcops_system_item{background:#fff;border:1px solid #ddd; border-radius:10px; text-align: center; padding:28px 20px; box-sizing: border-box;height:100%;}
 .logcops_img_row{
-    img{}
+    text-align: center; margin-bottom:20px;
+    img{max-width:112px;vertical-align: top;}
 }
 .logcops_spec_row{}
 .logcops_system_container{}
-.logcops_spec_main{}
-.logcops_spec_sub{}
+.logcops_spec_main,
+.logcops_spec_sub{color:#333333; font-weight:600; word-break: keep-all;}
+.logcops_spec_main{font-size:24px;}
+.logcops_spec_sub{font-size:14px; margin-top:24px; line-height:1.5;}
 
 .privacy_main_wrap{}
 .privacy_cont_cols{
