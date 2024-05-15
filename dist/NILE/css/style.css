@@ -4016,7 +4016,7 @@ input.subform_input::input-placeholder {
   color: #fff;
 }
 .info_block.skin4 {
-  background: url("../images/bg_second_bg_uvm.jpg") no-repeat 0 100%/100% auto;
+  background: url("../images/bg_second_bg_uvm.jpg") no-repeat 0 100%/cover;
 }
 .info_block.skin4 .info_block_title,
 .info_block.skin4 .info_block_copy {
@@ -4027,6 +4027,7 @@ input.subform_input::input-placeholder {
 }
 .info_block.skin5 {
   background: url("../images/bg_uvm_dia.jpg") no-repeat 0 100%/100% auto;
+  padding-bottom: 60px;
 }
 .info_block.type2 {
   padding-bottom: 0;
@@ -7188,6 +7189,44 @@ textarea.form_textarea:focus {
 }
 .structure_indent_list > li:last-of-type {
   margin-bottom: 0;
+}
+
+.uvm_info_box_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.uvm_info_box_list > li {
+  flex: 0 0 calc(50% - 30px);
+}
+
+.uvm_info_box {
+  padding: 25px 45px;
+  background: #f4f4f4;
+  border-radius: 26px;
+  line-height: 1.4;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.uvm_info_main {
+  font-size: 24px;
+  font-weight: 600;
+  color: #00398f;
+}
+
+.uvm_info_sub {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333333;
+  margin-top: 10px;
+}
+
+.uvm_info_img_wrap {
+  margin-top: 85px;
+}
+.uvm_info_img_wrap img {
+  vertical-align: top;
 }
 
 /* product 공통 배너 */
