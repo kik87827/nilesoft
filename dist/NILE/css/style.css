@@ -6255,6 +6255,13 @@ textarea.form_textarea:focus {
   line-height: 1;
 }
 
+.pv_name_text {
+  color: #fff;
+  font-weight: 900;
+  font-size: 72px;
+  line-height: 1;
+}
+
 .pv_name img {
   max-width: 100%;
   vertical-align: top;
@@ -6277,6 +6284,9 @@ textarea.form_textarea:focus {
 .pv_name.sse img {
   height: 50px;
 }
+.pv_name.factory img {
+  height: 84px;
+}
 
 .pv_summary_main {
   margin-top: 50px;
@@ -6286,6 +6296,12 @@ textarea.form_textarea:focus {
   line-height: 1.4;
   color: #fff;
 }
+.pv_summary_main.mtype2 {
+  margin-top: 35px;
+}
+.pv_summary_main.mtype3 {
+  margin-top: 25px;
+}
 
 .pv_summary_sub {
   font-size: 20px;
@@ -6294,6 +6310,9 @@ textarea.form_textarea:focus {
   font-weight: 500;
   line-height: 1.5;
   word-break: keep-all;
+}
+.pv_summary_sub.mtype2 {
+  margin-top: 55px;
 }
 
 .btn_pv_group {
@@ -6355,12 +6374,21 @@ textarea.form_textarea:focus {
   .pv_name img {
     height: auto !important;
   }
+  .pv_name_text {
+    font-size: 36px;
+  }
   .pv_summary_main {
     margin-top: 30px;
     font-size: 20px;
   }
+  .pv_summary_main.mtype2 {
+    margin-top: 15px;
+  }
   .pv_summary_sub {
     font-size: 16px;
+  }
+  .pv_summary_sub.mtype2 {
+    margin-top: 25px;
   }
   .btn_pv_group {
     margin-top: 40px;

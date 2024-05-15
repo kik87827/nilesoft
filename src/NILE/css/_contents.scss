@@ -1352,6 +1352,7 @@ textarea.form_textarea{
     }
     .text_level{font-size:18px;color:#ffffff; font-weight:500; line-height:1;}
 }
+.pv_name_text{color:#fff; font-weight:900; font-size:72px;line-height:1;}
 .pv_name{
     img{max-width:100%;vertical-align: top;}
     &.logcops{
@@ -1372,12 +1373,18 @@ textarea.form_textarea{
     &.sse{
         img{height:50px;}
     }
+    &.factory{
+        img{height:84px;}
+    }
 }
 .pv_summary_main{
     margin-top:50px; font-size:30px; font-weight:700; word-break: keep-all; line-height:1.4; color:#fff;
+    &.mtype2{margin-top:35px;}
+    &.mtype3{margin-top:25px;}
 }
 .pv_summary_sub{
     font-size:20px; color:#999999; margin-top:25px; font-weight:500; line-height:1.5; word-break: keep-all;
+    &.mtype2{margin-top:55px;}
 }
 .btn_pv_group{
     margin-top:80px; display:flex; gap:15px;
@@ -1407,8 +1414,13 @@ textarea.form_textarea{
         }
         img{height:auto !important;}
     }
-    .pv_summary_main{margin-top:30px; font-size:20px;}
-    .pv_summary_sub{font-size:16px;}
+    .pv_name_text{font-size:36px;}
+    .pv_summary_main{margin-top:30px; font-size:20px;
+        &.mtype2{margin-top:15px;}
+    }
+    .pv_summary_sub{font-size:16px;
+        &.mtype2{margin-top:25px;}
+    }
     .btn_pv_group{margin-top:40px;flex-wrap:wrap;margin-right:-10px;}
     .btn_pvbox{min-width:0;flex:0 0 calc(50% - 10px);}
     .btn_pvbox_inner{font-size:14px;}
