@@ -507,3 +507,27 @@ $(function() {
       });
     }
   }
+
+
+
+  function wseStickDia(){
+    const stick_keyword = document.querySelectorAll(".stick_keyword");
+    let stick_arrray = [];
+
+    action();
+    window.addEventListener("resize",()=>{
+      action();
+    });
+
+    function action(){
+      if(!!stick_keyword){
+        stick_keyword.forEach((item)=>{
+          item.style.removeProperty("width");
+          stick_arrray.push(item.getBoundingClientRect().width);
+        });
+        stick_keyword.forEach((item)=>{
+          item.style.width = Math.max.apply(null,stick_arrray) + "px";
+        });
+      }
+    }
+  }

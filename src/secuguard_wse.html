@@ -52,37 +52,37 @@
                                 <ul class="wse_need_box_list">
                                     <li>
                                         <div class="wse_need_box">
-                                            <p class="wse_need_copy">웹 어플리케이션 취약점을 이용한 해킹 피해 급증</p>
+                                            <p class="wse_need_copy">웹 어플리케이션 취약점을 이용한 <br>해킹 피해 급증</p>
                                             <div class="wse_need_ico_row"><i class="ico_need ico_01"></i></div>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="wse_need_box">
-                                            <p class="wse_need_copy">최적의 보안상태를 유지하는 안전한 웹 사이트 구축 필요</p>
+                                            <p class="wse_need_copy">최적의 보안상태를 유지하는 안전한 <br>웹 사이트 구축 필요</p>
                                             <div class="wse_need_ico_row"><i class="ico_need ico_02"></i></div>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="wse_need_box">
-                                            <p class="wse_need_copy">웹 어플리케이션은 지속적인 개발 수정, 보완 등의 과정이 반복</p>
+                                            <p class="wse_need_copy">웹 어플리케이션은 지속적인 개발 수정, <br>보완 등의 과정이 반복</p>
                                             <div class="wse_need_ico_row"><i class="ico_need ico_03"></i></div>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="wse_need_box">
-                                            <p class="wse_need_copy">프로그램 코딩 및 설정 실수로 인한 취약점 존재</p>
+                                            <p class="wse_need_copy">프로그램 코딩 및 설정 실수로 인한 <br>취약점 존재</p>
                                             <div class="wse_need_ico_row"><i class="ico_need ico_04"></i></div>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="wse_need_box">
-                                            <p class="wse_need_copy">강화된 각종 컴플라이언스 준수 및 감사 대비</p>
+                                            <p class="wse_need_copy">강화된 각종 컴플라이언스 준수 및 <br>감사 대비</p>
                                             <div class="wse_need_ico_row"><i class="ico_need ico_05"></i></div>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="wse_need_box">
-                                            <p class="wse_need_copy">다수의 웹서버 운영 및 웹서버상의 다수의 URL 및 어플리케이션 존재</p>
+                                            <p class="wse_need_copy">다수의 웹서버 운영 및 웹서버상의 다수의 <br>URL 및 어플리케이션 존재</p>
                                             <div class="wse_need_ico_row"><i class="ico_need ico_06"></i></div>
                                         </div>
                                     </li>
@@ -90,7 +90,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="info_block skin2">
+                    <div class="info_block skin2 gap2">
                         <div class="info_block_title_row">
                             <p class="info_block_title">WSE 특장점</p>
                         </div>
@@ -176,7 +176,7 @@
                             <img src="./NILE/images/dia_wse_m.jpg" class="mb_img" alt="">
                         </div>
                     </div>
-                    <div class="info_block type2">
+                    <div class="info_block type2 gap2">
                         <div class="info_block_title_row">
                             <p class="info_block_title">WSE 기능</p>
                         </div>
@@ -234,7 +234,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="key_td"><p class="data_tdtext">서버 탐색</p></td>
+                                            <td class="key_td"><p class="data_tdtext">업데이트</p></td>
                                             <td class="value_td">
                                                 <ul class="bullet_list dot">
                                                     <li>업데이트 서버에 접속하여 추가된 취약점에 대한 점검 모듈 업데이트</li>
@@ -243,7 +243,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="key_td"><p class="data_tdtext">서버 탐색</p></td>
+                                            <td class="key_td"><p class="data_tdtext">점검항목</p></td>
                                             <td class="value_td">
                                                 <ul class="bullet_list dot">
                                                     <li>Cross Site Scripting, SQL Injection, CRLF Injection, Code Execution, Directory</li>
@@ -263,6 +263,10 @@
         </main>
         <script>
 			menuRock("[name='data_secuguard_menu02']");
+
+            window.addEventListener("load",()=>{
+                wseStickDia();
+            });
 		</script>
         @@include('./include/_footer.html')
     </div>

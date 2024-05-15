@@ -24,7 +24,9 @@ $warn : #e84854;
     @return $remValue;
 }
 
-
+@mixin bgicon {
+    background-repeat:no-repeat; background-size:100% auto; background-position:0 0;
+}
 
 
 @mixin fontTransform {

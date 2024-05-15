@@ -1226,7 +1226,7 @@ textarea.form_textarea{
             th{
                 background:#fafafa; padding:15px;border:1px solid #fafafa;
                 .data_thtext{}
-                &.short_wid{}
+                &.short_wid{width:13%}
                 &.liquid_wid{}
             }
         }
@@ -1240,7 +1240,8 @@ textarea.form_textarea{
                     background:#fff;
                     .data_thtext{}
                 }
-                &.align2{text-align: left; }
+                &.align2{text-align: left; 
+                }
                 .data_thtext{}
             }
             td{ padding:15px; border:1px solid #dddddd;
@@ -1248,12 +1249,21 @@ textarea.form_textarea{
                 &.emp_td{background:#fafafa;}
                 &:last-of-type{border-right:0;}
                 &.key_td{
-                    .data_tdtext{}
+                    text-align: left;
+                    .data_tdtext{text-align: left;}
                 }
                 &.value_td{
+                    text-align: left;
                     .bullet_list{
+                        text-align: left; 
                         &.dot{
-                            > li{}
+                            > li{
+                                font-size:18px;color:#333333; margin-bottom:10px; padding-left:8px; position:relative;
+                                &:before{
+                                    display:block;content:''; width:2px;height:2px; background:#333;position:absolute;top:10px;left:0;
+                                }
+                                &:last-of-type{margin-bottom:0;}
+                            }
                         }
                     }
                 }
@@ -1555,56 +1565,70 @@ textarea.form_textarea{
 .sse_effect_main{font-size:24px; font-weight:600; word-break: keep-all;}
 .sse_effect_sub{font-size:16px; font-weight:600; margin-top:25px;line-height:1.55;word-break: keep-all;}
 
-.wse_need_box_list_wrap{}
+.wse_need_box_list_wrap{
+    position:relative;overflow:hidden;
+}
 
 .wse_need_box_list{
-    > li{}
+    display:flex; gap:30px 75px; flex-wrap:wrap; margin-right:-75px;
+    > li{
+        flex:0 0 calc(33.333333333% - 75px);
+    }
 }
 
 .wse_need_box{
-
+    background:#f4f4f4; border-radius:10px; padding:35px 30px 10px 30px;
 }
 .wse_need_copy{
-
+    font-size:18px; font-weight:600; color:#333; word-break: keep-all;
 }
 .wse_need_ico_row{
-    .ico_need{}
+    display:flex; justify-content: flex-end;
+    .ico_need{
+        
+    }
 }
 .ico_need{
-    &.ico_01{}
-    &.ico_02{}
-    &.ico_03{}
-    &.ico_04{}
-    &.ico_05{}
-    &.ico_06{}
+    @include bgicon; width:90px;height:90px;
+    &.ico_01{background-image:url("../images/ico_wse_guide01_01.png");}
+    &.ico_02{background-image:url("../images/ico_wse_guide01_02.png");}
+    &.ico_03{background-image:url("../images/ico_wse_guide01_03.png");}
+    &.ico_04{background-image:url("../images/ico_wse_guide01_04.png");}
+    &.ico_05{background-image:url("../images/ico_wse_guide01_05.png");}
+    &.ico_06{background-image:url("../images/ico_wse_guide01_06.png");}
 }
 
 .wse_stick_box_list_wrap{
-
-}
+    
+}   
 .wse_stick_box_list{
+    
     > li{
-
+        margin-bottom:20px;
+        &:last-of-type{margin-bottom:0;}    
     }
 }
 .wse_stick_box{
+    border:1px solid #c8d6df; background:#fff; border-radius:100px; display:flex; align-items: center; padding:10px 0;
     .key_cols{
-
+        flex:0; white-space: nowrap; display:flex; align-items: center; padding:0 30px 0 45px; gap:18px; position:relative;
+        &:after{display:block;content:'';width:1px;height:23px; background:#dddddd; position:absolute;top:50%;right:0;transform: translateY(-50%);}
     }
     .value_cols{
-
+        padding:0 30px;
     }
 }
 .ico_stick{
-    &.ico_01{}
-    &.ico_02{}
-    &.ico_03{}
-    &.ico_04{}
-    &.ico_05{}
-    &.ico_06{}
+    flex:0 0 44px; width:44px; height:44px; @include bgicon;
+    &.ico_01{background-image:url("../images/ico_wse_guide02_01.png");}
+    &.ico_02{background-image:url("../images/ico_wse_guide02_02.png");}
+    &.ico_03{background-image:url("../images/ico_wse_guide02_03.png");}
+    &.ico_04{background-image:url("../images/ico_wse_guide02_04.png");}
+    &.ico_05{background-image:url("../images/ico_wse_guide02_05.png");}
+    &.ico_06{background-image:url("../images/ico_wse_guide02_06.png");}
 }
-.stick_keyword{}
-.stick_value_para{}
+.stick_keyword{font-size:20px; font-weight:600; color:#144b99; display:inline-block; white-space:nowrap;}
+.stick_value_para{font-size:18px; color:#333333; font-weight:600;}
 
 .nse_info_list_wrap{}
 .nse_info_list{
