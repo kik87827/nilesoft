@@ -1,6 +1,7 @@
 /* contents */
 
 /* 공통 */
+.mb_br{display:none;}
 .pc_img{display:inline-block;}
 .mb_img{display:none;}
 .middle_subtop_wrap{
@@ -312,6 +313,7 @@ input.subform_input{height:60px;background:#fff;font-size:18px; font-weight:500;
     .info_block_title{font-size:24px;}
     .info_block_copy{font-size:16px;margin-top:10px;}
     .info_block_title_row{margin-bottom:25px;}
+    .mb_br{display:block;}
 }
 
 
@@ -1254,18 +1256,6 @@ textarea.form_textarea{
                 }
                 &.value_td{
                     text-align: left;
-                    .bullet_list{
-                        text-align: left; 
-                        &.dot{
-                            > li{
-                                font-size:18px;color:#333333; margin-bottom:10px; padding-left:8px; position:relative;
-                                &:before{
-                                    display:block;content:''; width:2px;height:2px; background:#333;position:absolute;top:10px;left:0;
-                                }
-                                &:last-of-type{margin-bottom:0;}
-                            }
-                        }
-                    }
                 }
             }
             &.emp{
@@ -1282,6 +1272,20 @@ textarea.form_textarea{
 .data_tdtext{text-align: center;}
 
 
+.bullet_list{
+    text-align: left; 
+    &.dot{
+        > li{
+            font-size:18px;color:#333333; margin-bottom:10px; padding-left:8px; position:relative;
+            &:before{
+                display:block;content:''; width:2px;height:2px; background:#333;position:absolute;top:10px;left:0;
+            }
+            &:last-of-type{margin-bottom:0;}
+        }
+    }
+}
+
+
 @media (max-width:$tablet){
     .data_tb_wrap{
         &.scroll{overflow-x:auto;position:relative;
@@ -1293,13 +1297,13 @@ textarea.form_textarea{
                 thead{
                     tr{
                         th{
-                            padding:10px 5px;
+                            padding:10px 10px;
                         }
                     }
                 }
                 tbody{
                     tr{
-                        td{ padding:10px 5px;}
+                        td{ padding:10px 10px;}
                     }
                 }
             }
@@ -1312,6 +1316,7 @@ textarea.form_textarea{
             tr{
                 th{
                      padding:10px;
+                     &.short_wid{width:60px;}
                     .data_thtext{}
                 }
             }
@@ -1333,6 +1338,18 @@ textarea.form_textarea{
     .data_thtext_sub{font-size:11px;}
     .data_number,
     .data_thtext, .data_tdtext{font-size:13px;}
+
+    .bullet_list{
+        &.dot{
+            > li{
+                font-size:14px;padding-left:6px;
+                &:before{
+                  top:8px;
+                }
+            }
+        }
+    }
+    
 }
 
 
@@ -2017,4 +2034,40 @@ textarea.form_textarea{
     }
     .ver_thtext,
     .ver_tdtext{font-size:14px; line-height:1.4;}
+
+
+    .wse_need_box_list{
+         gap:10px; margin-right:-10px;
+         br{display:none;}
+        > li{
+            flex-basis:calc(50% - 10px);
+        }
+    }
+
+    .wse_need_box{
+       border-radius:5px; padding:15px 10px 10px 10px; height:100%; box-sizing: border-box; display:flex; flex-direction: column; justify-content: space-between;
+    }
+    .wse_need_copy{
+        font-size:14px;
+    }
+    .ico_need{
+        width:45px;height:45px;
+    }
+
+    .wse_stick_box{
+        border-radius: 10px;
+        .key_cols{
+            padding:0 15px 0 15px; gap:10px; position:relative;
+            &:after{height:23px;}
+        }
+        .value_cols{
+            padding:0 10px;
+        }
+    }
+    .ico_stick{
+        flex-basis:22px; width:22px; height:22px;
+    }
+    .stick_keyword{font-size:14px; }
+    .stick_value_para{font-size:14px;}
+
 }

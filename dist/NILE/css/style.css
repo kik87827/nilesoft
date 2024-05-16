@@ -3648,6 +3648,10 @@ button.swiper-pagination-bullet {
 }
 /* contents */
 /* 공통 */
+.mb_br {
+  display: none;
+}
+
 .pc_img {
   display: inline-block;
 }
@@ -4254,6 +4258,9 @@ input.subform_input::input-placeholder {
   }
   .info_block_title_row {
     margin-bottom: 25px;
+  }
+  .mb_br {
+    display: block;
   }
 }
 /* CEO인사말 */
@@ -6132,29 +6139,6 @@ textarea.form_textarea:focus {
 .data_tb tbody tr td.value_td {
   text-align: left;
 }
-.data_tb tbody tr td.value_td .bullet_list {
-  text-align: left;
-}
-.data_tb tbody tr td.value_td .bullet_list.dot > li {
-  font-size: 18px;
-  color: #333333;
-  margin-bottom: 10px;
-  padding-left: 8px;
-  position: relative;
-}
-.data_tb tbody tr td.value_td .bullet_list.dot > li:before {
-  display: block;
-  content: "";
-  width: 2px;
-  height: 2px;
-  background: #333;
-  position: absolute;
-  top: 10px;
-  left: 0;
-}
-.data_tb tbody tr td.value_td .bullet_list.dot > li:last-of-type {
-  margin-bottom: 0;
-}
 .data_tb tbody tr.emp th,
 .data_tb tbody tr.emp td {
   background: #f2f2f2;
@@ -6184,6 +6168,30 @@ textarea.form_textarea:focus {
   text-align: center;
 }
 
+.bullet_list {
+  text-align: left;
+}
+.bullet_list.dot > li {
+  font-size: 18px;
+  color: #333333;
+  margin-bottom: 10px;
+  padding-left: 8px;
+  position: relative;
+}
+.bullet_list.dot > li:before {
+  display: block;
+  content: "";
+  width: 2px;
+  height: 2px;
+  background: #333;
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+.bullet_list.dot > li:last-of-type {
+  margin-bottom: 0;
+}
+
 @media (max-width: 1299px) {
   .data_tb_wrap.scroll {
     overflow-x: auto;
@@ -6198,10 +6206,10 @@ textarea.form_textarea:focus {
     height: 8px;
   }
   .data_tb_wrap.skin2 .data_tb thead tr th {
-    padding: 10px 5px;
+    padding: 10px 10px;
   }
   .data_tb_wrap.skin2 .data_tb tbody tr td {
-    padding: 10px 5px;
+    padding: 10px 10px;
   }
   .data_tb_wrap.skin2 .data_thtext,
 .data_tb_wrap.skin2 .data_tdtext {
@@ -6210,6 +6218,9 @@ textarea.form_textarea:focus {
   }
   .data_tb thead tr th {
     padding: 10px;
+  }
+  .data_tb thead tr th.short_wid {
+    width: 60px;
   }
   .data_tb tbody tr th {
     padding: 10px;
@@ -6225,6 +6236,13 @@ textarea.form_textarea:focus {
   .data_number,
 .data_thtext, .data_tdtext {
     font-size: 13px;
+  }
+  .bullet_list.dot > li {
+    font-size: 14px;
+    padding-left: 6px;
+  }
+  .bullet_list.dot > li:before {
+    top: 8px;
   }
 }
 /* product 상단 */
@@ -7672,6 +7690,57 @@ textarea.form_textarea:focus {
 .ver_tdtext {
     font-size: 14px;
     line-height: 1.4;
+  }
+  .wse_need_box_list {
+    gap: 10px;
+    margin-right: -10px;
+  }
+  .wse_need_box_list br {
+    display: none;
+  }
+  .wse_need_box_list > li {
+    flex-basis: calc(50% - 10px);
+  }
+  .wse_need_box {
+    border-radius: 5px;
+    padding: 15px 10px 10px 10px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .wse_need_copy {
+    font-size: 14px;
+  }
+  .ico_need {
+    width: 45px;
+    height: 45px;
+  }
+  .wse_stick_box {
+    border-radius: 10px;
+  }
+  .wse_stick_box .key_cols {
+    padding: 0 15px 0 15px;
+    gap: 10px;
+    position: relative;
+  }
+  .wse_stick_box .key_cols:after {
+    height: 23px;
+  }
+  .wse_stick_box .value_cols {
+    padding: 0 10px;
+  }
+  .ico_stick {
+    flex-basis: 22px;
+    width: 22px;
+    height: 22px;
+  }
+  .stick_keyword {
+    font-size: 14px;
+  }
+  .stick_value_para {
+    font-size: 14px;
   }
 }
 .guide_contents_item {

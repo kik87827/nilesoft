@@ -530,6 +530,7 @@ function wseStickDia() {
   function action() {
     if (!!stick_keyword) {
       stick_keyword.forEach((item) => {
+        stick_arrray = [];
         item.style.removeProperty("width");
         stick_arrray.push(item.getBoundingClientRect().width);
       });
