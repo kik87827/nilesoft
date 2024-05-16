@@ -2155,4 +2155,20 @@ textarea.form_textarea{
            font-size:14px;
         }
     }
+
+    .uvm_info_box_wrap{}
+    .uvm_info_box_list{
+        gap:10px;
+        > li{
+            flex:0 0 calc(50% - 10px);
+        }
+    }
+    .uvm_info_box{
+        padding:20px; border-radius:10px;
+    }   
+    .uvm_info_main{font-size:18px;}
+    .uvm_info_sub{font-size:14px;}
+    .uvm_info_img_wrap{
+        margin-top:35px;
+    }
 }
