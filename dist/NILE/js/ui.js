@@ -439,6 +439,17 @@ function toggleFunc() {
       item.addEventListener("click", (e) => {
         const thisItem = e.currentTarget;
         const thisParnet = thisItem.closest(".toggle_item");
+        const thisParnetGlobal = thisItem.closest(".toggle_item_list");
+        const thisParnetGlobalItem = thisParnetGlobal.querySelectorAll(".toggle_item");
+
+        if (!!thisParnetGlobalItem) {
+          thisParnetGlobalItem.forEach((item) => {
+            if (item !== thisParnet) {
+              item.classList.remove("active");
+            }
+          });
+        }
+
         if (!!thisParnet) {
           thisParnet.classList.toggle("active");
         }
