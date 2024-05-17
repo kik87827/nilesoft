@@ -110,7 +110,7 @@
     &:last-of-type{margin-bottom:0;}
 }
 .btn_subform_row{margin-top:30px;}
-.btn_submit_box{background:$primary; font-family: 'Pretendard'; border-radius:5px; font-size:19px; color:#fff; font-weight:600; display:flex; justify-content: center; min-height:60px; box-sizing:border-box; align-items: center; width:100%;height:100%; padding:10px;}
+.btn_submit_box{background:$primary; cursor: pointer; font-family: 'Pretendard'; border-radius:5px; font-size:19px; color:#fff; font-weight:600; display:flex; justify-content: center; min-height:60px; box-sizing:border-box; align-items: center; width:100%;height:100%; padding:10px;}
 
 .terms_guide_wrap{background:#f9f9f9;padding:20px;color:#333333; font-size:12px; line-height:1.5;}
 .terms_guide_block{
@@ -959,8 +959,6 @@ textarea.form_textarea{
 }
 .btn_text_only{font-size:16px; font-weight:500; display:inline-block; color:$primary; border-bottom:1px solid $primary; }
 .btn_submit_wrap{}
-.btn_submit_box{}
-.btn_submit_box_text{}
 
 @media (max-width:$mobile_large){
     .props_list_tb{

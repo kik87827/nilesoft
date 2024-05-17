@@ -3901,6 +3901,7 @@ button.swiper-pagination-bullet {
 
 .btn_submit_box {
   background: #13479b;
+  cursor: pointer;
   font-family: "Pretendard";
   border-radius: 5px;
   font-size: 19px;
