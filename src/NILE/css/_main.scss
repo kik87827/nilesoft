@@ -78,6 +78,36 @@
 }
 .mv_gate_summary_text{}
 
+
+.mv_cbox_container{}
+.mv_cbox_ctr{
+    &:last-of-type{}
+}
+.mv_cbox_cell{
+    &.define_liquid{}
+    &.define_fixed{}
+}
+.mv_cbox_copy_wrap{}
+.mv_cbox_main_copy{}
+.mv_cbox_sub_copy{}
+.mv_cbox{}
+.mv_cbox_title_row{
+    .ico{
+        &.ico_01{}
+        &.ico_02{}
+        &.ico_03{}
+        &.ico_04{}
+    }
+}
+.mv_cbox_text{}
+.mv_cbox_sub_row{}
+.mv_cbox_sub{}
+.mv_cbox_btn_row{}
+.btn_cbox{
+    &:after{}
+}
+.btn_cbox_text{}
+
 @media (max-width:$mobile_large){
     .swiper{
         &.mv_container{
