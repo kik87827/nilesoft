@@ -56,6 +56,28 @@
     
 }
 
+.mv_gate_copy_wrap{}
+.mv_gate_copy_sub{}
+.mv_gate_copy_main{}
+.mv_gate_copy_sub2{
+    strong{}
+}
+.mv_gate_summary_wrap{}
+.mv_gate_summary_list{
+    > li{
+
+    }
+}
+.mv_gate_summary{
+    .ico{
+        &.ico_01{}
+        &.ico_02{}
+        &.ico_03{}
+        &.ico_04{}
+    }
+}
+.mv_gate_summary_text{}
+
 @media (max-width:$mobile_large){
     .swiper{
         &.mv_container{
