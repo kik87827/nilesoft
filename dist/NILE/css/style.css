@@ -8329,8 +8329,8 @@ textarea.form_textarea:focus {
 .swiper.mv_container {
   height: 100vh;
 }
-.swiper.mv_container .swiper-pagination-vertical.swiper-pagination-bullets,
-.swiper.mv_container .swiper-vertical > .swiper-pagination-bullets {
+.swiper.mv_container .swiper-pagination.mv_global.swiper-pagination-vertical.swiper-pagination-bullets,
+.swiper.mv_container .swiper-pagination.mv_global > .swiper-pagination-bullets {
   left: 40px;
   right: auto;
   transform: translate(0, -50%);
@@ -8363,7 +8363,9 @@ textarea.form_textarea:focus {
 }
 
 .mv_item {
-  background: url("../images/bg_mv01.jpg") no-repeat 50% 50%/cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -8376,8 +8378,8 @@ textarea.form_textarea:focus {
   position: absolute;
   top: 0;
   left: 0;
-  background: #010205;
-  opacity: 0.14;
+  background: #000000;
+  opacity: 0.64;
 }
 .mv_item.scene_02 {
   background-image: url("../images/bg_mv02.jpg");
@@ -8427,8 +8429,8 @@ textarea.form_textarea:focus {
   .swiper.mv_container {
     height: 100vh;
   }
-  .swiper.mv_container .swiper-pagination-vertical.swiper-pagination-bullets,
-.swiper.mv_container .swiper-vertical > .swiper-pagination-bullets {
+  .swiper.mv_container .swiper-pagination.mv_global.swiper-pagination-vertical.swiper-pagination-bullets,
+.swiper.mv_container .swiper-pagination.mv_global > .swiper-pagination-bullets {
     left: 20px;
   }
 }

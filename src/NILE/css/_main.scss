@@ -3,9 +3,14 @@
 .swiper{
     &.mv_container{
         height:100vh;
+        .swiper-pagination{
+            &.mv_global{
+                
+                &.swiper-pagination-vertical.swiper-pagination-bullets, 
+                 > .swiper-pagination-bullets{left:40px;right:auto;transform: translate(0,-50%);width:auto;}
+            }
+        }
 
-        .swiper-pagination-vertical.swiper-pagination-bullets, 
-        .swiper-vertical > .swiper-pagination-bullets{left:40px;right:auto;transform: translate(0,-50%);width:auto;}
 
         .swiper-pagination-bullet{background:none;display:flex;height:10px;width:10px; align-items: center;justify-content: center; opacity:1 !important; margin:10px 0;
             &:before{display:block; content:''; width:6px;height:6px; border-radius:100%; background:#fff; opacity:.5; transition:.5s;}
@@ -17,9 +22,9 @@
     }
 }
 
-.mv_item{background:url("../images/bg_mv01.jpg") no-repeat 50% 50%/cover; height:100%; display:flex; flex-direction: column;
+.mv_item{@include bgfull; height:100%; display:flex; flex-direction: column;
     &.scene_01{
-        &:before{display:block;content:'';width:100%;height:100%;position:absolute;top:0;left:0;background:#010205;opacity:.14;}
+        &:before{display:block;content:'';width:100%;height:100%;position:absolute;top:0;left:0;background:#000000;opacity:.64;}
     }
     &.scene_02{background-image:url("../images/bg_mv02.jpg")}
     &.scene_03{background-image:url("../images/bg_mv03.jpg")}
@@ -56,6 +61,7 @@
     
 }
 
+
 .mv_gate_copy_wrap{}
 .mv_gate_copy_sub{}
 .mv_gate_copy_main{}
@@ -78,6 +84,33 @@
 }
 .mv_gate_summary_text{}
 
+.mv_gate02_copy_wrap{
+
+}
+.mv_gate02_main_copy{}
+.mv_gate02_main_copy2{}
+.mv_gate02_main_copy3{}
+.mv_gate02_sub_copy{}
+
+.mv_item_slide_item{
+   &.scene_01_01{
+    
+   } 
+   &.scene_01_02{
+
+   } 
+   &.scene_01_03{
+
+   } 
+}
+
+.mv_scene_img_wrap{}
+.mv_scene_img_title{
+    img{}
+}
+.mv_scene_img_contents{
+    img{}
+}
 
 .mv_cbox_container{}
 .mv_cbox_ctr{
@@ -108,13 +141,25 @@
 }
 .btn_cbox_text{}
 
+.swiper-pagination{
+    &.mv_inner{
+        .swiper-pagination-bullet{
+            &.swiper-pagination-bullet-active{
+            }
+        }
+    }
+}
+
 @media (max-width:$mobile_large){
     .swiper{
         &.mv_container{
             height:100vh;
-    
-            .swiper-pagination-vertical.swiper-pagination-bullets, 
-            .swiper-vertical > .swiper-pagination-bullets{left:20px;}
+            
+            .swiper-pagination.mv_global{
+
+                &.swiper-pagination-vertical.swiper-pagination-bullets, 
+                 > .swiper-pagination-bullets{left:20px;}
+            }
         }
     }
 }

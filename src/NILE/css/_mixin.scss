@@ -28,6 +28,10 @@ $warn : #e84854;
     background-repeat:no-repeat; background-size:100% auto; background-position:0 0;
 }
 
+@mixin bgfull {
+    background-repeat:no-repeat; background-size:cover; background-position:50% 50%;
+}
+
 
 @mixin fontTransform {
     transform: skew(.5deg);
