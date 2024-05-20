@@ -437,7 +437,97 @@
 					<div class="swiper-slide">
 						<div class="mv_item scene_04">
 							<div class="mv_item_inner">
-								<p style="color:#000;">Slide 4</p>
+								<div class="mv_item_copy_wrap">
+									<p class="mv_item_main_copy">로그<span class="else_sub_text"> | </span>SIEM<span class="else_sub_text"> | </span>개인정보<span class="else_sub_text"> | </span>가명·비식별</p>
+									<p class="mv_item_sub_copy">나일소프트의 기술력과 노하우를 만나면 보안이 바뀝니다.</p>
+								</div>
+								<div class="mv_motion_card_list_wrap">
+									<ul class="mv_motion_card_list">
+										<li>
+											<div class="mv_motion_card">
+												<div class="mv_motion_liquid">
+													<div class="mv_motion_keyword_row"><span class="mv_motion_keyword">GS인증 1등급</span></div>
+													<div class="mv_motion_name_row">
+														<span class="mv_motion_name_img logcops"></span>
+													</div>
+													<div class="mv_motion_caption_row">
+														<p class="mv_motion_caption">로그생명주기 전 과정을 지원하는 대용량 <br>실시간 통합로그관리시스템</p>
+													</div>
+													<div class="mv_motion_hover_row">
+														<ul class="mv_mcard_option_list">
+															<li>사용자 행위 감사로구 기록 및 재생</li>
+															<li>로그생명주기를 지원하는 통합시스템</li>
+															<li>다양한 활용방안을 제공하는 다목적 솔루션</li>
+														</ul>
+													</div>
+												</div>
+												<a href="#" class="btn_mv_motion">
+													<span class="btn_mv_motion_text">제품소개 바로가기</span>
+												</a>
+											</div>
+										</li>
+										<li>
+											<div class="mv_motion_card skin2">
+												<div class="mv_motion_liquid">
+													<div class="mv_motion_keyword_row"><span class="mv_motion_keyword">GS인증 1등급</span></div>
+													<div class="mv_motion_name_row">
+														<span class="mv_motion_name_img privacycops"></span>
+													</div>
+													<div class="mv_motion_caption_row">
+														<p class="mv_motion_caption">개인정보 접속이력 관리 및 모니터링 <br>IT내부통제 모니터링 및 관리</p>
+													</div>
+													<div class="mv_motion_hover_row">
+														<ul class="mv_mcard_option_list">
+															<li>관제 대상별 위험 점수 계산</li>
+															<li>심층적인 통계 분석 / 확정성 있는 대시보드</li>
+															<li>다양한 분석 패턴 / 자동화된 관제</li>
+														</ul>
+													</div>
+												</div>
+												<a href="#" class="btn_mv_motion">
+													<span class="btn_mv_motion_text">제품소개 바로가기</span>
+												</a>
+											</div>
+										</li>
+										<li>
+											<div class="mv_motion_card skin3">
+												<div class="mv_motion_liquid">
+													<div class="mv_motion_name_row">
+														<span class="mv_motion_name_text">IT 내부통제</span>
+													</div>
+													<div class="mv_motion_caption_row">
+														<p class="mv_motion_caption">개인정보 접속이력 관리 및 모니터링 <br>IT내부통제 모니터링 및 관리</p>
+													</div>
+													<div class="mv_motion_hover_row">
+														<ul class="mv_mcard_option_list">
+															<li>사용자 행위 감사로구 기록 및 재생</li>
+															<li>로그생명주기를 지원하는 통합시스템</li>
+															<li>다양한 활용방안을 제공하는 다목적 솔루션</li>
+														</ul>
+													</div>
+												</div>
+												<a href="#" class="btn_mv_motion">
+													<span class="btn_mv_motion_text">제품소개 바로가기</span>
+												</a>
+											</div>
+										</li>
+										<li>
+											<div class="mv_motion_card skin3">
+												<div class="mv_motion_liquid">
+													<div class="mv_motion_name_row">
+														<span class="mv_motion_name_img factory"></span>
+													</div>
+													<div class="mv_motion_caption_row">
+														<p class="mv_motion_caption">개인정보 가명화 및 비식별 처리시스템</p>
+													</div>
+												</div>
+												<a href="#" class="btn_mv_motion">
+													<span class="btn_mv_motion_text">제품소개 바로가기</span>
+												</a>
+											</div>
+										</li>
+									</ul>
+								</div>
 							</div>
 							<footer class="footer_wrap">
 								<div class="footer_inner">
@@ -473,29 +563,58 @@
 				<div class="swiper-pagination mv_global"></div>
 			</div>
 			<script>
-				const mainSwiper = new Swiper('.mv_container', {
-					direction: 'vertical',
-					mousewheel: true,
-					speed: 1000,
-					// If we need pagination
-					pagination: {
-						el: '.mv_container .swiper-pagination.mv_global',
-						clickable: true,
-					},
-				});
+				document.addEventListener("DOMContentLoaded", () => {
+					const mainSwiper = new Swiper('.mv_container', {
+						direction: 'vertical',
+						mousewheel: true,
+						speed: 1000,
+						// If we need pagination
+						pagination: {
+							el: '.mv_container .swiper-pagination.mv_global',
+							clickable: true,
+						},
+					});
 
-				const front_body = document.querySelector(".front_body");
-				const btn_main_top_go = document.querySelector(".main .btn_top_go");
-				mainSwiper.on("slideChange", () => {
-					if (mainSwiper.realIndex > 1) {
-						front_body.classList.add("main_skin2");
-					} else {
-						front_body.classList.remove("main_skin2");
+					const front_body = document.querySelector(".front_body");
+					const btn_main_top_go = document.querySelector(".main .btn_top_go");
+					const bottom_layer = document.querySelector(".bottom_layer");
+					const footer_wrap = document.querySelector(".footer_wrap");
+					let resizeMargin = 0;
+
+					bottomMove();
+
+					mainSwiper.on("slideChange", () => {
+						if (mainSwiper.realIndex > 1) {
+							front_body.classList.add("main_skin2");
+						} else {
+							front_body.classList.remove("main_skin2");
+						}
+						bottomMove();
+					});
+					btn_main_top_go.addEventListener("click", (e) => {
+						e.preventDefault();
+						mainSwiper.slideTo(0, 0);
+					});
+					window.addEventListener("resize", () => {
+						bottomResize();
+					});
+
+					function bottomMove() {
+						bottomResize();
+						if (mainSwiper.realIndex === 3) {
+							bottom_layer.style.bottom = (footer_wrap.getBoundingClientRect().height + resizeMargin) + "px";
+						} else {
+							bottom_layer.style.removeProperty("bottom");
+						}
 					}
-				});
-				btn_main_top_go.addEventListener("click", (e) => {
-					e.preventDefault();
-					mainSwiper.slideTo(0, 0);
+
+					function bottomResize() {
+						if (window.innerWidth < 1024) {
+							resizeMargin = 30;
+						} else {
+							resizeMargin = 40;
+						}
+					}
 				});
 			</script>
 		</main>

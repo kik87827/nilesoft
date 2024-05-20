@@ -578,8 +578,9 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 .util_list_wrap {
   position: absolute;
   top: 50%;
-  right: 40px;
+  right: 50px;
   transform: translateY(-50%);
+  z-index: 5;
 }
 
 .util_list {
@@ -709,6 +710,43 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   opacity: 1;
 }
 
+.util_toggle_wrap {
+  display: inline-block;
+  position: relative;
+}
+.util_toggle_wrap.active .util_option_layer {
+  display: block;
+}
+.util_option_layer {
+  position: absolute;
+  top: calc(100% + 18px);
+  background: #fff;
+  border-radius: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 78px;
+  padding: 10px 0;
+  box-shadow: 0px 8px 8px 0px rgba(19, 19, 20, 0.15);
+  border: 1px solid #dddddd;
+  display: none;
+}
+
+.util_option_list {
+  text-align: center;
+}
+.util_option {
+  display: inline-block;
+  font-size: 14px;
+  padding: 7px;
+  white-space: nowrap;
+  line-height: 1;
+  font-weight: 500;
+  color: #bfbfbf;
+}
+.util_option.active {
+  color: #333333;
+}
+
 /* mobile */
 .mainmenu_dim {
   position: fixed;
@@ -739,6 +777,8 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   display: flex;
   align-items: center;
   padding: 0 20px;
+  position: relative;
+  z-index: 5;
 }
 .mbutil_row .util_list {
   display: flex;
@@ -1092,6 +1132,49 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   color: #333333;
 }
 
+.bottom_layer {
+  position: fixed;
+  bottom: 130px;
+  right: 60px;
+  z-index: 30;
+  transition: 0.4s;
+}
+
+.bottom_item_list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.btn_bottom_menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 104px;
+  height: 104px;
+  border-radius: 100%;
+  background: #1bb6e3;
+  gap: 10px;
+  text-align: center;
+}
+.btn_bottom_menu .ico {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: 0 0;
+}
+.btn_bottom_menu .ico.inquiry {
+  background-image: url("../images/ico_talk_layer.png");
+  width: 33px;
+  height: 24px;
+}
+
+.bottom_menu_text {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  display: inline-block;
+}
+
 @media (min-width: 1920px) {
   .header_nav_list {
     gap: 120px;
@@ -1256,6 +1339,27 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   }
   .btn_panel_menu {
     display: flex;
+  }
+  .bottom_layer {
+    bottom: 20px;
+    right: 20px;
+  }
+  .btn_bottom_menu {
+    width: 70px;
+    height: 70px;
+    gap: 5px;
+  }
+  .btn_bottom_menu .ico {
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: 0 0;
+  }
+  .btn_bottom_menu .ico.inquiry {
+    width: 26.4px;
+    height: 19.2px;
+  }
+  .bottom_menu_text {
+    font-size: 13px;
   }
 }
 /**

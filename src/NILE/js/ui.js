@@ -71,6 +71,30 @@ $(function() {
         });
       }
     }
+    function langToggle(){
+      const util_toggle_wrap = document.querySelectorAll(".util_toggle_wrap");
+      const util_lang_menu = document.querySelectorAll(".util_toggle_wrap .util_menu");
+      if(!!util_lang_menu){
+        util_lang_menu.forEach((item)=>{
+          let eachItem = item;
+          eachItem.addEventListener("click",(e)=>{
+            e.preventDefault();
+            let thisEvent = e.currentTarget;
+            let thisParent = thisEvent.closest(".util_toggle_wrap");
+            thisParent.classList.toggle("active");
+          });
+        });
+        document.querySelector("body").addEventListener("click",(e)=>{
+          let thisEvent = e.target;
+          let thisParent = thisEvent.closest(".util_toggle_wrap");
+          if(!thisParent && !!util_toggle_wrap){
+            util_toggle_wrap.forEach((item)=>{
+              item.classList.remove("active");
+            });
+          }
+        }); 
+      }
+    }
     function pcGnb(){
       const header_wrap = document.querySelector(".header_wrap");
       /* const bg_depth = document.querySelector(".bg_depth"); */
@@ -212,6 +236,7 @@ $(function() {
     pcGnb();
     mbTotal();
     scrollTop();
+    langToggle();
   }
   
   /**
