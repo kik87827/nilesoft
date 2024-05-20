@@ -154,6 +154,7 @@
 .mv_item_main_copy{
     strong{}
 }
+.else_sub_text{}
 .mv_item_sub_copy{}
 
 .mv_card_list_wrap{}
@@ -194,6 +195,93 @@
 }
 .mv_pro_btn_wrap{}
 .btn_mv_pro{}
+
+.mv_motion_card_list_wrap{}
+.mv_motion_card_list{
+    > li{
+
+    }
+}
+.mv_motion_card{
+    &:hover{
+        .mv_motion_liquid{}
+        .mv_motion_hover_row{}
+        .mv_motion_keyword_row{}
+        .mv_motion_keyword{}
+    }
+    &.skin2{
+        .btn_mv_motion{}
+        .mv_motion_liquid{}
+        &:hover{
+            .mv_motion_liquid{}
+            .mv_motion_hover_row{}
+            .mv_motion_keyword_row{}
+            .mv_motion_keyword{}
+            .btn_mv_motion{}
+        }
+    }
+    &.skin3{
+        .btn_mv_motion{}
+        .mv_motion_liquid{}
+        &:hover{
+            .mv_motion_liquid{}
+            .mv_motion_hover_row{}
+            .mv_motion_keyword_row{}
+            .mv_motion_keyword{}
+            .btn_mv_motion{}
+        }
+    }
+    &.skin4{
+        .btn_mv_motion{}
+        .mv_motion_liquid{}
+        &:hover{
+            .mv_motion_liquid{}
+            .mv_motion_hover_row{}
+            .mv_motion_keyword_row{}
+            .mv_motion_keyword{}
+            .btn_mv_motion{}
+        }
+    }
+}
+.mv_motion_liquid{
+
+}
+.mv_motion_keyword_row{
+    
+}
+.mv_motion_keyword{}
+.mv_motion_name_row{
+
+}
+.mv_motion_name_img{
+    &.logcops{
+        
+    }
+    &.privacycops{
+
+    }
+    &.factory{
+
+    }
+}
+.mv_motion_name_text{}
+.mv_motion_caption_row{
+
+}
+.mv_motion_caption{}
+.mv_motion_hover_row{
+
+}
+.mv_mcard_option_list{
+    > li{
+        &:before{}
+        &:last-of-type{}
+    }
+}
+.btn_mv_motion{
+    &:after{}
+}
+.btn_mv_motion_text{}
 
 @media (max-width:$mobile_large){
     .swiper{
