@@ -11,6 +11,7 @@ function mainSwiper() {
   });
   const mainGateSwiper = new Swiper(".gate_swiper_container", {
     speed: 1000,
+    loop: true,
     pagination: {
       el: '.mv_gate_swiper_wrap .swiper-pagination.mv_inner',
       clickable: true,
