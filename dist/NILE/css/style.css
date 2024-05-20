@@ -8603,6 +8603,39 @@ textarea.form_textarea:focus {
   font-weight: 600;
 }
 
+.mv_gate02_copy_wrap {
+  text-align: center;
+  line-height: 1.4;
+}
+
+.mv_gate02_main_copy {
+  font-size: 64px;
+  color: #1bb6e3;
+  font-weight: 700;
+  margin-bottom: 5px;
+  letter-spacing: -1px;
+}
+
+.mv_gate02_main_copy2 {
+  font-size: 64px;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.mv_gate02_main_copy3 {
+  font-size: 53px;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.mv_gate02_sub_copy {
+  font-size: 24px;
+  color: #fff;
+  margin-top: 40px;
+}
+
 .mv_item_slide_item {
   height: 100%;
   display: flex;
