@@ -8465,6 +8465,10 @@ textarea.form_textarea:focus {
   height: 10px;
   opacity: 1;
 }
+.swiper.mv_container.scrollmode .mv_item {
+  height: auto;
+  min-height: 1050px;
+}
 
 .mv_item {
   background-repeat: no-repeat;
@@ -8690,6 +8694,143 @@ textarea.form_textarea:focus {
   vertical-align: top;
   height: 100%;
   max-width: 100%;
+}
+
+.mv_cbox_container {
+  width: 100%;
+  position: relative; /* padding:0 11.45833333333333%; */
+  padding: 0 220px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 4열로 구성 */
+  gap: 34px; /* 셀 사이의 간격 */
+}
+
+/* .mv_cbox_ctr{
+    display:flex; gap:34px; margin-right:-34px;
+    &:last-of-type{}
+} */
+.merged {
+  grid-column: span 2; /* 셀을 2열 병합 */
+}
+
+.mv_cbox_copy_wrap {
+  line-height: 1.4;
+}
+
+.mv_cbox_main_copy {
+  font-size: 64px;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.mv_cbox_sub_copy {
+  font-size: 20px;
+  color: #fff;
+  letter-spacing: -0.25px;
+  margin-top: 25px;
+}
+
+.mv_cbox {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0px 8px 8px 0px rgba(19, 19, 20, 0.15);
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 40px 35px;
+}
+.mv_cbox:hover {
+  background-color: #3246a3;
+}
+.mv_cbox:hover .mv_cbox_text, .mv_cbox:hover .mv_cbox_sub {
+  color: #fff;
+}
+.mv_cbox:hover .mv_cbox_title_row .ico {
+  background-position: 0 100%;
+}
+.mv_cbox:hover .btn_cbox {
+  background-color: #2b3c8b;
+}
+.mv_cbox:hover .btn_cbox:after {
+  border-color: #fff;
+}
+.mv_cbox:hover .btn_cbox_text {
+  color: #fff;
+}
+
+.mv_cbox_title_row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.mv_cbox_title_row .ico {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: 0 0;
+  width: 50px;
+  height: 50px;
+  flex: 0 0 50px;
+}
+.mv_cbox_title_row .ico.ico_01 {
+  background-image: url("../images/ico_mv02_box01.png");
+}
+.mv_cbox_title_row .ico.ico_02 {
+  background-image: url("../images/ico_mv02_box02.png");
+}
+.mv_cbox_title_row .ico.ico_03 {
+  background-image: url("../images/ico_mv02_box03.png");
+}
+.mv_cbox_title_row .ico.ico_04 {
+  background-image: url("../images/ico_mv02_box04.png");
+}
+
+.mv_cbox_text {
+  font-size: 30px;
+  font-weight: 700;
+  color: #2a2a2a;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.mv_cbox_sub {
+  font-size: 19px;
+  color: #333333;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+  word-break: keep-all;
+}
+
+.mv_cbox_btn_row {
+  margin-top: 50px;
+  text-align: right;
+}
+
+.btn_cbox {
+  background: #f2f2f2;
+  border-radius: 100px;
+  padding: 15px 50px 15px 36px;
+  display: inline-block;
+  position: relative;
+}
+.btn_cbox:after {
+  display: block;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #a7a7a7;
+  border-top: 2px solid #a7a7a7;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transform: rotate(45deg);
+}
+
+.btn_cbox_text {
+  display: inline-block;
+  font-size: 18px;
 }
 
 .swiper-pagination.mv_inner {

@@ -2,6 +2,7 @@ function mainSwiper(){
     const mainSwiper = new Swiper('.mv_container', {
         direction: 'vertical',
         mousewheel: true,
+        // freeMode: true,
         speed : 1000,
         // If we need pagination
         pagination: {
@@ -22,9 +23,15 @@ function mainSwiper(){
     const btn_main_top_go = document.querySelector(".main .btn_top_go");
     const bottom_layer = document.querySelector(".bottom_layer");
     const footer_wrap = document.querySelector(".footer_wrap");
+    const mv_container = document.querySelector(".mv_container");
     let resizeMargin = 0;
 
     bottomMove();
+    copyMaxHeight();
+
+    window.addEventListener("resize",()=>{
+
+    });
 
     mainSwiper.on("slideChange",()=>{
         /* if(mainSwiper.realIndex > 1){
@@ -67,7 +74,20 @@ function mainSwiper(){
     });
     window.addEventListener("resize",()=>{
         bottomResize();
+        copyMaxHeight();
     });
+
+    function screenAction(){
+        if($(window).width()>1023){
+            if($(window).height()<900){
+                mainSwiper.params.freeMode = true;
+                mv_container.classList.add("scrollmode");
+            }else{
+                mainSwiper.params.freeMode = false;
+                mv_container.classList.remove("scrollmode");
+            }
+        }
+    }
 
     function bottomMove(){
         bottomResize();
@@ -94,4 +114,19 @@ function mainSwiper(){
         }
     });
 
+}
+
+
+function copyMaxHeight(){
+    const mv_cbox_sub = document.querySelectorAll(".mv_cbox_sub");
+    let subcopyHeight = [];
+    if(!!mv_cbox_sub){
+        mv_cbox_sub.forEach((item)=>{
+            item.style.removeProperty("height");
+            subcopyHeight.push(item.getBoundingClientRect().height);
+        });
+        mv_cbox_sub.forEach((item)=>{
+            item.style.height = Math.max.apply(null,subcopyHeight) + "px";
+        });
+    }
 }
