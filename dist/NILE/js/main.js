@@ -1,15 +1,17 @@
 function mainSwiper() {
-  const mainSwiper = new Swiper('.mv_container', {
+  let mainSwiperOption = {
     direction: 'vertical',
     mousewheel: true,
-    // freeMode: true,
+    freeMode: false,
     speed: 1000,
+    //initialSlide : 2,
     // If we need pagination
     pagination: {
       el: '.mv_container .swiper-pagination.mv_global',
       clickable: true,
     },
-  });
+  }
+  let mainSwiper = new Swiper('.mv_container', mainSwiperOption);
   const mainGateSwiper = new Swiper(".gate_swiper_container", {
     speed: 1000,
     loop: true,
@@ -26,11 +28,13 @@ function mainSwiper() {
   const mv_container = document.querySelector(".mv_container");
   let resizeMargin = 0;
 
-  bottomMove();
+  screenAction();
+  //bottomMove();
   copyMaxHeight();
+  //scrollModeAction();
 
   window.addEventListener("resize", () => {
-
+    scrollModeAction();
   });
 
   mainSwiper.on("slideChange", () => {
@@ -58,15 +62,9 @@ function mainSwiper() {
 
     front_body.classList.remove("main_skin2");
 
-    if (mainSwiper.realIndex == 0) {
-      if (mainGateSwiper.realIndex == 2) {
-        front_body.classList.add("main_skin2");
-      }
-    } else if (mainSwiper.realIndex == 2 || mainSwiper.realIndex == 3) {
-      front_body.classList.add("main_skin2");
-    }
+    screenAction();
 
-    bottomMove();
+    //bottomMove();
   });
   btn_main_top_go.addEventListener("click", (e) => {
     e.preventDefault();
@@ -78,25 +76,35 @@ function mainSwiper() {
   });
 
   function screenAction() {
-    if ($(window).width() > 1023) {
-      if ($(window).height() < 900) {
-        mainSwiper.params.freeMode = true;
-        mv_container.classList.add("scrollmode");
-      } else {
-        mainSwiper.params.freeMode = false;
-        mv_container.classList.remove("scrollmode");
+    if (mainSwiper.realIndex == 0) {
+      if (mainGateSwiper.realIndex == 2) {
+        front_body.classList.add("main_skin2");
       }
+    } else if (mainSwiper.realIndex == 2 || mainSwiper.realIndex == 3) {
+      front_body.classList.add("main_skin2");
     }
   }
 
-  function bottomMove() {
-    bottomResize();
-    if (mainSwiper.realIndex === 3) {
-      bottom_layer.style.bottom = (footer_wrap.getBoundingClientRect().height + resizeMargin) + "px";
-    } else {
-      bottom_layer.style.removeProperty("bottom");
-    }
-  }
+  /* function scrollModeAction(){
+      mainSwiper.destroy();
+      if(window.innerHeight < 900){
+          mv_container.classList.add("scrollmode");
+          mainSwiper = new Swiper('.mv_container', mainSwiperScrollOption);
+      }else{
+          mv_container.classList.remove("scrollmode");
+          mainSwiper = new Swiper('.mv_container', mainSwiperOption);
+      } 
+      mainSwiper.update();
+  } */
+
+  /*  function bottomMove(){
+       bottomResize();
+       if(mainSwiper.realIndex === 3){
+           bottom_layer.style.bottom = (footer_wrap.getBoundingClientRect().height + resizeMargin) + "px";
+       }else{
+           bottom_layer.style.removeProperty("bottom");
+       }
+   } */
 
   function bottomResize() {
     if (window.innerWidth < 1024) {

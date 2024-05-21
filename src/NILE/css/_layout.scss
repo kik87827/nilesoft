@@ -136,7 +136,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
     display:inline-block; font-size:17px; font-weight:500; color:#fff; line-height:1;
 }
 .btn_util_box{
-    display:inline-flex;padding:10px 18px; border-radius:100px;background:#fff;gap:5px; align-items: center;
+    display:inline-flex;padding:10px 18px; border-radius:100px;background:#fff;gap:5px; align-items: center; border:1px solid #fff;
     .ico{
         background-position:0 0;background-repeat:no-repeat; background-size:100% auto;
         &.logout{background-image:url("../images/ico_logout.png"); width:15px; height:13px;}
@@ -335,21 +335,6 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 }
 .btn_top_go_text{font-size:13px; color:#333333;}
 
-.bottom_layer{position:fixed;bottom:130px;right:60px;z-index:30; transition:.4s;}
-.bottom_item_list{
-    display:flex; flex-direction: column; gap:20px;
-    > li{
-
-    }
-}
-.btn_bottom_menu{
-    display:flex; flex-direction: column; justify-content: center; align-items: center; width:104px;height:104px; border-radius: 100%; background:#1bb6e3; gap:10px; text-align: center;
-    .ico{
-         @include bgicon;
-        &.inquiry{background-image:url("../images/ico_talk_layer.png"); width:33px;height:24px;}
-    }
-}
-.bottom_menu_text{color:#fff; font-size:16px; font-weight:700; display:inline-block;}
 
 @media (min-width:1920px){
     .header_nav_list{gap:120px}
@@ -448,14 +433,5 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 
     .btn_panel_menu{display:flex;}
     
-
-    .bottom_layer{bottom:20px;right:20px;}
-    .btn_bottom_menu{
-        width:70px;height:70px; gap:5px;
-        .ico{
-             @include bgicon;
-            &.inquiry{width:26.4px;height:19.2px;}
-        }
-    }
-    .bottom_menu_text{font-size:13px;}
+    
 }
