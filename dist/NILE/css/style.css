@@ -8406,12 +8406,16 @@ textarea.form_textarea:focus {
   position: relative;
   overflow: hidden;
 }
-.swiper.mv_container.scrollmode .swiper-slide {
-  height: 1050px !important;
-}
-.swiper.mv_container.scrollmode .mv_item {
-  height: auto;
-  min-height: 1050px;
+.swiper.mv_container.scrollmode {
+  /* height:auto; */
+  /* .swiper-wrapper{transform: none !important;} */
+  /* .swiper-slide{height:auto !important;} */
+  /* .mv_item{height:auto;min-height:1050px;} */
+  /* .mv_item ,
+  .mv_item_slide_item {
+      min-height:1050px;
+  }
+  .swiper-slide{height:auto !important;} */
 }
 
 .mv_item {
@@ -8597,6 +8601,7 @@ textarea.form_textarea:focus {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
