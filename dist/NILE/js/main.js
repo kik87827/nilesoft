@@ -3,13 +3,15 @@ function mainSwiper() {
     direction: 'vertical',
     mousewheel: true,
     freeMode: false,
-    autoHeight: false,
-    slidesPerView: 1,
+    /* autoHeight : false, */
+    slidesPerView: "auto",
+    autoHeight: true,
+    // autoHeight : true, 
     /* freeMode: true,
     slidesPerView: "auto",
     autoHeight : true, */
     speed: 1000,
-    //initialSlide : 2,
+    initialSlide: 3,
     pagination: {
       el: '.mv_container .swiper-pagination.mv_global',
       clickable: true,
@@ -17,7 +19,6 @@ function mainSwiper() {
   });
   /* mainSwiper.params.freeMode.enabled = true;
   mainSwiper.update(); */
-  console.log(mainSwiper.params.autoHeight);
 
   const mainGateSwiper = new Swiper(".gate_swiper_container", {
     speed: 1000,
@@ -25,6 +26,10 @@ function mainSwiper() {
     pagination: {
       el: '.mv_gate_swiper_wrap .swiper-pagination.mv_inner',
       clickable: true,
+    },
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
     },
   });
 
@@ -38,10 +43,10 @@ function mainSwiper() {
   screenAction();
   //bottomMove();
   copyMaxHeight();
-  scrollModeAction();
+  // scrollModeAction();
 
   window.addEventListener("resize", () => {
-    scrollModeAction();
+    // scrollModeAction();
   });
 
   mainSwiper.on("slideChange", () => {
@@ -67,7 +72,6 @@ function mainSwiper() {
         front_body.classList.add("main_skin2");
     } */
 
-    front_body.classList.remove("main_skin2");
 
     screenAction();
 
@@ -84,6 +88,7 @@ function mainSwiper() {
 
   function screenAction() {
     //if(mv_container.classList.contains("scrollmode")){return;}
+    front_body.classList.remove("main_skin2");
     if (mainSwiper.realIndex == 0) {
       if (mainGateSwiper.realIndex == 2) {
         front_body.classList.add("main_skin2");
@@ -101,7 +106,6 @@ function mainSwiper() {
       mv_container.classList.remove("scrollmode");
       mainSwiper.params.freeMode.enabled = false;
     }
-    console.log(mainSwiper.params.autoHeight);
     mainSwiper.update();
   }
 
@@ -123,6 +127,9 @@ function mainSwiper() {
   }
 
   mainGateSwiper.on("slideChange", () => {
+    if (mainSwiper.realIndex > 0) {
+      return;
+    }
     if (mainGateSwiper.realIndex == 2) {
       front_body.classList.add("main_skin2");
     } else {
