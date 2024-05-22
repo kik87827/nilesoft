@@ -8453,6 +8453,12 @@ textarea.form_textarea:focus {
   gap: 90px;
 }
 
+.mv_item_package {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+}
+
 .main_skin2 .header_wrap .toplogo_link {
   background-position: 0 100%;
 }
@@ -8467,6 +8473,9 @@ textarea.form_textarea:focus {
 }
 .main_skin2 .header_wrap .btn_util_box {
   border-color: #ddd;
+}
+.main_skin2 .header_wrap .login_men {
+  color: #404040;
 }
 .main_skin2 .mv_container .swiper-pagination.mv_global .swiper-pagination-bullet:before {
   background: #e1e1e1;
@@ -8875,8 +8884,7 @@ textarea.form_textarea:focus {
   position: relative;
   height: 100%;
   box-sizing: border-box;
-  padding: 60px 20px 40px;
-  box-shadow: 0px 8px 8px 0px rgba(19, 19, 20, 0.15);
+  padding: 60px 20px 40px; /* box-shadow: 0px 8px 8px 0px rgba(19, 19, 20, 0.15); */
 }
 .mv_card_obj:before {
   display: block;
@@ -9016,6 +9024,20 @@ textarea.form_textarea:focus {
   flex-direction: column;
   min-height: 500px;
 }
+.mv_motion_card.hover .mv_motion_liquid {
+  justify-content: flex-start;
+  padding: 30px 0;
+}
+.mv_motion_card.hover .mv_motion_liquid:before {
+  height: calc(100% + 1px);
+  opacity: 1;
+}
+.mv_motion_card.hover .mv_motion_hover_row {
+  display: block;
+}
+.mv_motion_card.hover .mv_motion_keyword_row {
+  text-align: left;
+}
 .mv_motion_card.skin2 {
   background-color: #0077ca;
 }
@@ -9037,6 +9059,7 @@ textarea.form_textarea:focus {
 .mv_motion_liquid {
   flex: 1;
   min-height: 0;
+  position: relative;
   text-align: center;
   background: url("../images/bg_probox_01.jpg") no-repeat 50% 50%/cover;
   display: flex;
@@ -9044,9 +9067,28 @@ textarea.form_textarea:focus {
   justify-content: center;
   align-items: center;
 }
+.mv_motion_liquid:before {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 0;
+  background: #057ea7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 0;
+}
+.mv_motion_liquid > * {
+  position: relative;
+  z-index: 1;
+}
 
 .mv_motion_keyword_row {
   margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30px;
 }
 
 .mv_motion_keyword {
@@ -9069,6 +9111,9 @@ textarea.form_textarea:focus {
 
 .mv_motion_caption_row {
   margin-top: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30px;
 }
 
 .mv_motion_caption {
@@ -9081,6 +9126,23 @@ textarea.form_textarea:focus {
 
 .mv_motion_hover_row {
   display: none;
+  text-align: left;
+  padding-top: 30px;
+  margin-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+  width: calc(100% - 60px);
+}
+
+.mv_mcard_option_list > li {
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.mv_mcard_option_list > li:last-of-type {
+  margin-bottom: 0;
 }
 
 .btn_mv_motion {

@@ -50,6 +50,10 @@
     }
 }
 
+.mv_item_package{
+    display:flex; flex-direction: column; gap:90px;
+}
+
 .main_skin2{
     .header_wrap{
         .toplogo_link{background-position:0 100%;}
@@ -61,6 +65,7 @@
             .util_menu_text{color:#404040;}
         }
         .btn_util_box{border-color:#ddd;}
+        .login_men{color:#404040}
     }
     .mv_container{
         .swiper-pagination{
@@ -238,7 +243,7 @@
     > li{flex:1;}
 }
 .mv_card_obj{
-    position:relative;height:100%; box-sizing: border-box; padding:60px 20px 40px; box-shadow: 0px 8px 8px 0px rgba(19, 19, 20, 0.15);
+    position:relative;height:100%; box-sizing: border-box; padding:60px 20px 40px; /* box-shadow: 0px 8px 8px 0px rgba(19, 19, 20, 0.15); */
     &:before{display:block;content:'';width:100%;height:100%;background:#fff;position:absolute;top:0;left:0; border-radius:40px; transition:.4s;
         box-shadow: 0px -1px 9px 0px rgba(0,0,0,0.15); transform: scale(1.0);
     }
@@ -302,10 +307,13 @@
 .mv_motion_card{
     border-radius:46px;background:#057ea7; box-shadow: 0px -1px 9px 0px rgba(0,0,0,0.15); position:relative;overflow:hidden;  height:100%; box-sizing: border-box; 
     display:flex; flex-direction: column; min-height:500px;
-    &:hover{
-        .mv_motion_liquid{}
-        .mv_motion_hover_row{}
-        .mv_motion_keyword_row{}
+    &.hover{
+        .mv_motion_liquid{
+            justify-content: flex-start; padding:30px 0;
+            &:before{height:calc(100% + 1px);opacity:1;}
+        }
+        .mv_motion_hover_row{display:block;}
+        .mv_motion_keyword_row{text-align: left;}
         .mv_motion_keyword{}
     }
     &.skin2{
@@ -346,10 +354,12 @@
     }
 }
 .mv_motion_liquid{
-    flex:1; min-height:0; text-align:center; background:url("../images/bg_probox_01.jpg") no-repeat 50% 50%/cover; display:flex; flex-direction: column; justify-content: center; align-items: center;
+    flex:1; min-height:0; position:relative; text-align:center; background:url("../images/bg_probox_01.jpg") no-repeat 50% 50%/cover; display:flex; flex-direction: column; justify-content: center; align-items: center;
+    &:before{display:block;content:'';width:100%;height:0; background:#057ea7; position:absolute;top:0;left:0; opacity:0; z-index:0;}
+    > *{position:relative; z-index:1;}
 }
 .mv_motion_keyword_row{
-    margin-bottom:20px;
+    margin-bottom:20px; width:100%; box-sizing: border-box;padding:0 30px;
 }
 .mv_motion_keyword{font-size:16px; color:#fff; font-weight:500;padding:10px 18px; border-radius: 100px; display:inline-block; border:1px solid #fff;}
 .mv_motion_name_row{
@@ -361,16 +371,17 @@
 }
 .mv_motion_name_text{}
 .mv_motion_caption_row{
-    margin-top:20px;
+    margin-top:20px; width:100%; box-sizing: border-box;padding:0 30px;
 }
 .mv_motion_caption{font-size:18px; color:#fff; font-weight:700; word-break: keep-all; line-height:1.4;}
 .mv_motion_hover_row{
-    display:none;
+    display:none; text-align: left; padding-top:30px;margin-top:30px; border-top:1px solid rgba(255,255,255,.2);box-sizing: border-box;width:calc(100% - 60px);
 }
 .mv_mcard_option_list{
     > li{
+        color:#fff; font-weight:500; font-size:16px; margin-bottom:10px; position:relative;
         &:before{}
-        &:last-of-type{}
+        &:last-of-type{margin-bottom:0;}
     }
 }
 .btn_mv_motion{
