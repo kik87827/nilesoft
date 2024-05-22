@@ -141,6 +141,7 @@
    } 
    &.scene_01_03{
         background-image:url("../images/bg_mvinfo_03.jpg");
+        display:block;
    } 
 }
 
@@ -155,8 +156,8 @@
     img{vertical-align: top; height:100%; max-width:100%;}
 }
 .mv_secquard_img_wrap{
-    display:flex; flex-direction: column; justify-content: center; align-items: center; height:100%; box-sizing: border-box; padding-top:80px;
-    img{vertical-align: top; width:auto; height:100%; max-width: inherit;}
+    display:block;  height:calc(100vh - 80px); box-sizing: border-box; transform:translate(0,80px);
+    img{vertical-align: top; width:100%; height:100%;max-width: inherit;position:absolute;top:0;left:0;object-fit: contain;object-position: 50% 50%;}
 }
 
 .mv_cbox_container{width:100%; position:relative; /* padding:0 11.45833333333333%; */ padding:0 220px;
@@ -237,7 +238,7 @@
     > li{flex:1;}
 }
 .mv_card_obj{
-    position:relative;height:100%; box-sizing: border-box; padding:60px 20px 40px;
+    position:relative;height:100%; box-sizing: border-box; padding:60px 20px 40px; box-shadow: 0px 8px 8px 0px rgba(19, 19, 20, 0.15);
     &:before{display:block;content:'';width:100%;height:100%;background:#fff;position:absolute;top:0;left:0; border-radius:40px; transition:.4s;
         box-shadow: 0px -1px 9px 0px rgba(0,0,0,0.15); transform: scale(1.0);
     }
@@ -345,33 +346,26 @@
     }
 }
 .mv_motion_liquid{
-    flex:1; min-height:0; background:url("../images/bg_probox_01.jpg") no-repeat 50% 50%/cover;
+    flex:1; min-height:0; text-align:center; background:url("../images/bg_probox_01.jpg") no-repeat 50% 50%/cover; display:flex; flex-direction: column; justify-content: center; align-items: center;
 }
 .mv_motion_keyword_row{
-    
+    margin-bottom:20px;
 }
-.mv_motion_keyword{}
+.mv_motion_keyword{font-size:16px; color:#fff; font-weight:500;padding:10px 18px; border-radius: 100px; display:inline-block; border:1px solid #fff;}
 .mv_motion_name_row{
 
 }
 .mv_motion_name_img{
-    &.logcops{
-        
-    }
-    &.privacycops{
-
-    }
-    &.factory{
-
-    }
+    text-align: center; display:block;
+    img {vertical-align: top;}
 }
 .mv_motion_name_text{}
 .mv_motion_caption_row{
-
+    margin-top:20px;
 }
-.mv_motion_caption{}
+.mv_motion_caption{font-size:18px; color:#fff; font-weight:700; word-break: keep-all; line-height:1.4;}
 .mv_motion_hover_row{
-
+    display:none;
 }
 .mv_mcard_option_list{
     > li{
