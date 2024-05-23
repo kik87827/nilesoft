@@ -9024,19 +9024,20 @@ textarea.form_textarea:focus {
   flex-direction: column;
   min-height: 500px;
 }
-.mv_motion_card.hover .mv_motion_liquid {
-  justify-content: flex-start;
+.mv_motion_card:hover .mv_motion_liquid {
+  /* justify-content: flex-start; */
   padding: 30px 0;
 }
-.mv_motion_card.hover .mv_motion_liquid:before {
+.mv_motion_card:hover .mv_motion_liquid:before {
   height: calc(100% + 1px);
   opacity: 1;
 }
-.mv_motion_card.hover .mv_motion_hover_row {
+.mv_motion_card:hover .mv_motion_hover_row {
   display: block;
 }
-.mv_motion_card.hover .mv_motion_keyword_row {
+.mv_motion_card:hover .mv_motion_keyword_row {
   text-align: left;
+  margin-bottom: 70px;
 }
 .mv_motion_card.skin2 {
   background-color: #0077ca;
@@ -9044,17 +9045,26 @@ textarea.form_textarea:focus {
 .mv_motion_card.skin2 .mv_motion_liquid {
   background-image: url("../images/bg_probox_02.jpg");
 }
+.mv_motion_card.skin2 .mv_motion_liquid:before {
+  background-color: #0077ca;
+}
 .mv_motion_card.skin3 {
   background-color: #004fb3;
 }
 .mv_motion_card.skin3 .mv_motion_liquid {
   background-image: url("../images/bg_probox_03.jpg");
 }
+.mv_motion_card.skin3 .mv_motion_liquid:before {
+  background-color: #004fb3;
+}
 .mv_motion_card.skin4 {
   background-color: #0b7281;
 }
 .mv_motion_card.skin4 .mv_motion_liquid {
   background-image: url("../images/bg_probox_04.jpg");
+}
+.mv_motion_card.skin4 .mv_motion_liquid:before {
+  background-color: #0b7281;
 }
 .mv_motion_liquid {
   flex: 1;
@@ -9078,6 +9088,7 @@ textarea.form_textarea:focus {
   left: 0;
   opacity: 0;
   z-index: 0;
+  transition: 0.4s;
 }
 .mv_motion_liquid > * {
   position: relative;
@@ -9140,6 +9151,18 @@ textarea.form_textarea:focus {
   font-size: 16px;
   margin-bottom: 10px;
   position: relative;
+  padding-left: 15px;
+}
+.mv_mcard_option_list > li:before {
+  display: block;
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 100%;
+  position: absolute;
+  top: 7px;
+  left: 0;
 }
 .mv_mcard_option_list > li:last-of-type {
   margin-bottom: 0;
