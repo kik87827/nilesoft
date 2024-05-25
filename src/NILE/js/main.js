@@ -18,6 +18,11 @@ function mainSwiper(){
             el: '.mv_container .swiper-pagination.mv_global',
             clickable: true,
         },
+        on : {
+            setTranslate: function (translate) {
+                // console.log('Current translate:', translate.translate);
+            },
+        }
     });
     /* mainSwiper.params.freeMode.enabled = true;
     mainSwiper.update(); */
@@ -108,7 +113,7 @@ function mainSwiper(){
             let overHeightItem = document.querySelectorAll(".overHeight");
             if(overHeightItem.length>0){
                 mv_container.classList.add("scrollmode");
-                 mainSwiper.params.freeMode.enabled = true;
+                mainSwiper.params.freeMode.enabled = true;
             }else{
                 mv_container.classList.remove("scrollmode");
                 mainSwiper.params.freeMode.enabled = false;
