@@ -13,7 +13,7 @@ function mainSwiper() {
     slidesPerView: "auto",
     autoHeight : true, */
     speed: 1000,
-    initialSlide: 3,
+    initialSlide: 0,
     pagination: {
       el: '.mv_container .swiper-pagination.mv_global',
       clickable: true,
@@ -25,15 +25,17 @@ function mainSwiper() {
   const mainGateSwiper = new Swiper(".gate_swiper_container", {
     speed: 1000,
     loop: true,
+    observer: true,
+    observeParents: true,
     pagination: {
       el: '.mv_gate_swiper_wrap .swiper-pagination.mv_inner',
       clickable: true,
     },
     initialSlide: 0,
-    autoplay: {
-      delay: 3500,
-      disableOnInteraction: false,
-    },
+    /* autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+    }, */
   });
 
   const front_body = document.querySelector(".front_body");
