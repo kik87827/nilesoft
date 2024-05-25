@@ -211,7 +211,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
     .util_menu{
         vertical-align: middle; align-items: center;
         .ico{
-            &.earth{}
+            &.earth{background-position:0 0 !important;}
         }
     }
 }

@@ -791,6 +791,10 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   vertical-align: middle;
   align-items: center;
 }
+.mbutil_row .util_menu .ico.earth {
+  background-position: 0 0 !important;
+}
+
 .login_mb_data_list {
   display: flex;
   align-items: center;
@@ -8737,6 +8741,7 @@ textarea.form_textarea:focus {
   color: #fff;
   font-weight: 700;
   letter-spacing: -1px;
+  word-break: keep-all;
 }
 
 .mv_cbox_sub_copy {
@@ -8744,6 +8749,7 @@ textarea.form_textarea:focus {
   color: #fff;
   letter-spacing: -0.25px;
   margin-top: 25px;
+  word-break: keep-all;
 }
 
 .mv_cbox {
@@ -8955,6 +8961,17 @@ textarea.form_textarea:focus {
   background-color: #13479b;
 }
 
+.mv_pro_sub_copy_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.mv_pro_sub_copy_wrap .mv_pro_sub_copy {
+  margin: 0;
+}
+
 .mv_pro_sub_copy {
   font-size: 18px;
   color: #333333;
@@ -9024,6 +9041,19 @@ textarea.form_textarea:focus {
   min-width: 145px;
   text-align: center;
   box-sizing: border-box;
+}
+
+.mv_pro_summary_wrap {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.mv_pro_summary {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
 }
 
 .mv_motion_card_list_wrap {
@@ -9274,10 +9304,8 @@ textarea.form_textarea:focus {
 }
 @media (max-width: 1680px) {
   .mv_cbox_container {
+    padding: 0 130px;
     gap: 20px;
-  }
-  .mv_cbox_container {
-    padding: 0 100px;
   }
   .mv_item_package {
     gap: 50px;
@@ -9301,6 +9329,7 @@ textarea.form_textarea:focus {
   }
   .mv_motion_card {
     border-radius: 20px;
+    min-height: 450px;
   }
   .mv_motion_card:hover .mv_motion_liquid {
     padding: 15px;
@@ -9312,8 +9341,8 @@ textarea.form_textarea:focus {
     padding: 7px 15px;
     font-size: 14px;
   }
-  .mv_motion_name_img img {
-    max-width: 80%;
+  .mv_motion_name_img {
+    /*  img{max-width:80%;} */
   }
   .mv_motion_liquid {
     padding: 15px;
@@ -9351,9 +9380,44 @@ textarea.form_textarea:focus {
     font-size: 24px;
   }
   .btn_mv_pro {
-    min-width: 100px;
     padding: 15px 20px;
     font-size: 15px;
+  }
+  .mv_cbox {
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .mv_cbox_title_row {
+    margin-bottom: 10px;
+  }
+  .mv_cbox_title_row .ico {
+    width: 35px;
+    height: 35px;
+    flex-basis: 35px;
+  }
+  .mv_cbox_text {
+    font-size: 20px;
+  }
+  .mv_cbox_sub {
+    font-size: 16px;
+  }
+  .mv_cbox_btn_row {
+    margin-top: 30px;
+  }
+  .btn_cbox {
+    padding: 10px 35px 10px 20px;
+  }
+  .btn_cbox:after {
+    width: 6px;
+    height: 6px;
+    top: 15px;
+    right: 20px;
+  }
+  .btn_cbox_text {
+    font-size: 16px;
+  }
+  .mv_card_list_wrap {
+    padding: 0 130px;
   }
 }
 @media (max-width: 1440px) {
@@ -9409,7 +9473,7 @@ textarea.form_textarea:focus {
     flex: 0 0 50%;
   }
   .mv_secquard_img_wrap img {
-    height: 70%;
+    height: 90%;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -9445,6 +9509,78 @@ textarea.form_textarea:focus {
   }
   .mv_scene_img_contents {
     height: 70%;
+  }
+}
+@media (max-width: 1023px) {
+  .mv_gate_copy_wrap {
+    margin: 0 50px;
+  }
+  .mv_gate_copy_sub {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .mv_gate_copy_main {
+    font-size: 34px;
+  }
+  .mv_gate_summary_wrap {
+    margin: 30px 50px 0;
+  }
+  .mv_gate_summary .ico {
+    width: 28px;
+    height: 28px;
+    flex-basis: 28px;
+  }
+  .mv_gate_summary_text {
+    font-size: 14px;
+  }
+  .mv_gate_summary_list {
+    margin-right: -10px;
+  }
+  .mv_gate_summary_list > li {
+    flex: 0 0 calc(50% - 10px);
+  }
+  .mv_gate_summary {
+    min-height: 0;
+    height: 100%;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  .mv_gate02_container {
+    /* margin:0 230px; */
+    margin: 0 50px;
+    display: block;
+    text-align: center;
+  }
+  .mv_gate02_copy_wrap {
+    text-align: center;
+  }
+  .mv_gate02_main_copy {
+    font-size: 34px;
+    margin-bottom: 5px;
+    letter-spacing: -0.5px;
+  }
+  .mv_gate02_main_copy2 {
+    font-size: 30px;
+    letter-spacing: -0.25px;
+  }
+  .mv_gate02_main_copy3 {
+    font-size: 28px;
+    letter-spacing: -0.25px;
+  }
+  .mv_gate02_sub_copy {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .mv_gate02_img_wrap {
+    margin-top: 20px;
+  }
+  .mv_secquard_img_wrap {
+    margin: 0 20px;
+  }
+  .mv_secquard_img_wrap img {
+    height: 100%;
   }
 }
 @media (max-width: 1023px) {

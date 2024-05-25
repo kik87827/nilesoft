@@ -1,7 +1,7 @@
 function mainSwiper() {
   let mainSwiper = new Swiper('.mv_container', {
-    observer: true,
-    observeParents: true,
+    /*  observer: true,
+     observeParents: true, */
     direction: 'vertical',
     mousewheel: true,
     freeMode: false,
@@ -25,13 +25,11 @@ function mainSwiper() {
   const mainGateSwiper = new Swiper(".gate_swiper_container", {
     speed: 1000,
     loop: true,
-    observer: true,
-    observeParents: true,
     pagination: {
       el: '.mv_gate_swiper_wrap .swiper-pagination.mv_inner',
       clickable: true,
     },
-    initialSlide: 0,
+    initialSlide: 1,
     /* autoplay: {
         delay: 3500,
         disableOnInteraction: false,
@@ -131,16 +129,16 @@ function mainSwiper() {
     }
   }
 
-  function scrollModeAction() {
-    if (window.innerHeight < 900) {
-      mv_container.classList.add("scrollmode");
-      mainSwiper.params.freeMode.enabled = true;
-    } else {
-      mv_container.classList.remove("scrollmode");
-      mainSwiper.params.freeMode.enabled = false;
-    }
-    mainSwiper.update();
-  }
+  /* function scrollModeAction(){
+      if(window.innerHeight < 900){
+          mv_container.classList.add("scrollmode");
+          mainSwiper.params.freeMode.enabled = true;
+      }else{
+          mv_container.classList.remove("scrollmode");
+          mainSwiper.params.freeMode.enabled = false;
+      } 
+      mainSwiper.update();
+  } */
 
 
   mainGateSwiper.on("slideChange", () => {
@@ -153,20 +151,45 @@ function mainSwiper() {
       front_body.classList.remove("main_skin2");
     }
   });
-
 }
 
 
 function copyMaxHeight() {
-  const mv_cbox_sub = document.querySelectorAll(".mv_cbox_sub");
-  let subcopyHeight = [];
-  if (!!mv_cbox_sub) {
-    mv_cbox_sub.forEach((item) => {
+  const selectors = [".mv_cbox_sub", ".mv_pro_sub_copy_wrap", ".mv_pro_summary_wrap"];
+  selectors.forEach(selector => action(selector));
+
+  function action(selector) {
+    const elements = document.querySelectorAll(selector);
+    if (elements.length === 0) {
+      return;
+    }
+
+    let maxHeight = 0;
+
+    elements.forEach(item => {
       item.style.removeProperty("height");
-      subcopyHeight.push(item.getBoundingClientRect().height);
+      maxHeight = Math.max(maxHeight, item.getBoundingClientRect().height);
     });
-    mv_cbox_sub.forEach((item) => {
-      item.style.height = Math.max.apply(null, subcopyHeight) + "px";
-    });
+    elements.forEach(item => {
+      item.style.height = `${maxHeight}px`;
+    })
   }
+  /* const mv_cbox_sub = document.querySelectorAll(".mv_cbox_sub");
+  const mv_pro_sub_copy = document.querySelectorAll(".mv_pro_sub_copy");
+  copyMaxTarget(mv_cbox_sub);
+  copyMaxTarget(mv_pro_sub_copy);
+
+  function copyMaxTarget(target){
+      let domTarget = target;
+      let subcopyHeight = [];
+      if(!!domTarget){
+          domTarget.forEach((item)=>{
+              item.style.removeProperty("height");
+              subcopyHeight.push(item.getBoundingClientRect().height);
+          });
+          domTarget.forEach((item)=>{
+              item.style.height = Math.max.apply(null,subcopyHeight) + "px";
+          });
+      }
+  } */
 }
