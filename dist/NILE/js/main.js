@@ -29,7 +29,7 @@ function mainSwiper() {
       el: '.mv_gate_swiper_wrap .swiper-pagination.mv_inner',
       clickable: true,
     },
-    initialSlide: 1,
+    initialSlide: 0,
     /* autoplay: {
         delay: 3500,
         disableOnInteraction: false,
