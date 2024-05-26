@@ -20,7 +20,7 @@ function mainSwiper() {
     },
     on: {
       setTranslate: function(translate) {
-        scrollTopCheck(translate);
+        //scrollTopCheck(translate);
         // console.log('Current translate:', translate.translate);
       },
     }
@@ -110,9 +110,10 @@ function mainSwiper() {
               } 
          }
      }); */
-    if (0 > scene_03.offset().top) {
+    if (0 > scene_03.offset().top || mainGateSwiper.realIndex == 2) {
       front_body.classList.add("main_skin2");
     } else {
+
       front_body.classList.remove("main_skin2");
     }
   }
@@ -138,6 +139,10 @@ function mainSwiper() {
         mv_container.classList.remove("scrollmode");
         mainSwiper.params.freeMode.enabled = false;
       }
+      if (window.innerWidth < 1024) {
+        mv_container.classList.add("scrollmode");
+        mainSwiper.params.freeMode.enabled = true;
+      }
       mainSwiper.update();
     }
   }
@@ -145,14 +150,11 @@ function mainSwiper() {
   function screenAction() {
     //if(mv_container.classList.contains("scrollmode")){return;}
     front_body.classList.remove("main_skin2");
-    if (window.innerWidth < 1024) {
-      return;
-    }
     if (mainSwiper.realIndex == 0) {
       if (mainGateSwiper.realIndex == 2) {
         front_body.classList.add("main_skin2");
       }
-    } else if (mainSwiper.realIndex == 2 || mainSwiper.realIndex == 3) {
+    } else if (mainSwiper.realIndex == 2 || mainSwiper.realIndex == 3 || mainSwiper.realIndex == 4) {
       front_body.classList.add("main_skin2");
     }
   }
@@ -183,7 +185,7 @@ function mainSwiper() {
 
 
 function copyMaxHeight() {
-  const selectors = [".mv_cbox_sub", ".mv_pro_sub_copy_wrap", ".mv_pro_summary_wrap"];
+  const selectors = [".mv_pro_sub_copy_wrap", ".mv_pro_summary_wrap"];
   selectors.forEach(selector => action(selector));
 
   function action(selector) {
