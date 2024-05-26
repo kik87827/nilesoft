@@ -8738,11 +8738,13 @@ textarea.form_textarea:focus {
   max-width: inherit;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
   -o-object-fit: contain;
      object-fit: contain;
   -o-object-position: 50% 50%;
      object-position: 50% 50%;
+  max-width: 1200px;
+  transform: translateX(-50%);
 }
 
 .mv_cbox_container {
@@ -9519,7 +9521,8 @@ textarea.form_textarea:focus {
   .mv_secquard_img_wrap img {
     height: 90%;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) translate(0);
+    left: 0;
   }
   .mv_mcard_option_list > li {
     padding-left: 10px;
@@ -9848,13 +9851,19 @@ textarea.form_textarea:focus {
     margin-top: 150px;
   }
   .mv_cbox_container {
-    margin: 0 220px;
+    margin: 0 auto;
+    max-width: 1485px;
+    padding: 0;
   }
   .mv_motion_card_list_wrap {
-    padding: 0 150px;
+    margin: 0 auto;
+    max-width: 1620px;
+    padding: 0;
   }
   .mv_card_list_wrap {
-    padding: 0 200px;
+    margin: 0 auto;
+    width: 1515px;
+    padding: 0;
   }
   .mv_gate02_container {
     display: flex;
