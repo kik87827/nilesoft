@@ -125,6 +125,9 @@ function mainSwiper() {
   function screenAction() {
     //if(mv_container.classList.contains("scrollmode")){return;}
     front_body.classList.remove("main_skin2");
+    if (window.innerWidth < 1024) {
+      return;
+    }
     if (mainSwiper.realIndex == 0) {
       if (mainGateSwiper.realIndex == 2) {
         front_body.classList.add("main_skin2");
