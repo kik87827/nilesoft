@@ -36,10 +36,10 @@ function mainSwiper() {
       clickable: true,
     },
     initialSlide: 0,
-    /* autoplay: {
-        delay: 3500,
-        disableOnInteraction: false,
-    }, */
+    autoplay: {
+      delay: 4500,
+      disableOnInteraction: false,
+    },
   });
 
   const front_body = document.querySelector(".front_body");
