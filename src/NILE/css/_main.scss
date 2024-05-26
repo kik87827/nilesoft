@@ -582,12 +582,12 @@
     .mv_scene_img_contents{
         height:70%;
     }
-    .mv_item_slide_item{
+    /* .mv_item_slide_item{
         box-sizing:border-box; padding:120px 30px;
     }
     .mv_item:not(.scene_01){
         box-sizing:border-box; padding:120px 30px;
-    }
+    } */
 }
 @media (max-width:$mobile_large){
     .mv_gate_copy_wrap{margin:0 30px;}

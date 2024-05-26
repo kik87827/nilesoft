@@ -9558,14 +9558,12 @@ textarea.form_textarea:focus {
   .mv_scene_img_contents {
     height: 70%;
   }
-  .mv_item_slide_item {
-    box-sizing: border-box;
-    padding: 120px 30px;
+  /* .mv_item_slide_item{
+      box-sizing:border-box; padding:120px 30px;
   }
-  .mv_item:not(.scene_01) {
-    box-sizing: border-box;
-    padding: 120px 30px;
-  }
+  .mv_item:not(.scene_01){
+      box-sizing:border-box; padding:120px 30px;
+  } */
 }
 @media (max-width: 1023px) {
   .mv_gate_copy_wrap {
