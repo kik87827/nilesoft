@@ -396,7 +396,7 @@
 .mv_motion_keyword_row{
     margin-bottom:20px; width:100%; box-sizing: border-box;padding:0 30px;
 }
-.mv_motion_keyword{font-size:16px; color:#fff; font-weight:500;padding:10px 18px; border-radius: 100px; display:inline-block; border:1px solid #fff;}
+.mv_motion_keyword{font-size:16px; color:#fff; font-weight:500;padding:10px 18px; border-radius: 100px; display:inline-block; border:1px solid #fff; word-break: keep-all;}
 .mv_motion_name_row{
 
 }
@@ -733,7 +733,7 @@
             flex:0 0 calc(50% - 10px);
         }
     }
-    .mv_motion_card{min-height:400px;}
+    .mv_motion_card{min-height:400px; border-radius:10px;}
     .mv_motion_caption{font-size:13px;}
     .mv_motion_hover_row{
         width:100%;

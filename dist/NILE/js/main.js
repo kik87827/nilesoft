@@ -1,4 +1,14 @@
 function mainSwiper() {
+
+
+  const front_body = document.querySelector(".front_body");
+  const btn_main_top_go = document.querySelector(".main .btn_top_go");
+  const bottom_layer = document.querySelector(".bottom_layer");
+  const header_wrap = document.querySelector(".header_wrap");
+  const footer_wrap = document.querySelector(".footer_wrap");
+  const mv_container = document.querySelector(".mv_container");
+  const check_height = document.querySelectorAll(".check_height");
+
   let mainSwiper = new Swiper('.mv_container', {
     /*  observer: true,
      observeParents: true, */
@@ -21,6 +31,12 @@ function mainSwiper() {
     on: {
       setTranslate: function(translate) {
         //scrollTopCheck(translate);
+        console.dir(translate);
+        if (translate.translate < 0) {
+          header_wrap.classList.add("scroll");
+        } else {
+          header_wrap.classList.remove("scroll");
+        }
         // console.log('Current translate:', translate.translate);
       },
     }
@@ -41,14 +57,6 @@ function mainSwiper() {
       disableOnInteraction: false,
     },
   });
-
-  const front_body = document.querySelector(".front_body");
-  const btn_main_top_go = document.querySelector(".main .btn_top_go");
-  const bottom_layer = document.querySelector(".bottom_layer");
-  const header_wrap = document.querySelector(".header_wrap");
-  const footer_wrap = document.querySelector(".footer_wrap");
-  const mv_container = document.querySelector(".mv_container");
-  const check_height = document.querySelectorAll(".check_height");
 
   screenAction();
   //bottomMove();

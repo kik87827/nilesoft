@@ -1,46 +1,5 @@
 function mainSwiper(){
-    let mainSwiper = new Swiper('.mv_container', {
-       /*  observer: true,
-        observeParents: true, */
-        direction: 'vertical',
-        mousewheel: true,
-        freeMode: false,
-        /* autoHeight : false, */
-        slidesPerView: "auto",
-        autoHeight : true,
-        // autoHeight : true, 
-        /* freeMode: true,
-        slidesPerView: "auto",
-        autoHeight : true, */
-        speed : 1000,
-        initialSlide : 0,
-        pagination: {
-            el: '.mv_container .swiper-pagination.mv_global',
-            clickable: true,
-        },
-        on : {
-            setTranslate: function (translate) {
-                //scrollTopCheck(translate);
-                // console.log('Current translate:', translate.translate);
-            },
-        }
-    });
-    /* mainSwiper.params.freeMode.enabled = true;
-    mainSwiper.update(); */
     
-    const mainGateSwiper = new Swiper(".gate_swiper_container",{
-        speed : 1000,
-        loop : true,
-        pagination: {
-            el: '.mv_gate_swiper_wrap .swiper-pagination.mv_inner',
-            clickable: true,
-        },
-        initialSlide : 0,
-        autoplay: {
-            delay: 4500,
-            disableOnInteraction: false,
-        },
-    });
     
     const front_body = document.querySelector(".front_body");
     const btn_main_top_go = document.querySelector(".main .btn_top_go");
@@ -49,6 +8,55 @@ function mainSwiper(){
     const footer_wrap = document.querySelector(".footer_wrap");
     const mv_container = document.querySelector(".mv_container");
     const check_height = document.querySelectorAll(".check_height");
+
+    let mainSwiper = new Swiper('.mv_container', {
+        /*  observer: true,
+         observeParents: true, */
+         direction: 'vertical',
+         mousewheel: true,
+         freeMode: false,
+         /* autoHeight : false, */
+         slidesPerView: "auto",
+         autoHeight : true,
+         // autoHeight : true, 
+         /* freeMode: true,
+         slidesPerView: "auto",
+         autoHeight : true, */
+         speed : 1000,
+         initialSlide : 0,
+         pagination: {
+             el: '.mv_container .swiper-pagination.mv_global',
+             clickable: true,
+         },
+         on : {
+             setTranslate: function (translate) {
+                 //scrollTopCheck(translate);
+                 console.dir(translate);
+                 if(translate.translate < 0){
+                    header_wrap.classList.add("scroll");
+                }else{
+                     header_wrap.classList.remove("scroll");
+                 }
+                 // console.log('Current translate:', translate.translate);
+             },
+         }
+     });
+     /* mainSwiper.params.freeMode.enabled = true;
+     mainSwiper.update(); */
+     
+     const mainGateSwiper = new Swiper(".gate_swiper_container",{
+         speed : 1000,
+         loop : true,
+         pagination: {
+             el: '.mv_gate_swiper_wrap .swiper-pagination.mv_inner',
+             clickable: true,
+         },
+         initialSlide : 0,
+         autoplay: {
+             delay: 4500,
+             disableOnInteraction: false,
+         },
+     });
 
     screenAction();
     //bottomMove();
