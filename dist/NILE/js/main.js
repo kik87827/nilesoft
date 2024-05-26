@@ -20,6 +20,7 @@ function mainSwiper() {
     },
     on: {
       setTranslate: function(translate) {
+        scrollTopCheck(translate);
         // console.log('Current translate:', translate.translate);
       },
     }
@@ -96,6 +97,25 @@ function mainSwiper() {
     copyMaxHeight();
     heightCheck();
   });
+
+  function scrollTopCheck() {
+    const scene_03 = $(".scene_03");
+    const scene_04 = $(".scene_04");
+    /*  mv_item.each(function(index){
+         if($(this).hasClass("scene_03")){
+             if(0>$(this).offset().top){
+                 front_body.classList.add("main_skin2");
+              }else{
+                  front_body.classList.remove("main_skin2");
+              } 
+         }
+     }); */
+    if (0 > scene_03.offset().top) {
+      front_body.classList.add("main_skin2");
+    } else {
+      front_body.classList.remove("main_skin2");
+    }
+  }
 
   function heightCheck() {
     let header_wrap_height = 0;
