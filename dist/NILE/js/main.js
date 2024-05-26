@@ -31,7 +31,9 @@ function mainSwiper() {
     on: {
       setTranslate: function(translate) {
         //scrollTopCheck(translate);
-        console.dir(translate);
+        if (window.innerWidth >= 1024) {
+          return;
+        }
         if (translate.translate < 0) {
           header_wrap.classList.add("scroll");
         } else {
@@ -67,6 +69,10 @@ function mainSwiper() {
 
   window.addEventListener("resize", () => {
     // scrollModeAction();
+    header_wrap.classList.remove("scroll");
+    if (window.innerWidth >= 1024) {
+      header_wrap.classList.remove("scroll");
+    }
   });
 
   mainSwiper.on("slideChange", () => {

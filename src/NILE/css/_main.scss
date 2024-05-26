@@ -396,7 +396,7 @@
 .mv_motion_keyword_row{
     margin-bottom:20px; width:100%; box-sizing: border-box;padding:0 30px;
 }
-.mv_motion_keyword{font-size:16px; color:#fff; font-weight:500;padding:10px 18px; border-radius: 100px; display:inline-block; border:1px solid #fff; word-break: keep-all;}
+.mv_motion_keyword{font-size:16px; color:#fff; font-weight:500;padding:10px 18px; border-radius: 100px; display:inline-block; border:1px solid #fff; word-break: keep-all; text-align: center;}
 .mv_motion_name_row{
 
 }
@@ -739,9 +739,10 @@
         width:100%;
     }
     .btn_mv_motion{
-        flex:0 0 50px;
+        flex:0 0 50px; gap:5px;
         &:after{width:20px;height:6px; flex:0 0 20px;}
     }
+    .btn_mv_motion_text{font-size:13px;}
 
     .mv_mcard_option_list{
         > li{
@@ -749,6 +750,8 @@
             &:before{top:6px;}
         }
     }
+
+    .mv_motion_keyword{font-size:12px;}
 }
 
 @media (min-width:1921px){
