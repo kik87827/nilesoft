@@ -918,6 +918,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   display: flex;
   flex-direction: column;
   padding-top: 80px;
+  overflow: hidden;
 }
 .sub_visual_wrap:before {
   display: block;
@@ -942,6 +943,9 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   background-size: cover;
   background-position: 50% 50%;
   z-index: 0;
+  transform: scale(1.6);
+  -webkit-animation: zoomin 2s ease 0.3s forwards;
+          animation: zoomin 2s ease 0.3s forwards;
 }
 .sub_visual_wrap .header_wrap {
   flex: 0 0 80px;
@@ -976,6 +980,10 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   color: #fff;
   opacity: 0.7;
   margin-bottom: 8px;
+  transform: translate(100px);
+  opacity: 0;
+  -webkit-animation: subcopy 1s ease-out 0.5s forwards;
+          animation: subcopy 1s ease-out 0.5s forwards;
 }
 
 .sv_copy_main {
@@ -983,8 +991,69 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   font-weight: 700;
   color: #fff;
   word-break: keep-all;
+  transform: translate(100px);
+  opacity: 0;
+  -webkit-animation: maincopy 1s ease-out 1s forwards;
+          animation: maincopy 1s ease-out 1s forwards;
 }
 
+@-webkit-keyframes zoomin {
+  0% {
+    transform: scale(1.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomin {
+  0% {
+    transform: scale(1.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes subcopy {
+  0% {
+    opacity: 0;
+    transform: translate(100px);
+  }
+  100% {
+    opacity: 0.7;
+    transform: translate(0px);
+  }
+}
+@keyframes subcopy {
+  0% {
+    opacity: 0;
+    transform: translate(100px);
+  }
+  100% {
+    opacity: 0.7;
+    transform: translate(0px);
+  }
+}
+@-webkit-keyframes maincopy {
+  0% {
+    opacity: 0;
+    transform: translate(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px);
+  }
+}
+@keyframes maincopy {
+  0% {
+    opacity: 0;
+    transform: translate(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px);
+  }
+}
 .breadcrumb_list_wrap {
   padding: 0 0 30px 0;
   max-width: 1200px;
@@ -6323,6 +6392,10 @@ textarea.form_textarea:focus {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  opacity: 0;
+  transform: translate(100px);
+  -webkit-animation: pvcmotion 0.7s ease-out 0.2s forwards;
+          animation: pvcmotion 0.7s ease-out 0.2s forwards;
 }
 .pv_level_item {
   display: flex;
@@ -6351,8 +6424,18 @@ textarea.form_textarea:focus {
   font-weight: 900;
   font-size: 72px;
   line-height: 1;
+  opacity: 0;
+  transform: translate(100px);
+  -webkit-animation: pvcmotion 0.7s ease-out 0.4s forwards;
+          animation: pvcmotion 0.7s ease-out 0.4s forwards;
 }
 
+.pv_name {
+  opacity: 0;
+  transform: translate(100px);
+  -webkit-animation: pvcmotion 0.7s ease-out 0.4s forwards;
+          animation: pvcmotion 0.7s ease-out 0.4s forwards;
+}
 .pv_name img {
   max-width: 100%;
   vertical-align: top;
@@ -6386,6 +6469,10 @@ textarea.form_textarea:focus {
   word-break: keep-all;
   line-height: 1.4;
   color: #fff;
+  opacity: 0;
+  transform: translate(100px);
+  -webkit-animation: pvcmotion 0.7s ease-out 0.6s forwards;
+          animation: pvcmotion 0.7s ease-out 0.6s forwards;
 }
 .pv_summary_main.mtype2 {
   margin-top: 35px;
@@ -6401,6 +6488,10 @@ textarea.form_textarea:focus {
   font-weight: 500;
   line-height: 1.5;
   word-break: keep-all;
+  opacity: 0;
+  transform: translate(100px);
+  -webkit-animation: pvcmotion 0.7s ease-out 0.8s forwards;
+          animation: pvcmotion 0.7s ease-out 0.8s forwards;
 }
 .pv_summary_sub.mtype2 {
   margin-top: 55px;
@@ -6410,6 +6501,10 @@ textarea.form_textarea:focus {
   margin-top: 80px;
   display: flex;
   gap: 15px;
+  opacity: 0;
+  transform: translate(100px);
+  -webkit-animation: pvcmotion 0.7s ease-out 1s forwards;
+          animation: pvcmotion 0.7s ease-out 1s forwards;
 }
 
 .btn_pvbox {
@@ -6452,6 +6547,27 @@ textarea.form_textarea:focus {
   text-align: center;
 }
 
+@-webkit-keyframes pvcmotion {
+  0% {
+    opacity: 0;
+    transform: translate(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px);
+  }
+}
+
+@keyframes pvcmotion {
+  0% {
+    opacity: 0;
+    transform: translate(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px);
+  }
+}
 @media (max-width: 1023px) {
   .pv_caption_list {
     margin-bottom: 30px;

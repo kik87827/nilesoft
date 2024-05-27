@@ -278,9 +278,12 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 
 /* // mobile */
 
-.sub_visual_wrap{min-height:320px; position:relative; display:flex;flex-direction: column;padding-top:80px;
+.sub_visual_wrap{min-height:320px; position:relative; display:flex;flex-direction: column;padding-top:80px; overflow:hidden;
     &:before{display:block;content:'';width:100%;height:100%;background:#141414;opacity:.4;position:absolute;top:0;left:0;z-index:1}
-    .bg{display:block;width:100%;height:100%;position:absolute;top:0;left:0; background-repeat:no-repeat; background-size:cover; background-position:50% 50%; z-index:0;}
+    .bg{display:block;width:100%;height:100%;position:absolute;top:0;left:0; background-repeat:no-repeat; background-size:cover; background-position:50% 50%; z-index:0; 
+        transform: scale(1.6);
+        animation: zoomin 2s ease .3s forwards;
+    }
     .header_wrap{flex:0 0 80px;}
     &.product{
         min-height:calc(100vh - 80px);
@@ -290,8 +293,29 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 .sv_inner{flex:1;position:relative;display:flex;flex-direction: column;height:100%;justify-content: space-between;z-index:2;}
 .sv_copy_wrap{padding:60px 86px;max-width:1200px;margin:0 auto;width:100%; }
 .sv_copy_group{}
-.sv_copy_sub{font-size:22px;color:#fff;opacity:.7;margin-bottom:8px;}
-.sv_copy_main{font-size:64px; font-weight:700; color:#fff; word-break: keep-all;}
+.sv_copy_sub{font-size:22px;color:#fff;opacity:.7;margin-bottom:8px;  transform: translate(100px); opacity:0;
+    animation: subcopy 1s ease-out .5s forwards;
+}
+.sv_copy_main{font-size:64px; font-weight:700; color:#fff; word-break: keep-all;transform: translate(100px); opacity:0;
+    animation: maincopy 1s ease-out 1s forwards;
+}
+
+@keyframes zoomin {
+    0% {transform: scale(1.6);}
+    100% { transform: scale(1.0);}
+}
+
+@keyframes subcopy {
+    0% {opacity:0; transform: translate(100px);}
+    100% {opacity:.7;transform: translate(0px);}
+}
+
+@keyframes maincopy {
+    0% {opacity:0;transform: translate(100px);}
+    100% {opacity:1;transform: translate(0px);}
+}
+
+
 .breadcrumb_list_wrap{padding:0 0 30px 0;max-width:1200px;margin:0 auto;width:100%;}
 .breadcrumb_list{
     display:flex;gap:5px 27px; align-items: center; flex-wrap:wrap;
