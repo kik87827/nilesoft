@@ -8648,55 +8648,51 @@ textarea.form_textarea:focus {
   -webkit-animation: zoomin_main 2s ease 0.5s forwards;
           animation: zoomin_main 2s ease 0.5s forwards;
 }
-.gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate_copy_sub, .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate_copy_main, .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate_copy_sub2, .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate_summary_wrap { /* opacity:1;transform: translateY(0); */
-  -webkit-animation: up_motion 1s ease-out forwards;
-          animation: up_motion 1s ease-out forwards;
+.gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate_copy_sub, .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate_copy_main, .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate_copy_sub2, .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate_summary_wrap {
+  opacity: 1;
+  transform: translateY(0);
 }
 .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate_copy_sub {
-  -webkit-animation-delay: 0.8s;
-          animation-delay: 0.8s;
+  transition-delay: 0.8s;
 }
 .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate_copy_main {
-  -webkit-animation-delay: 1.2s;
-          animation-delay: 1.2s;
+  transition-delay: 1.2s;
 }
 .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate_copy_sub2 {
-  -webkit-animation-delay: 1.5s;
-          animation-delay: 1.5s;
+  transition-delay: 1.5s;
 }
 .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate_summary_wrap {
-  -webkit-animation-delay: 1.8s;
-          animation-delay: 1.8s;
+  transition-delay: 1.8s;
 }
 .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate02_main_copy, .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate02_main_copy2, .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate02_main_copy3, .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate02_sub_copy {
-  -webkit-animation: left_motion 1s ease-out forwards;
-          animation: left_motion 1s ease-out forwards;
+  /* animation: left_motion 1s ease-out forwards; */
+  opacity: 1;
+  transform: translateX(0);
 }
 .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate02_img_wrap {
-  -webkit-animation: right_motion 1s ease-out forwards;
-          animation: right_motion 1s ease-out forwards;
+  opacity: 1;
+  transform: translateX(0);
 }
 .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate02_main_copy {
-  -webkit-animation-delay: 0.8s;
-          animation-delay: 0.8s;
+  transition-delay: 0.8s;
 }
 .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate02_main_copy2 {
-  -webkit-animation-delay: 1.2s;
-          animation-delay: 1.2s;
+  transition-delay: 1.2s;
 }
 .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate02_main_copy3 {
-  -webkit-animation-delay: 1.5s;
-          animation-delay: 1.5s;
+  transition-delay: 1.5s;
 }
 .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate02_sub_copy {
-  -webkit-animation-delay: 1.8s;
-          animation-delay: 1.8s;
+  transition-delay: 1.8s;
 }
 .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate02_img_wrap {
-  -webkit-animation-delay: 2.1s;
-          animation-delay: 2.1s;
+  transition-delay: 2.1s;
 }
-
+.gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_secquard_img_wrap {
+  opacity: 1;
+  margin-top: 0;
+  transition-delay: 0.8s;
+}
 .mv_gate_copy_wrap {
   text-align: center;
 }
@@ -9514,16 +9510,25 @@ textarea.form_textarea:focus {
 .mv_gate_copy_sub, .mv_gate_copy_main, .mv_gate_copy_sub2, .mv_gate_summary_wrap {
   opacity: 0;
   transform: translateY(50px);
+  transition: all 1s ease-out;
 }
 
 .mv_gate02_main_copy, .mv_gate02_main_copy2, .mv_gate02_main_copy3, .mv_gate02_sub_copy {
   opacity: 0;
   transform: translateX(-50px);
+  transition: all 1s ease-out;
 }
 
 .mv_gate02_img_wrap {
   opacity: 0;
   transform: translateX(50px);
+  transition: all 1s ease-out;
+}
+
+.mv_secquard_img_wrap {
+  opacity: 0;
+  margin-top: -50px;
+  transition: all 1s ease-out;
 }
 
 @-webkit-keyframes zoomin_main {
