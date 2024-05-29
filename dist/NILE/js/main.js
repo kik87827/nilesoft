@@ -55,7 +55,7 @@ function mainSwiper() {
     },
     initialSlide: 0,
     autoplay: {
-      delay: 4500,
+      delay: 5000,
       disableOnInteraction: false,
     },
   });
