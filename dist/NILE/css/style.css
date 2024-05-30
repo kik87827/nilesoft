@@ -8527,6 +8527,33 @@ textarea.form_textarea:focus {
 .swiper.mv_container > .swiper-wrapper > .swiper-slide.swiper-slide-active .mv_item .mv_cbox_sub_copy {
   transition-delay: 0.8s;
 }
+.swiper.mv_container > .swiper-wrapper > .swiper-slide.swiper-slide-active .mv_item .mv_cbox {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.swiper.mv_container > .swiper-wrapper > .swiper-slide.swiper-slide-active .mv_item .mv_cbox_cell:nth-of-type(2) .mv_cbox {
+  transition-delay: 0.9s;
+}
+.swiper.mv_container > .swiper-wrapper > .swiper-slide.swiper-slide-active .mv_item .mv_cbox_cell:nth-of-type(3) .mv_cbox {
+  transition-delay: 1.2s;
+}
+.swiper.mv_container > .swiper-wrapper > .swiper-slide.swiper-slide-active .mv_item .mv_cbox_cell:nth-of-type(4) .mv_cbox {
+  transition-delay: 1.4s;
+}
+.swiper.mv_container > .swiper-wrapper > .swiper-slide.swiper-slide-active .mv_item .mv_cbox_cell:nth-of-type(5) .mv_cbox {
+  transition-delay: 1.6s;
+}
+.swiper.mv_container > .swiper-wrapper > .swiper-slide.swiper-slide-active .mv_item .mv_item_main_copy,
+.swiper.mv_container > .swiper-wrapper > .swiper-slide.swiper-slide-active .mv_item .mv_item_sub_copy {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.swiper.mv_container > .swiper-wrapper > .swiper-slide.swiper-slide-active .mv_item .mv_item_main_copy {
+  transition-delay: 0.8s;
+}
+.swiper.mv_container > .swiper-wrapper > .swiper-slide.swiper-slide-active .mv_item .mv_item_sub_copy {
+  transition-delay: 1.2s;
+}
 .swiper.mv_container .swiper-pagination.mv_global.swiper-pagination-vertical.swiper-pagination-bullets,
 .swiper.mv_container .swiper-pagination.mv_global > .swiper-pagination-bullets {
   left: 40px;
@@ -8663,16 +8690,16 @@ textarea.form_textarea:focus {
   transform: translateY(0);
 }
 .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate_copy_sub {
-  transition-delay: 0.8s;
+  transition-delay: 0.6s;
 }
 .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate_copy_main {
-  transition-delay: 1.2s;
+  transition-delay: 0.8s;
 }
 .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate_copy_sub2 {
-  transition-delay: 1.5s;
+  transition-delay: 1s;
 }
 .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate_summary_wrap {
-  transition-delay: 1.8s;
+  transition-delay: 1.2s;
 }
 .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate02_main_copy, .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate02_main_copy2, .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate02_main_copy3, .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate02_sub_copy {
   /* animation: left_motion 1s ease-out forwards; */
@@ -8684,19 +8711,19 @@ textarea.form_textarea:focus {
   transform: translateX(0);
 }
 .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate02_main_copy {
-  transition-delay: 0.8s;
+  transition-delay: 0.6s;
 }
 .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate02_main_copy2 {
-  transition-delay: 1.2s;
+  transition-delay: 0.8s;
 }
 .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate02_main_copy3 {
-  transition-delay: 1.5s;
+  transition-delay: 1s;
 }
 .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate02_sub_copy {
-  transition-delay: 1.8s;
+  transition-delay: 1.2s;
 }
 .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_gate02_img_wrap {
-  transition-delay: 2.1s;
+  transition-delay: 1.4s;
 }
 .gate_swiper_container.swiper-container .swiper-slide.swiper-slide-active .mv_secquard_img_wrap {
   opacity: 1;
@@ -9547,6 +9574,19 @@ textarea.form_textarea:focus {
   opacity: 0;
   transform: translateX(50px);
   transition: all 1s ease-out 0.5s;
+}
+
+.mv_cbox {
+  transform: translate(0, 100px);
+  opacity: 0;
+  transition: transform 1s ease-out 0.8s, opacity 1s ease-out 0.8s;
+}
+
+.mv_item_main_copy,
+.mv_item_sub_copy {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s ease-out;
 }
 
 @-webkit-keyframes zoomin_main {
