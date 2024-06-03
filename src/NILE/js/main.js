@@ -72,10 +72,10 @@ function mainSwiper(){
              clickable: true,
          },
          initialSlide : 0,
-         /* autoplay: {
+          autoplay: {
              delay: 5000,
              disableOnInteraction: false,
-         }, */
+         },
      });
 
     screenAction();
