@@ -7,6 +7,8 @@ function mainSwiper(){
     const header_wrap = document.querySelector(".header_wrap");
     const footer_wrap = document.querySelector(".footer_wrap");
     const mv_container = document.querySelector(".mv_container");
+    const mv_swiper_slide = document.querySelectorAll(".swiper-slide");
+    const mv_footer_prev = document.querySelector(".scene_04").closest(".swiper-slide");
     const check_height = document.querySelectorAll(".check_height");
 
     let mainSwiper = new Swiper('.mv_container', {
@@ -146,10 +148,16 @@ function mainSwiper(){
             let overHeightItem = document.querySelectorAll(".overHeight");
             if(overHeightItem.length>0){
                 mv_container.classList.add("scrollmode");
-                mainSwiper.params.freeMode.enabled = true;
+                mainSwiper.params.speed = 0;
+                mainSwiper.params.freeMode.enabled = true; 
+                mainSwiper.params.slidesPerView = "auto"; 
             }else{
                 mv_container.classList.remove("scrollmode");
-                mainSwiper.params.freeMode.enabled = false;
+                mainSwiper.params.speed = 1000;
+                mainSwiper.params.freeMode.enabled = false; 
+                mainSwiper.params.slidesPerView = "1"; 
+                // slidesPerView: "auto"
+                
             }
             if(window.innerWidth < 1024){
                 mv_container.classList.add("scrollmode");
@@ -168,6 +176,20 @@ function mainSwiper(){
             }
         } else if (mainSwiper.realIndex == 2 || mainSwiper.realIndex == 3 || mainSwiper.realIndex == 4) {
             front_body.classList.add("main_skin2");
+        }
+
+        if(mainSwiper.realIndex == 4){
+            console.log('last2',mainSwiper.realIndex);
+            console.log('last2',mv_footer_prev);
+            if(!!mv_footer_prev){
+                mv_footer_prev.classList.add("prev-active");
+            }
+        }else{
+            if(!!mv_swiper_slide){
+                mv_swiper_slide.forEach((item)=>{
+                    item.classList.remove("prev-active");
+                });
+            }
         }
     }
 
