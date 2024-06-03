@@ -10300,6 +10300,8 @@ textarea.form_textarea:focus {
   .scene_contents_cols {
     margin: 25px 0 0 0;
   }
+  /* motion */
+  /* .mv_card_obj,.mv_motion_card{transform: translate(-100px,0);} */
 }
 @media (min-width: 1921px) {
   .mv_gate_summary_wrap {

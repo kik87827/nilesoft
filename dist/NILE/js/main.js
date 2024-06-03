@@ -151,15 +151,19 @@ function mainSwiper() {
       if (overHeightItem.length > 0) {
         mv_container.classList.add("scrollmode");
         mainSwiper.params.speed = 0;
+        mainSwiper.params.momentumBounce = true;
+        mainSwiper.params.passiveListeners = true;
+        mainSwiper.params.freeModeSticky = false;
         mainSwiper.params.freeMode.enabled = true;
         mainSwiper.params.slidesPerView = "auto";
       } else {
         mv_container.classList.remove("scrollmode");
         mainSwiper.params.speed = 1000;
+        mainSwiper.params.momentumBounce = false;
+        mainSwiper.params.passiveListeners = false;
+        mainSwiper.params.freeModeSticky = false;
         mainSwiper.params.freeMode.enabled = false;
         mainSwiper.params.slidesPerView = "1";
-        // slidesPerView: "auto"
-
       }
       if (window.innerWidth < 1024) {
         mv_container.classList.add("scrollmode");
@@ -171,6 +175,7 @@ function mainSwiper() {
 
   function screenAction() {
     //if(mv_container.classList.contains("scrollmode")){return;}
+    //let mv_skin4 = document.querySelector(".mv_motion_card.skin4");
     front_body.classList.remove("main_skin2");
     if (mainSwiper.realIndex == 0) {
       if (mainGateSwiper.realIndex == 2) {
@@ -193,6 +198,12 @@ function mainSwiper() {
         });
       }
     }
+
+    /* if(!!mv_skin4){
+        mv_skin4.addEventListener("transitionend",()=>{
+            mainSwiper.update();
+        });
+    } */
   }
 
   /* function scrollModeAction(){
