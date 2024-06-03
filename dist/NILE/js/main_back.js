@@ -17,13 +17,8 @@ function mainSwiper() {
     direction: 'vertical',
     mousewheel: true,
     freeMode: false,
-    /* autoHeight : false, */
-    slidesPerView: "auto",
+    //slidesPerView: 1,
     autoHeight: true,
-    // autoHeight : true, 
-    /* freeMode: true,
-    slidesPerView: "auto",
-    autoHeight : true, */
     speed: 1000,
     initialSlide: 0,
     pagination: {
@@ -150,10 +145,14 @@ function mainSwiper() {
       let overHeightItem = document.querySelectorAll(".overHeight");
       if (overHeightItem.length > 0) {
         mv_container.classList.add("scrollmode");
+        mainSwiper.params.speed = 0;
         mainSwiper.params.freeMode.enabled = true;
+        // mainSwiper.params.slidesPerView = "auto"; 
       } else {
         mv_container.classList.remove("scrollmode");
+        mainSwiper.params.speed = 1000;
         mainSwiper.params.freeMode.enabled = false;
+        // mainSwiper.params.slidesPerView = "1"; 
       }
       if (window.innerWidth < 1024) {
         mv_container.classList.add("scrollmode");
@@ -227,8 +226,29 @@ function mainSwiper() {
       });
       elements.forEach(item => {
         item.style.height = `${maxHeight}px`;
-      });
-      mainSwiper.update();
+      })
+      /* if(!!mainSwiper){
+          mainSwiper.update();
+      } */
     }
+
+    /* const mv_cbox_sub = document.querySelectorAll(".mv_cbox_sub");
+        const mv_pro_sub_copy = document.querySelectorAll(".mv_pro_sub_copy");
+        copyMaxTarget(mv_cbox_sub);
+        copyMaxTarget(mv_pro_sub_copy);
+    
+        function copyMaxTarget(target){
+            let domTarget = target;
+            let subcopyHeight = [];
+            if(!!domTarget){
+                domTarget.forEach((item)=>{
+                    item.style.removeProperty("height");
+                    subcopyHeight.push(item.getBoundingClientRect().height);
+                });
+                domTarget.forEach((item)=>{
+                    item.style.height = Math.max.apply(null,subcopyHeight) + "px";
+                });
+            }
+        } */
   }
 }
