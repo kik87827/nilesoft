@@ -43,10 +43,10 @@ function mainSwiper(){
                  if(window.innerWidth>=1024){return;}
                  if(translate.translate < 0){
                     header_wrap.classList.add("scroll");
-                    gate_bottom_layer.style.display = "none";
+                    //gate_bottom_layer.style.display = "none";
                 }else{
                      header_wrap.classList.remove("scroll");
-                     gate_bottom_layer.style.display = "block";
+                     //gate_bottom_layer.style.display = "block";
                  }
                  // console.log('Current translate:', translate.translate);
              },
@@ -59,9 +59,9 @@ function mainSwiper(){
      innerDebug.setAttribute("id","debug");
      front_body.append(innerDebug); */
 
-     if(!!gate_bottom_layer){
+     /* if(!!gate_bottom_layer){
         front_body.append(gate_bottom_layer);
-     }
+     } */
 
      
      const mainGateSwiper = new Swiper(".gate_swiper_container",{
@@ -186,9 +186,9 @@ function mainSwiper(){
         front_body.classList.remove("main_skin2");
         /* mv_gate_swiper_wrap.style.height = window.innerHeight + "px";
         console.log(window.innerHeight); */
-        gate_bottom_layer.style.display = "none";
+        //gate_bottom_layer.style.display = "none";
         if (mainSwiper.realIndex == 0) {
-            gate_bottom_layer.style.display = "block";
+            //gate_bottom_layer.style.display = "block";
             if (mainGateSwiper.realIndex == 2) {
                 front_body.classList.add("main_skin2");
             }

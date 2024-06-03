@@ -1,5 +1,11 @@
+
+
 window.addEventListener("DOMContentLoaded", () => {
     commonInit();
+    // 최초 로드 시 호출
+    setVhProperty();
+    // 창 크기가 변경될 때마다 호출
+    window.addEventListener('resize', setVhProperty);
 });
 window.addEventListener("load", () => {
   layoutFunc();
@@ -8,7 +14,17 @@ window.addEventListener("load", () => {
 
 $(function() {
 })
-  
+
+  /**
+   * browser height 체크
+   */
+function setVhProperty() {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+
+
   /**
    * device check
    */
