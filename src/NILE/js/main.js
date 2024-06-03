@@ -55,9 +55,9 @@ function mainSwiper(){
      /* mainSwiper.params.freeMode.enabled = true;
      mainSwiper.update(); */
 
-     var innerDebug = document.createElement("div");
+    /*  var innerDebug = document.createElement("div");
      innerDebug.setAttribute("id","debug");
-     front_body.append(innerDebug);
+     front_body.append(innerDebug); */
 
      if(!!gate_bottom_layer){
         front_body.append(gate_bottom_layer);
@@ -157,7 +157,7 @@ function mainSwiper(){
         }
         if(!!check_height){
             check_height.forEach((item)=>{
-                if(item.getBoundingClientRect().height>= window.innerHeight - header_wrap_height){
+                if(item.getBoundingClientRect().height>= document.documentElement.clientHeight - header_wrap_height){
                     item.classList.add("overHeight");
                 }else{
                     item.classList.remove("overHeight");

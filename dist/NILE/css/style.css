@@ -10193,6 +10193,9 @@ html.mainfront .page_wrap {
   .mv_card_obj {
     padding: 15px 10px;
   }
+  .mv_card_obj:hover:before {
+    transform: scale(1);
+  }
   .mv_card_obj:before {
     border-radius: 10px;
   }
