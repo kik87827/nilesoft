@@ -3495,6 +3495,10 @@ button.swiper-pagination-bullet {
 .popup_item.size2 {
   max-width: 636px;
 }
+.popup_item.modal_type {
+  max-width: 428px;
+  border-radius: 8px;
+}
 
 .bg_dim {
   display: block;
@@ -3548,6 +3552,37 @@ button.swiper-pagination-bullet {
   padding-top: 0;
 }
 
+.modal_container_wrap {
+  position: relative;
+  overflow: hidden;
+  overflow-y: auto;
+  flex: 1;
+  padding: 25px;
+}
+
+.modal_title {
+  font-size: 24px;
+  color: #333333;
+  font-weight: 700;
+}
+
+.modal_contents_row {
+  margin-top: 10px;
+}
+
+.modal_contents_copy {
+  font-size: 16px;
+  color: #333333;
+}
+
+.modal_btn_row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 75px;
+}
 .touchmode .popup_contents_row.scroll_mode {
   padding-right: 70px;
 }
@@ -3710,6 +3745,12 @@ button.swiper-pagination-bullet {
   .popup_btn_row.type2 {
     gap: 10px;
   }
+  .modal_title {
+    font-size: 20px;
+  }
+  .modal_btn_row {
+    margin-top: 35px;
+  }
 }
 /* // 공통 popup */
 .btn_box {
@@ -3733,6 +3774,13 @@ button.swiper-pagination-bullet {
 .btn_box.size_submit {
   min-width: 220px;
 }
+.btn_box.size3 {
+  min-width: 107px;
+  min-height: 35px;
+}
+.btn_box.size3 .btn_box_text {
+  font-size: 14px;
+}
 .btn_box .ico {
   display: inline-block;
 }
@@ -3740,6 +3788,9 @@ button.swiper-pagination-bullet {
   width: 17px;
   height: 15px;
   background: url("../images/ico_download.png") no-repeat 0 0/100% auto;
+}
+.btn_box.skin2 {
+  background: #b1b1b1;
 }
 
 .btn_box_text {

@@ -18,58 +18,86 @@
 
 <body class="front_body">
 	<div class="page_wrap">
-		<div>
-			<a href="#" class="btn_guide" id="btn_guide">레이어팝업</a>
+		<div class="btn_box_group">
+			<a href="#" class="btn_box" id="btnCall"><span class="btn_box_text">팝업 호출</span></a>
 		</div>
+		<!-- popup -->
+		<div class="popup_wrap" id="modal_popup_01">
+			<div class="bg_dim"></div>
+			<div class="popup_item modal_type">
+				<div class="modal_container_wrap">
+					<div class="modal_title_row">
+						<h2 class="modal_title">보안 취약점 점검</h2>
+					</div>
+					<div class="modal_contents_row">
+						<p class="modal_contents_copy">제품문의 구분을 확인해 주세요.</p>
+					</div>
+					<div class="modal_btn_row">
+						<a href="javascript:;" class="btn_box size3 close_trigger"><span class="btn_box_text">닫기</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup_wrap" id="modal_popup_02">
+			<div class="bg_dim"></div>
+			<div class="popup_item modal_type">
+				<div class="modal_container_wrap">
+					<div class="modal_title_row">
+						<h2 class="modal_title">로그아웃</h2>
+					</div>
+					<div class="modal_contents_row">
+						<p class="modal_contents_copy">로그아웃 하시겠습니까?</p>
+					</div>
+					<div class="modal_btn_row">
+						<a href="javascript:;" class="btn_box size3 close_trigger"><span class="btn_box_text">확인</span></a>
+						<a href="javascript:;" class="btn_box size3 skin2 close_trigger"><span class="btn_box_text">취소</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // popup -->
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				// 인스턴스 선언
+				let modal_popup_01 = new DesignPopup({
+					selector: "#modal_popup_01",
+					beforeCallback() {
+
+					},
+					callback() {
+
+					},
+					closeCallback() {}
+				});
+				let modal_popup_02 = new DesignPopup({
+					selector: "#modal_popup_02",
+					beforeCallback() {
+
+					},
+					callback() {
+
+					},
+					closeCallback() {}
+				});
+
+				// 퍼블확인용
+				let url = window.location.href.split('?')[1];
+				let url_2 = url !== undefined ? url.split('#')[0] : null;
+				if (url_2 === "type2") {
+					modal_popup_02.popupShow(); // show
+				} else {
+					modal_popup_01.popupShow(); // show
+					// modal_popup_01.popupShow(); // hide
+				}
+
+
+				// event
+				document.querySelector("#btnCall").addEventListener("click", () => {
+					modal_popup_01.popupShow(); // show
+				});
+			});
+		</script>
 	</div>
-	<script>
-		// 인스턴스 선언
-		let designAlert = new DesignModal({
-			type: "confirm", // alert, confirm,
-			submitText: "수정",
-			closeText: "닫기",
-			main_message: `
-				현재 인증 신청이 되어있어 수정이 불가합니다. <br>평가자 배정 전까지는 <strong>진행 현황 페이지</strong>에서 <br>수정할 수 있습니다.
-			`,
-			identify_callback: function() {
-				console.log('확인');
-			},
-			cancel_callback: function() {
-				console.log('취소');
-			}
-		})
-		let designAlert2 = new DesignModal({
-			type: "confirm", // alert, confirm,
-			submitText: "수정",
-			closeText: "닫기",
-			main_message: `
-				현재 인증 신청이 되어있어 수정이 불가합니다. 02 <br>평가자 배정 전까지는 <strong>진행 현황 페이지</strong>에서 <br>수정할 수 있습니다.
-			`,
-			identify_callback: function() {
-				console.log('수정2');
-			},
-			cancel_callback: function() {
-				console.log('닫기2');
-			}
-		})
-
-
-		// action
-		designAlert.show();
-		setTimeout(() => {
-			designAlert2.show();
-		}, 1000);
-		// setTimeout(()=>{
-		// 	designAlert.hide();
-		// },1000);
-
-		//test
-		document.querySelector("#btn_guide").addEventListener("click", () => {
-			designAlert2.show();
-		});
-
-		// 강제로 닫기 designAlert.hide();
-	</script>
 </body>
 
 </html>

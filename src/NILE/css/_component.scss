@@ -16,6 +16,9 @@
     &.size2{
         max-width:636px;
     }
+    &.modal_type{
+        max-width:428px; border-radius:8px;
+    }
 }
 .bg_dim{display:block;width:100%;height:100%;position:fixed;top:0;left:0;z-index:0;background:#000;opacity:0;transition:.5s;
     &.no_transition{transition:0s;opacity:.6;transform:none;}
@@ -28,6 +31,16 @@
     &.scroll_mode{padding-right:60px;}
     & + .popup_btn_row{padding-top:0;}
 }
+.modal_container_wrap{position:relative;overflow:hidden;overflow-y:auto;flex:1;padding:25px;}
+.modal_title_row{}
+.modal_title{font-size:24px; color:#333333; font-weight:700;}
+.modal_contents_row{margin-top:10px;}
+.modal_contents_copy{font-size:16px; color:#333333;}
+.modal_btn_row{
+    display:flex; flex-wrap:wrap; justify-content: center; align-items: center; gap:8px; margin-top:75px;
+    .btn_box{}
+}
+
 
 .touchmode {
     .popup_contents_row{
@@ -99,6 +112,12 @@
             gap:10px;
         }
     }
+
+    .modal_title_row{}
+    .modal_title{font-size:20px;}
+    .modal_btn_row{
+        margin-top:35px;
+    }
 }
 /* // 공통 popup */
 
@@ -113,9 +132,16 @@
     &.size_submit{
         min-width:220px;
     }
+    &.size3{min-width:107px;
+        min-height:35px;
+        .btn_box_text{font-size:14px;}
+    }
     .ico{
         display:inline-block;
         &.down{width:17px;height:15px; background:url("../images/ico_download.png") no-repeat 0 0/100% auto;}
+    }
+    &.skin2{
+        background:#b1b1b1;
     }
 }
 .btn_box_text{color:#fff; font-size:18px; font-weight:500; display:inline-block;}
@@ -131,7 +157,6 @@
         .ico{
             &.down{width:12px;height:11px;}
         }
-
         &.size_submit{
             min-width:160px;
         }
