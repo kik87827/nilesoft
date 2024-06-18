@@ -9,7 +9,7 @@ var gulp = require("gulp"),
 	beautify = require('gulp-beautify'),
 	htmlbeautify = require('gulp-html-beautify');
 
-gulp.task('default', ['scss','fileinclude','beautify','watch']);
+gulp.task('default', ['fileinclude','beautify','watch']);
 
 gulp.task('scss', function () {
 	gulp.src('./src/NILE/css/*.scss')
