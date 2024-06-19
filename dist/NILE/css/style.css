@@ -1383,6 +1383,72 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
     display: flex;
   }
 }
+
+/* layer */
+.gate_bottom_layer{position:fixed;top:50%;right:0;z-index:30;transform: translateY(-50%);z-index:10;}
+.gate_bottom_item_list{
+    display:flex; flex-direction: column; gap:20px;
+}
+.gate_bottom_item_list > li{}
+.btn_bottom_menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 15px 0 0 15px;
+  background: #1bb6e3;
+  gap: 10px;
+  text-align: center;
+}
+.btn_bottom_menu .ico {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: 0 0;
+}
+.btn_bottom_menu .ico.inquiry {
+  background-image: url("../../images/ico_talk_layer.png");
+  width: 33px;
+  height: 24px;
+}
+
+.bottom_menu_text {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  display: inline-block;
+}
+@media (max-width:1440px){
+  .btn_bottom_menu {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px 0 0 10px;
+  }
+  .bottom_menu_text{font-size:14px;}
+}
+@media (max-width:1440px){
+  .btn_bottom_menu {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px 0 0 10px;
+  }
+  .bottom_menu_text{font-size:14px;}
+}
+@media (max-width:1023px){
+  .btn_bottom_menu {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px 0 0 5px;
+    gap:5px;
+  }
+  .bottom_menu_text{font-size:11px;}
+  .btn_bottom_menu .ico.inquiry {
+    width: 19.8px;
+    height: 14.4px;
+  }
+}
+
 /**
  * Swiper 11.1.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -9669,48 +9735,7 @@ html.mainfront .page_wrap {
   line-height: 1;
 }
 
-.gate_bottom_layer {
-  position: absolute;
-  bottom: 130px;
-  right: 60px;
-  z-index: 30;
-  transition: 0.4s;
-}
 
-.gate_bottom_item_list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.btn_bottom_menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 104px;
-  height: 104px;
-  border-radius: 100%;
-  background: #1bb6e3;
-  gap: 10px;
-  text-align: center;
-}
-.btn_bottom_menu .ico {
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: 0 0;
-}
-.btn_bottom_menu .ico.inquiry {
-  background-image: url("../../images/ico_talk_layer.png");
-  width: 33px;
-  height: 24px;
-}
-
-.bottom_menu_text {
-  color: #fff;
-  font-size: 16px;
-  font-weight: 700;
-  display: inline-block;
-}
 
 .scene_diagram_container {
   display: flex;
@@ -10030,14 +10055,7 @@ html.mainfront .page_wrap {
   }
 }
 @media (max-width: 1440px) {
-  .gate_bottom_layer {
-    bottom: 70px;
-    right: 30px;
-  }
-  .btn_bottom_menu {
-    width: 90px;
-    height: 90px;
-  }
+  
   .mv_gate_copy_sub {
     font-size: 24px;
     margin-bottom: 16px;
@@ -10241,27 +10259,8 @@ html.mainfront .page_wrap {
   .swiper-pagination.mv_inner .swiper-pagination-bullet.swiper-pagination-bullet-active {
     width: 28px;
   }
-  .gate_bottom_layer {
-    bottom: 20px;
-    right: 20px;
-  }
-  .btn_bottom_menu {
-    width: 70px;
-    height: 70px;
-    gap: 5px;
-  }
-  .btn_bottom_menu .ico {
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: 0 0;
-  }
-  .btn_bottom_menu .ico.inquiry {
-    width: 26.4px;
-    height: 19.2px;
-  }
-  .bottom_menu_text {
-    font-size: 13px;
-  }
+  
+  
   .mv_cbox_cell.merged {
     display: none;
   }
